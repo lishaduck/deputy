@@ -1,0 +1,22 @@
+{
+  "name": "@eslint-deputy/sonar",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    }
+  },
+  "dependencies": {
+    "eslint-plugin-sonarjs": "catalog:plugins"
+  },
+  "peerDependencies": {
+    "@eslint-deputy/config": "workspace:*",
+    "eslint": "catalog:peers"
+  },
+  "devDependencies": {
+    "@eslint-deputy/config": "workspace:*",
+    "@eslint-deputy/typegen": "workspace:*",
+    "eslint": "catalog:dev"
+  }
+}

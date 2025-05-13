@@ -1,0 +1,14 @@
+{
+  "eslint.options": {
+    "flags": ["unstable_config_lookup_from_file"]
+  },
+  "eslint.probe": [
+    "javascript",
+    "typescript",
+    "yaml",
+    "json",
+    "jsonc",
+    "svelte",
+    "html"
+  ]
+}

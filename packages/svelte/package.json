@@ -1,0 +1,22 @@
+{
+  "name": "@eslint-deputy/svelte",
+  "type": "module",
+  "dependencies": {
+    "eslint-plugin-svelte": "^3.8.1"
+  },
+  "peerDependencies": {
+    "@eslint-deputy/config": "workspace:*",
+    "eslint": "catalog:peers",
+    "svelte": "catalog:peers"
+  },
+  "peerDependenciesMeta": {
+    "svelte": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@eslint-deputy/config": "workspace:*",
+    "eslint": "catalog:dev",
+    "svelte": "catalog:dev"
+  }
+}

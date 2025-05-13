@@ -1,0 +1,24 @@
+{
+  "name": "@eslint-deputy/typegen",
+  "type": "module",
+  "exports": {
+    ".": "./index.ts"
+  },
+  "dependencies": {
+    "eslint-flat-config-utils": "catalog:",
+    "eslint-typegen": "^2.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "catalog:types",
+    "eslint": "catalog:dev"
+  },
+  "peerDependencies": {
+    "@types/node": "catalog:peers",
+    "eslint": "catalog:peers"
+  },
+  "peerDependenciesMeta": {
+    "@types/node": {
+      "optional": true
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "@eslint-deputy/pnpm",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    }
+  },
+  "dependencies": {
+    "eslint-plugin-pnpm": "catalog:plugins"
+  },
+  "peerDependencies": {
+    "@eslint-deputy/config": "workspace:*",
+    "eslint": "catalog:peers"
+  },
+  "devDependencies": {
+    "@eslint-deputy/config": "workspace:*",
+    "eslint": "catalog:dev"
+  }
+}

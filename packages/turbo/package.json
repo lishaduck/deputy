@@ -1,0 +1,17 @@
+{
+  "name": "@eslint-deputy/turbo",
+  "type": "module",
+  "dependencies": {
+    "eslint-plugin-turbo": "catalog:plugins"
+  },
+  "peerDependencies": {
+    "@eslint-deputy/config": "workspace:*",
+    "eslint": "catalog:peers",
+    "turbo": "catalog:peers"
+  },
+  "devDependencies": {
+    "@eslint-deputy/config": "workspace:*",
+    "eslint": "catalog:dev",
+    "turbo": "catalog:dev"
+  }
+}

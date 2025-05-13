@@ -1,0 +1,77 @@
+{
+  "name": "@eslint-deputy/config",
+  "version": "0.0.0",
+  "private": true,
+  "description": "An opinionated ESLint configuration",
+  "keywords": [
+    "eslint",
+    "eslintconfig",
+    "eslint-config"
+  ],
+  "license": "UPL-1.0",
+  "author": "",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    }
+  },
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "prepare": "scripts/typegen.ts"
+  },
+  "dependencies": {
+    "@eslint-community/eslint-plugin-eslint-comments": "catalog:plugins",
+    "@eslint/js": "catalog:plugins",
+    "@regru/eslint-plugin-prefer-early-return": "catalog:plugins",
+    "@stylistic/eslint-plugin": "catalog:plugins",
+    "confusing-browser-globals": "catalog:plugins",
+    "defu": "catalog:",
+    "eslint-config-flat-gitignore": "catalog:plugins",
+    "eslint-flat-config-utils": "catalog:",
+    "eslint-no-restricted": "catalog:plugins",
+    "eslint-plugin-de-morgan": "catalog:plugins",
+    "eslint-plugin-depend": "catalog:plugins",
+    "eslint-plugin-jsdoc": "catalog:plugins",
+    "eslint-plugin-no-use-extend-native": "catalog:plugins",
+    "eslint-plugin-package-json": "catalog:plugins",
+    "eslint-plugin-perfectionist": "catalog:plugins",
+    "eslint-plugin-promise": "catalog:plugins",
+    "eslint-plugin-regexp": "catalog:plugins",
+    "eslint-plugin-tsdoc": "catalog:plugins",
+    "eslint-plugin-unicorn-x": "catalog:plugins",
+    "globals": "catalog:",
+    "jsonc-eslint-parser": "catalog:parsers",
+    "typescript-eslint": "catalog:plugins",
+    "yaml-eslint-parser": "catalog:parsers"
+  },
+  "devDependencies": {
+    "@eslint-deputy/node": "workspace:*",
+    "@eslint-deputy/pnpm": "workspace:*",
+    "@eslint-deputy/sonar": "workspace:*",
+    "@eslint-deputy/typegen": "workspace:*",
+    "@types/confusing-browser-globals": "catalog:types",
+    "@types/node": "catalog:types",
+    "eslint": "catalog:dev",
+    "jiti": "catalog:dev",
+    "tsdown": "catalog:dev",
+    "type-fest": "catalog:types",
+    "typescript": "catalog:dev"
+  },
+  "peerDependencies": {
+    "@types/node": "catalog:peers",
+    "eslint": "catalog:peers",
+    "typescript": "catalog:peers"
+  },
+  "peerDependenciesMeta": {
+    "@types/node": {
+      "optional": true
+    }
+  },
+  "engines": {
+    "node": "^20.18.0 || ^22.11.0 || >=24.0.0"
+  }
+}

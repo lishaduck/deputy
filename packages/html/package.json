@@ -1,0 +1,22 @@
+{
+  "name": "@eslint-deputy/html",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    }
+  },
+  "dependencies": {
+    "@html-eslint/eslint-plugin": "^0.40.3"
+  },
+  "peerDependencies": {
+    "@eslint-deputy/config": "workspace:*",
+    "eslint": "catalog:peers"
+  },
+  "devDependencies": {
+    "@eslint-deputy/config": "workspace:*",
+    "eslint": "catalog:dev",
+    "jiti": "catalog:dev"
+  }
+}

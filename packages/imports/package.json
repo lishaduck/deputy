@@ -1,0 +1,16 @@
+{
+  "name": "@eslint-deputy/imports",
+  "type": "module",
+  "dependencies": {
+    "eslint-import-resolver-typescript": "catalog:plugins",
+    "eslint-plugin-import-x": "catalog:plugins"
+  },
+  "devDependencies": {
+    "@eslint-deputy/config": "workspace:*",
+    "eslint": "catalog:dev"
+  },
+  "peerDependencies": {
+    "@eslint-deputy/config": "workspace:*",
+    "eslint": "catalog:peers"
+  }
+}
