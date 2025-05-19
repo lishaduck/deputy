@@ -1,15 +1,17 @@
 import type { Linter } from "eslint";
 import unicornX from "eslint-plugin-unicorn-x";
-import { defineConfig } from "eslint/config";
-import { off } from "../severity.ts";
-import type { DeputyConfigOptions } from "../options.ts";
 
-const handpicked: Linter.RulesRecord = {
+import { defineConfig, type TypedRules } from "@eslint-deputy/define-config";
+
+import type { DeputyConfigOptions } from "../options.ts";
+import { off } from "../severity.ts";
+
+const handpicked: TypedRules = {
   "unicorn-x/empty-brace-spaces": off,
   "unicorn-x/no-abusive-eslint-disable": off, // We use eslint-plugin-eslint-comments.
 };
 
-const handpickedDts: Linter.RulesRecord = {
+const handpickedDts: TypedRules = {
   "unicorn-x/no-named-default": off,
 };
 

@@ -9,17 +9,14 @@ export async function generate(
 ): Promise<void> {
   const config = await concat(...configs);
 
-  const configNames = config
-    .map((i) => i.name)
-    .filter((name) => name !== undefined);
-
   let dts = await flatConfigsToRulesDTS(config, {
-    augmentFlatConfigUtils: true,
+    includeAugmentation: true,
   });
 
   dts += `
-// Names of all the configs
-export type ConfigNames = ${configNames.map((i) => `'${i}'`).join(" | ")}
+declare module "@eslint-deputy/define-config" {
+  interface RulesRecord extends RuleOptions {}
+}
 `;
 
   dts = dts.replaceAll("\ntype", "\n/** @internal */\nexport type");

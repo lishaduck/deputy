@@ -15,6 +15,7 @@ export const sonar: Domain = {
         "sonarjs/deprecation": off,
         "sonarjs/function-return-type": off,
         "sonarjs/class-name": off,
+        "sonarjs/unused-import": off,
       },
     },
   ],

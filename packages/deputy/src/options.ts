@@ -1,58 +1,63 @@
 import type { Linter } from "eslint";
-import type globals from "globals";
-import type { TypescriptEslintNoDeprecated } from "./typegen.js";
 import type { Arrayable } from "eslint-flat-config-utils";
+import type { RuleConfig as GlobalsRuleConfig } from "eslint-no-restricted/globals";
 import type { RuleConfig as PropertyRuleConfig } from "eslint-no-restricted/properties";
 import type { RuleConfig as SyntaxRuleConfig } from "eslint-no-restricted/syntax";
-import type { RuleConfig as GlobalsRuleConfig } from "eslint-no-restricted/globals";
+import type globals from "globals";
+
+import type { TypescriptEslintNoDeprecated } from "./typegen.js";
 
 export interface DeputyOptions {
+  readonly allowDefaultProject?: string[] | undefined;
   readonly domains?: Domain[] | undefined;
   readonly environment?: DeputyEnvironment | undefined;
   readonly rootDir?: string | undefined;
-  readonly allowDefaultProject?: string[] | undefined;
   readonly ruleConfigurations?: RuleConfigurations | undefined;
 }
 
 export interface RuleConfigurations {
-  readonly deprecations?: TypescriptEslintNoDeprecated | undefined;
+  readonly deprecations?: DeprecatedConfiguration;
   readonly restricted?: RestrictedConfiguration;
 }
 
 export interface RestrictedConfiguration {
+  readonly globals?: GlobalsRuleConfig[] | undefined;
   readonly properties?: PropertyRuleConfig[] | undefined;
   readonly syntax?: SyntaxRuleConfig[] | undefined;
-  readonly globals?: GlobalsRuleConfig[] | undefined;
 }
 
+export type DeprecatedConfiguration =
+  | Exclude<TypescriptEslintNoDeprecated, []>[0]["allow"]
+  | undefined;
+
 export interface ResolvedRestrictedConfiguration {
+  readonly globals: GlobalsRuleConfig[];
   readonly properties: PropertyRuleConfig[];
   readonly syntax: SyntaxRuleConfig[];
-  readonly globals: GlobalsRuleConfig[];
 }
 
 export interface ResolvedRuleConfigurations {
-  readonly deprecations: TypescriptEslintNoDeprecated | undefined;
+  readonly deprecations: DeprecatedConfiguration;
   readonly restricted: ResolvedRestrictedConfiguration;
 }
 
 export interface DeputyResolvedOptions {
+  readonly allowDefaultProject: string[];
   readonly domains: Domain[];
   readonly environment: DeputyEnvironment;
   readonly rootDir: string | undefined;
-  readonly allowDefaultProject: string[];
   readonly ruleConfigurations: Required<ResolvedRuleConfigurations>;
 }
 
 export interface DeputyConfigOptions {
-  readonly environment: DeputyEnvironment;
-  readonly rootDir: string | undefined;
   readonly allowDefaultProject: string[];
+  readonly environment: DeputyEnvironment;
   readonly fileGlobs: GlobBag;
+  readonly rootDir: string | undefined;
   readonly ruleConfigurations: Required<ResolvedRuleConfigurations>;
 }
 
-interface GlobBag {
+export interface GlobBag {
   /**
    * Both JS and TS.
    *
@@ -82,7 +87,7 @@ export type Extension = `.${string}`;
 
 /**
  * @param options Resolved state of the config.
- * @returns Config
+ * @returns An ESLint config to be included.
  */
 export type ConfigFactory = (
   options: DeputyConfigOptions,
@@ -97,7 +102,7 @@ export interface Domain {
 }
 
 export interface DeputyEnvironment {
-  readonly type: "app" | "library"; // TODO: Wire up
+  readonly type?: "app" | "internal" | "lib";
 
   readonly globals?: (keyof typeof globals | Linter.Globals)[];
 }

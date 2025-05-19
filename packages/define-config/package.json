@@ -1,0 +1,21 @@
+{
+  "name": "@eslint-deputy/define-config",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    }
+  },
+  "dependencies": {
+    "@eslint/config-helpers": "catalog:"
+  },
+  "peerDependencies": {
+    "eslint": "catalog:peers"
+  },
+  "devDependencies": {
+    "@eslint-deputy/config": "workspace:*",
+    "eslint": "catalog:dev",
+    "jiti": "catalog:dev"
+  }
+}

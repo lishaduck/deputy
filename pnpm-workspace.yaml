@@ -10,15 +10,23 @@ onlyBuiltDependencies:
   - unrs-resolver
 
 packageExtensions:
-  "@html-eslint/eslint-plugin":
-    peerDependencies:
-      eslint: ^9.7.0
-
   "@eslint/config-helpers":
     peerDependencies:
       eslint: ^9.0.0
 
+  "@html-eslint/eslint-plugin":
+    peerDependencies:
+      eslint: ^9.7.0
+
   eslint-flat-config-utils:
+    peerDependencies:
+      eslint: ^9.0.0
+
+  eslint-plugin-depend:
+    peerDependencies:
+      eslint: ^9.0.0
+
+  eslint-plugin-tsdoc:
     peerDependencies:
       eslint: ^9.0.0
 
@@ -30,6 +38,7 @@ catalog:
   "@eslint/config-inspector": ^1.0.2
   defu: ^6.1.4
   eslint-flat-config-utils: ^2.0.1
+  eslint-plugin-import: ""
   globals: ^16.1.0
 
 catalogs:
@@ -55,6 +64,8 @@ catalogs:
     eslint-plugin-sonarjs: ^3.0.2
     eslint-plugin-tsdoc: ^0.4.0
     eslint-plugin-turbo: ^2.5.3
+    eslint-plugin-unicorn: ^0.0.0
+    eslint-plugin-unicorn-: ^0.0.0
     eslint-plugin-unicorn-x: ^1.0.8
     typescript-eslint: ^8.32.1
 

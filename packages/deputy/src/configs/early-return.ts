@@ -1,8 +1,10 @@
-import type { Linter } from "eslint";
 import preferEarlyReturn from "@regru/eslint-plugin-prefer-early-return";
-import { warn } from "../severity.ts";
-import { defineConfig } from "eslint/config";
+import type { Linter } from "eslint";
+
+import { defineConfig } from "@eslint-deputy/define-config";
+
 import type { DeputyConfigOptions } from "../options.ts";
+import { warn } from "../severity.ts";
 
 export const earlyReturn = ({
   fileGlobs,

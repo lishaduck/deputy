@@ -1,5 +1,7 @@
-import { defineConfig } from "eslint/config";
 import type { Linter } from "eslint";
+
+import { defineConfig } from "@eslint-deputy/define-config";
+
 import type { DeputyConfigOptions } from "../options.ts";
 import { off } from "../severity.ts";
 

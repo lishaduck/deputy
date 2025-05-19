@@ -1,6 +1,10 @@
 import type { Linter } from "eslint";
 import globals from "globals";
 
+/**
+ * @param environmentGlobals
+ * @example
+ */
 export function getGlobals(
   environmentGlobals: (keyof typeof globals | Linter.Globals)[],
 ): Linter.Globals {

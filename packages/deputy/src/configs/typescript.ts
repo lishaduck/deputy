@@ -1,7 +1,9 @@
 import type { Linter } from "eslint";
+
+import { defineConfig } from "@eslint-deputy/define-config";
+
 import type { DeputyConfigOptions } from "../options.ts";
 import { error, warn } from "../severity.ts";
-import { defineConfig } from "eslint/config";
 
 export const typescript = ({
   fileGlobs,
@@ -16,6 +18,4 @@ export const typescript = ({
       ],
       "@typescript-eslint/explicit-module-boundary-types": error,
     },
-
-    // TODO: TSDoc
   });

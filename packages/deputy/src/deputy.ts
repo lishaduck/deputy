@@ -1,6 +1,9 @@
 import { defu } from "defu";
 import type { Linter } from "eslint";
 import { composer, type FlatConfigComposer } from "eslint-flat-config-utils";
+
+import { restrictedSyntax } from "./common/restricted.ts";
+import { configs } from "./configs/index.ts";
 import type {
   DeputyConfigOptions,
   DeputyOptions,
@@ -8,8 +11,6 @@ import type {
   Extension,
 } from "./options.ts";
 import type {} from "./typegen.d.ts";
-import { configs } from "./configs/index.ts";
-import { restrictedSyntax } from "./common/restricted.ts";
 
 function resolveConfig(
   options: DeputyOptions | undefined,
@@ -86,6 +87,19 @@ function createConfig(
   ].flatMap((config) => config?.(configOptions) ?? []);
 }
 
+/**
+ * Configure ESLint.
+ *
+ * @param options - Configuration and customizations for Deputy.
+ * @returns A.
+ *
+ * @example
+ * ```ts
+ * import { deputy } from "@eslint-deputy/config"
+ *
+ * export default deputy();
+ * ```
+ */
 // eslint-disable-next-line @typescript-eslint/promise-function-async -- returns a Composer.
 export function deputy(options?: DeputyOptions): FlatConfigComposer {
   const resolvedConfig = resolveConfig(options);

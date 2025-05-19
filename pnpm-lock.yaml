@@ -6,6 +6,9 @@ settings:
 
 catalogs:
   default:
+    '@eslint/config-helpers':
+      specifier: ^0.2.2
+      version: 0.2.2
     defu:
       specifier: ^6.1.4
       version: 6.1.4
@@ -122,7 +125,7 @@ catalogs:
       specifier: ^4.37.0
       version: 4.37.0
 
-packageExtensionsChecksum: sha256-PVOSWE3+Ies4aVGTwGFfdpAkdxMyFzI1PqnQOIF+1lU=
+packageExtensionsChecksum: sha256-HQmyXeuwnTouA/CvBUHJ0L5OX/mp0SdiZiIzpqL19Sk=
 
 importers:
 
@@ -147,11 +150,30 @@ importers:
         specifier: ^0.14.3
         version: 0.14.3
 
+  packages/define-config:
+    dependencies:
+      '@eslint/config-helpers':
+        specifier: 'catalog:'
+        version: 0.2.2(eslint@9.27.0(jiti@2.4.2))
+    devDependencies:
+      '@eslint-deputy/config':
+        specifier: workspace:*
+        version: link:../deputy
+      eslint:
+        specifier: catalog:dev
+        version: 9.27.0(jiti@2.4.2)
+      jiti:
+        specifier: catalog:dev
+        version: 2.4.2
+
   packages/deputy:
     dependencies:
       '@eslint-community/eslint-plugin-eslint-comments':
         specifier: catalog:plugins
         version: 4.5.0(eslint@9.27.0(jiti@2.4.2))
+      '@eslint-deputy/config':
+        specifier: workspace:*
+        version: 'link:'
       '@eslint/js':
         specifier: catalog:plugins
         version: 9.27.0
@@ -181,7 +203,7 @@ importers:
         version: 1.2.1(eslint@9.27.0(jiti@2.4.2))
       eslint-plugin-depend:
         specifier: catalog:plugins
-        version: 1.2.0
+        version: 1.2.0(eslint@9.27.0(jiti@2.4.2))
       eslint-plugin-jsdoc:
         specifier: catalog:plugins
         version: 50.6.17(eslint@9.27.0(jiti@2.4.2))
@@ -202,7 +224,7 @@ importers:
         version: 2.7.0(eslint@9.27.0(jiti@2.4.2))
       eslint-plugin-tsdoc:
         specifier: catalog:plugins
-        version: 0.4.0
+        version: 0.4.0(eslint@9.27.0(jiti@2.4.2))
       eslint-plugin-unicorn-x:
         specifier: catalog:plugins
         version: 1.0.8(eslint@9.27.0(jiti@2.4.2))
@@ -1518,6 +1540,8 @@ packages:
 
   eslint-plugin-depend@1.2.0:
     resolution: {integrity: sha512-nbG8AOTYk43kM/SLCFLNW8tvAssF3rrvE5W5dWLP9/joNdAvzJLMuTEx9GIahoRYVTFCQYLejg2tll0USSvFHg==}
+    peerDependencies:
+      eslint: ^9.0.0
 
   eslint-plugin-es-x@7.8.0:
     resolution: {integrity: sha512-7Ds8+wAAoV3T+LAKeu39Y5BzXCrGKrcISfgKEqTS4BDN8SFEDQd0S43jiQ8vIa3wUKD07qitZdfzlenSi8/0qQ==}
@@ -1596,6 +1620,8 @@ packages:
 
   eslint-plugin-tsdoc@0.4.0:
     resolution: {integrity: sha512-MT/8b4aKLdDClnS8mP3R/JNjg29i0Oyqd/0ym6NnQf+gfKbJJ4ZcSh2Bs1H0YiUMTBwww5JwXGTWot/RwyJ7aQ==}
+    peerDependencies:
+      eslint: ^9.0.0
 
   eslint-plugin-turbo@2.5.3:
     resolution: {integrity: sha512-DlXZd+LgpDlxH/6IsiAXLhy82x0jeJDm0XBEqP6Le08uy0HBQkjCUt7SmXNp8esAtX9RYe6oDClbNbmI1jtK5g==}
@@ -4245,8 +4271,9 @@ snapshots:
     dependencies:
       eslint: 9.27.0(jiti@2.4.2)
 
-  eslint-plugin-depend@1.2.0:
+  eslint-plugin-depend@1.2.0(eslint@9.27.0(jiti@2.4.2)):
     dependencies:
+      eslint: 9.27.0(jiti@2.4.2)
       fd-package-json: 1.2.0
       module-replacements: 2.8.0
       semver: 7.7.2
@@ -4395,10 +4422,11 @@ snapshots:
     transitivePeerDependencies:
       - ts-node
 
-  eslint-plugin-tsdoc@0.4.0:
+  eslint-plugin-tsdoc@0.4.0(eslint@9.27.0(jiti@2.4.2)):
     dependencies:
       '@microsoft/tsdoc': 0.15.1
       '@microsoft/tsdoc-config': 0.17.1
+      eslint: 9.27.0(jiti@2.4.2)
 
   eslint-plugin-turbo@2.5.3(eslint@9.27.0(jiti@2.4.2))(turbo@2.5.3):
     dependencies:

@@ -2,7 +2,9 @@ import type { Linter } from "eslint";
 import createNoRestrictedGlobals from "eslint-no-restricted/globals";
 import createNoRestrictedProperties from "eslint-no-restricted/properties";
 import createNoRestrictedSyntax from "eslint-no-restricted/syntax";
-import { defineConfig } from "eslint/config";
+
+import { defineConfig } from "@eslint-deputy/define-config";
+
 import type { DeputyConfigOptions } from "../options.ts";
 
 export const restricted = ({

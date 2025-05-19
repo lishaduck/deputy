@@ -1,59 +1,45 @@
-import { defineConfig } from "eslint/config";
 import js from "@eslint/js";
+import stylistic from "@stylistic/eslint-plugin";
 import confusingBrowserGlobals from "confusing-browser-globals";
 import type { Linter } from "eslint";
-import stylistic from "@stylistic/eslint-plugin";
 import ts from "typescript-eslint";
+
+import { defineConfig, type TypedRules } from "@eslint-deputy/define-config";
+
+import { getGlobals } from "../common/globals.ts";
 import type { DeputyConfigOptions, RuleConfigurations } from "../options.ts";
 import { error, off, warn } from "../severity.ts";
-import { getGlobals } from "../common/globals.ts";
 
-const coreHandpicked: Linter.RulesRecord = {
+const coreHandpicked: TypedRules = {
+  "array-callback-return": [error, { allowImplicit: true, checkForEach: true }],
+  // @ts-expect-error(TS2322): https://github.com/eslint/eslint/issues/19721#issuecomment-2895433469
+  curly: [error, "multi-line", "consistent"],
+  eqeqeq: error,
   "func-style": [warn, "declaration", { allowArrowFunctions: true }],
-  "no-promise-executor-return": error,
-  "no-unreachable-loop": error,
+  "logical-assignment-operators": [
+    error,
+    "always",
+    { enforceForIfStatements: true },
+  ],
   "no-caller": error,
+  "no-console": [warn, { allow: ["warn", "error", "debug", "info", "table"] }],
+  "no-else-return": [error, { allowElseIf: false }],
+  "no-eval": error,
   "no-extend-native": error,
   "no-extra-bind": error,
   "no-extra-label": error,
   "no-implicit-coercion": error,
+  "no-lone-blocks": error,
+  "no-multi-assign": error,
   "no-multi-str": error,
   "no-new-wrappers": error,
   "no-object-constructor": error,
-  strict: [warn, "safe"],
   "no-octal-escape": error,
-  "no-proto": error,
-  "no-sequences": [error, { allowInParentheses: false }],
-  "no-unmodified-loop-condition": error,
-  "no-void": [error, { allowAsStatement: true }],
-  "no-multi-assign": error,
-  "no-plusplus": [error, { allowForLoopAfterthoughts: true }],
-  "no-useless-call": error,
-  "prefer-object-has-own": error,
-  "no-lone-blocks": error,
-  "no-eval": error,
-  "no-return-assign": [error, "always"],
-  "no-else-return": [error, { allowElseIf: false }],
-  "prefer-template": error,
-  "operator-assignment": [error, "always"],
-  "logical-assignment-operators": [
-    "error",
-    "always",
-    { enforceForIfStatements: true },
-  ],
-  "prefer-object-spread": error,
   "no-param-reassign": error,
-  "no-useless-computed-key": error,
-  "no-useless-rename": error,
-  "object-shorthand": error,
-  "array-callback-return": [error, { allowImplicit: true, checkForEach: true }],
-  "no-unneeded-ternary": [error, { defaultAssignment: false }],
-  "require-atomic-updates": error,
-  "no-console": [warn, { allow: ["warn", "error", "debug", "info", "table"] }],
-  curly: [error, "multi-line", "consistent"],
-  eqeqeq: error,
-  "prefer-arrow-callback": error,
-  "no-useless-assignment": error,
+  "no-plusplus": [error, { allowForLoopAfterthoughts: true }],
+  "no-promise-executor-return": error,
+  "no-proto": error,
+  "no-restricted-globals": [error, ...confusingBrowserGlobals],
   "no-restricted-imports": [
     error,
     {
@@ -71,53 +57,69 @@ const coreHandpicked: Linter.RulesRecord = {
       ],
     },
   ],
-  "no-restricted-globals": [error, ...confusingBrowserGlobals],
+  "no-return-assign": [error, "always"],
+  "no-sequences": [error, { allowInParentheses: false }],
+  "no-unmodified-loop-condition": error,
+  "no-unneeded-ternary": [error, { defaultAssignment: false }],
+  "no-unreachable-loop": error,
+  "no-useless-assignment": error,
+  "no-useless-call": error,
+  "no-useless-computed-key": error,
+  "no-useless-rename": error,
+  "no-void": [error, { allowAsStatement: true }],
+  "object-shorthand": error,
+  "operator-assignment": [error, "always"],
+  "prefer-arrow-callback": error,
+  "prefer-object-has-own": error,
+  "prefer-object-spread": error,
+  "prefer-template": error,
+  "require-atomic-updates": error,
+  strict: [warn, "safe"],
+
+  // Replaced by TSESLint rules:
+  "no-return-await": off,
+  "no-shadow": off,
+  "no-undef": off,
+  "no-use-before-define": off,
 };
 
-const tseslintHandpicked: Linter.RulesRecord = {
+const tseslintHandpicked: TypedRules = {
   "@typescript-eslint/ban-ts-comment": [
     error,
     {
-      minimumDescriptionLength: 10,
+      minimumDescriptionLength: 20, // "(TSNNNN): " is 10 + 10.
       "ts-check": false,
       "ts-expect-error": {
         descriptionFormat: String.raw`^\(TS\d+\): .+$`,
       },
     },
   ],
-  "no-use-before-define": off,
-  "@typescript-eslint/no-use-before-define": error,
-  "@typescript-eslint/no-loop-func": error,
-  "@typescript-eslint/method-signature-style": error,
-  "@typescript-eslint/prefer-nullish-coalescing": [
-    error,
-    { ignorePrimitives: true },
-  ],
-  "@typescript-eslint/no-unused-expressions": [
-    error,
-    {
-      allowShortCircuit: true,
-      allowTernary: true,
-      allowTaggedTemplates: true,
-      enforceForJSX: true,
-    },
-  ],
-  "@typescript-eslint/no-import-type-side-effects": error,
   "@typescript-eslint/default-param-last": error,
+  "@typescript-eslint/method-signature-style": error,
   "@typescript-eslint/no-empty-object-type": [
     error,
     {
       allowInterfaces: "with-single-extends",
     },
   ],
-  "no-shadow": "off",
+  "@typescript-eslint/no-import-type-side-effects": error,
+  "@typescript-eslint/no-loop-func": error,
   "@typescript-eslint/no-shadow": [
     error,
     {
-      hoist: "all",
       allow: ["resolve", "reject", "done", "next", "err", "error"],
-      ignoreTypeValueShadow: true,
+      hoist: "all",
       ignoreFunctionTypeParameterNameValueShadow: true,
+      ignoreTypeValueShadow: true,
+    },
+  ],
+  "@typescript-eslint/no-unused-expressions": [
+    error,
+    {
+      allowShortCircuit: true,
+      allowTaggedTemplates: true,
+      allowTernary: true,
+      enforceForJSX: true,
     },
   ],
   "@typescript-eslint/no-unused-vars": [
@@ -133,35 +135,38 @@ const tseslintHandpicked: Linter.RulesRecord = {
       ignoreRestSiblings: true,
     },
   ],
+  "@typescript-eslint/no-use-before-define": error,
   "@typescript-eslint/prefer-destructuring": [
     warn,
     {
-      VariableDeclarator: {
-        array: false,
-        object: true,
-      },
       AssignmentExpression: {
         array: false,
         object: false,
+      },
+      VariableDeclarator: {
+        array: false,
+        object: true,
       },
     },
     {
       enforceForRenamedProperties: false,
     },
   ],
+  "@typescript-eslint/prefer-nullish-coalescing": [
+    error,
+    { ignorePrimitives: true },
+  ],
   "@typescript-eslint/promise-function-async": warn,
   "@typescript-eslint/restrict-template-expressions": [
     error,
     { allowNumber: true },
   ],
-  "no-return-await": off,
   "@typescript-eslint/return-await": [error, "always"],
-
   "@typescript-eslint/strict-boolean-expressions": warn,
   "@typescript-eslint/switch-exhaustiveness-check": error,
 };
 
-const stylisticHandpicked: Linter.RulesRecord = {
+const stylisticHandpicked: TypedRules = {
   "@stylistic/padding-line-between-statements": [
     error,
 
@@ -176,19 +181,19 @@ const stylisticHandpicked: Linter.RulesRecord = {
 
 const ecmascriptCustomized = (
   ruleConfigurations: RuleConfigurations,
-): Linter.RulesRecord => ({
+): TypedRules => ({
   "@typescript-eslint/no-deprecated": [
     error,
-    ...(ruleConfigurations.deprecations ?? []),
+    { allow: ruleConfigurations.deprecations ?? [] },
   ],
 });
 
 export const ecmascript = ({
   allowDefaultProject,
   environment,
+  fileGlobs,
   rootDir,
   ruleConfigurations,
-  fileGlobs,
 }: DeputyConfigOptions): Linter.Config[] =>
   defineConfig(
     {
@@ -207,9 +212,9 @@ export const ecmascript = ({
         globals: getGlobals(environment.globals ?? []),
         parserOptions: {
           ecmaFeatures: {
-            jsx: true,
-            impliedStrict: true,
             globalReturn: false,
+            impliedStrict: true,
+            jsx: true,
           },
           sourceType: "module",
 
@@ -244,6 +249,4 @@ export const ecmascript = ({
       files: [fileGlobs.ecma],
       rules: ecmascriptCustomized(ruleConfigurations),
     },
-
-    // TODO: JSDoc
   );

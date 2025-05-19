@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "@eslint-community/eslint-plugin-eslint-comments": "catalog:plugins",
+    "@eslint-deputy/config": "workspace:*",
     "@eslint/js": "catalog:plugins",
     "@regru/eslint-plugin-prefer-early-return": "catalog:plugins",
     "@stylistic/eslint-plugin": "catalog:plugins",

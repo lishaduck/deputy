@@ -10,5 +10,11 @@
     "jsonc",
     "svelte",
     "html"
+  ],
+  "eslint.rules.customizations": [
+    {
+      "rule": "*",
+      "severity": "downgrade" // TODO: Figure out how to make infos show up as problems.
+    }
   ]
 }
