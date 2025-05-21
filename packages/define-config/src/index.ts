@@ -3,9 +3,8 @@ import {
   type ExtendsElement,
 } from "@eslint/config-helpers";
 import type { Linter } from "eslint";
-import type { ESLintRules } from "eslint/rules";
 
-export interface RulesRecord extends ESLintRules {}
+export interface RulesRecord extends Linter.RulesRecord {}
 
 export type TypedRules = Partial<RulesRecord>;
 export type TypedConfig = Linter.Config<RulesRecord>;

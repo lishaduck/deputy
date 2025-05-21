@@ -12,7 +12,6 @@ import { error, off, warn } from "../severity.ts";
 
 const coreHandpicked: TypedRules = {
   "array-callback-return": [error, { allowImplicit: true, checkForEach: true }],
-  // @ts-expect-error(TS2322): https://github.com/eslint/eslint/issues/19721#issuecomment-2895433469
   curly: [error, "multi-line", "consistent"],
   eqeqeq: error,
   "func-style": [warn, "declaration", { allowArrowFunctions: true }],
@@ -21,6 +20,7 @@ const coreHandpicked: TypedRules = {
     "always",
     { enforceForIfStatements: true },
   ],
+  "no-alert": error,
   "no-caller": error,
   "no-console": [warn, { allow: ["warn", "error", "debug", "info", "table"] }],
   "no-else-return": [error, { allowElseIf: false }],

@@ -2,8 +2,13 @@ import type { Linter } from "eslint";
 import globals from "globals";
 
 /**
- * @param environmentGlobals
+ * Merge an array of globals into a single globals object.
+ *
+ * @param environmentGlobals - A list of globals. If a string, will be a set from `npm:globals`.
+ * @returns A merged object of globals.
+ *
  * @example
+ * console.log(getGlobals(["node"]))
  */
 export function getGlobals(
   environmentGlobals: (keyof typeof globals | Linter.Globals)[],

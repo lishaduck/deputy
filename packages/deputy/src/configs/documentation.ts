@@ -13,9 +13,15 @@ const handpicked: TypedRules = {
   "jsdoc/check-indentation": warn,
   "jsdoc/require-description": warn,
   "jsdoc/require-description-complete-sentence": warn,
-  "jsdoc/require-hyphen-before-param-description": [warn, "always"],
+  "jsdoc/require-hyphen-before-param-description": [
+    warn,
+    "always",
+    { tags: { returns: "never" } },
+  ],
   "jsdoc/require-jsdoc": [warn, { publicOnly: true }],
+  "jsdoc/sort-tags": [warn, { reportIntraTagGroupSpacing: false }],
   "jsdoc/tag-lines": [warn, "always", { count: 0, startLines: 1 }],
+  "jsdoc/text-escaping": error,
 };
 
 const exampleDisables: TypedRules = {

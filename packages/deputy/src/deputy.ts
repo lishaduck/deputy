@@ -9,6 +9,8 @@ import type {
   DeputyOptions,
   DeputyResolvedOptions,
   Extension,
+  ExtensionBag,
+  GlobBag,
 } from "./options.ts";
 import type {} from "./typegen.d.ts";
 
@@ -22,6 +24,7 @@ function resolveConfig(
       allowDefaultProject: [],
       domains: [],
       environment: {},
+      internalPattern: undefined,
       rootDir: undefined,
       ruleConfigurations: {
         deprecations: undefined,
@@ -35,8 +38,26 @@ function resolveConfig(
   ) as DeputyResolvedOptions;
 }
 
+const defaultJs = [".js", ".mjs", ".cjs"] as const;
+const defaultTs = [".ts", ".mts", ".cts"] as const;
+
 function extensionsToGlob(extensions: readonly Extension[]): string {
   return `**/*.{${extensions.map((extension) => extension.slice(1)).join(",")}}`;
+}
+
+function extensionsBagToGlob(extensionsBag: ExtensionBag): GlobBag {
+  return {
+    ecma: extensionsToGlob(extensionsBag.ecma),
+
+    js: extensionsToGlob(extensionsBag.js),
+    ts: extensionsToGlob(extensionsBag.ts),
+
+    dts: extensionsToGlob(extensionsBag.dts),
+
+    get configs() {
+      return this.ecma.replace("**/*.", "**/*.config.");
+    },
+  };
 }
 
 function resolveOptions(options: DeputyResolvedOptions): DeputyConfigOptions {
@@ -44,36 +65,33 @@ function resolveOptions(options: DeputyResolvedOptions): DeputyConfigOptions {
     (domain) => domain.additionalExtensions ?? [],
   );
 
-  const extensions = {
+  const extensions: ExtensionBag = {
     get ecma() {
       return [...this.js, ...this.ts];
     },
+
     js: [
-      ".js",
-      ".mjs",
-      ".cjs",
+      ...defaultJs,
       ...domainExtensions.flatMap((extraExtensions) => extraExtensions.js),
     ],
     ts: [
-      ".ts",
-      ".mts",
-      ".cts",
+      ...defaultTs,
       ...domainExtensions.flatMap((extraExtensions) => extraExtensions.ts),
     ],
-  } as const;
+
+    get dts() {
+      return this.ts.flatMap(
+        (extension) => [`.d${extension}`, `.d.*${extension}`] as const,
+      );
+    },
+  };
+
+  const fileGlobs = extensionsBagToGlob(extensions);
 
   return {
     ...options,
-    fileGlobs: {
-      ecma: extensionsToGlob(extensions.ecma),
-      js: extensionsToGlob(extensions.js),
-      ts: extensionsToGlob(extensions.ts),
-      dts: extensionsToGlob(
-        extensions.ts.flatMap(
-          (extension) => [`.d${extension}`, `.d.*${extension}`] as const,
-        ),
-      ),
-    },
+    extensions,
+    fileGlobs,
   };
 }
 

@@ -10,6 +10,10 @@ onlyBuiltDependencies:
   - unrs-resolver
 
 packageExtensions:
+  "@eslint/js":
+    peerDependencies:
+      eslint: ^9.0.0
+
   "@eslint/config-helpers":
     peerDependencies:
       eslint: ^9.0.0
@@ -26,7 +30,18 @@ packageExtensions:
     peerDependencies:
       eslint: ^9.0.0
 
+  eslint-plugin-import-x:
+    peerDependencies:
+      "@typescript-eslint/scope-manager": ^8.0.0
+      eslint: ^9.0.0
+    dependencies:
+      type-fest: ^4.40.0
+
   eslint-plugin-tsdoc:
+    peerDependencies:
+      eslint: ^9.0.0
+
+  jsonc-eslint-parser:
     peerDependencies:
       eslint: ^9.0.0
 
@@ -38,7 +53,6 @@ catalog:
   "@eslint/config-inspector": ^1.0.2
   defu: ^6.1.4
   eslint-flat-config-utils: ^2.0.1
-  eslint-plugin-import: ""
   globals: ^16.1.0
 
 catalogs:
@@ -91,4 +105,3 @@ catalogs:
   types:
     "@types/confusing-browser-globals": ~1.0.3
     "@types/node": ^22.15.18
-    type-fest: ^4.37.0

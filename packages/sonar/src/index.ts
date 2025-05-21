@@ -16,6 +16,7 @@ export const sonar: Domain = {
         "sonarjs/function-return-type": off,
         "sonarjs/class-name": off,
         "sonarjs/unused-import": off,
+        "sonarjs/cognitive-complexity": off,
       },
     },
   ],

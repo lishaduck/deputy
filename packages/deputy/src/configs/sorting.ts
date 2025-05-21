@@ -2,7 +2,7 @@ import type { Linter } from "eslint";
 import perfectionist from "eslint-plugin-perfectionist";
 import { Alphabet } from "eslint-plugin-perfectionist/alphabet";
 
-import { defineConfig, type TypedRules } from "@eslint-deputy/define-config";
+import { defineConfig } from "@eslint-deputy/define-config";
 
 import type { DeputyConfigOptions } from "../options.ts";
 import { error, off } from "../severity.ts";
@@ -47,11 +47,6 @@ const objectSort: PerfectionistSortObjects = [
 
       // Footers
       {
-        groupName: "dts",
-        selector: "property",
-        elementNamePattern: "^(?:dts)$",
-      },
-      {
         groupName: "previous",
         selector: "property",
         elementNamePattern: "^(?:prev|previous|characterBefore)$",
@@ -74,7 +69,6 @@ const objectSort: PerfectionistSortObjects = [
       "group",
       "files",
       "unknown",
-      "dts",
       "previous",
       "next",
       "pattern",
@@ -82,35 +76,10 @@ const objectSort: PerfectionistSortObjects = [
   },
 ];
 
-const handpicked: TypedRules = {
-  "perfectionist/sort-imports": [
-    error,
-    {
-      groups: [
-        ["side-effect", "side-effect-style"],
-        ["builtin", "external"],
-        "internal",
-        ["parent", "sibling", "index"],
-        "object",
-      ],
-      internalPattern: ["^~/.+", "^@/.+", "^$lib/.*", "^@eslint-deputy/.+"], // TODO: Make this custom.
-      partitionByNewLine: false,
-
-      type: "custom",
-      alphabet: importAlphabet,
-    },
-  ],
-  "perfectionist/sort-modules": off,
-  "perfectionist/sort-objects": [error, ...objectSort],
-  "perfectionist/sort-union-types": [
-    error,
-    {
-      groups: ["unknown", "nullish"],
-    },
-  ],
-};
-
-export const sorting = ({ fileGlobs }: DeputyConfigOptions): Linter.Config[] =>
+export const sorting = ({
+  fileGlobs,
+  internalPattern,
+}: DeputyConfigOptions): Linter.Config[] =>
   defineConfig(
     {
       name: "deputy/sorting",
@@ -119,7 +88,7 @@ export const sorting = ({ fileGlobs }: DeputyConfigOptions): Linter.Config[] =>
 
       settings: {
         perfectionist: {
-          //   partitionByComment: true,
+          partitionByComment: true,
           partitionByNewLine: true,
         },
       },
@@ -127,6 +96,34 @@ export const sorting = ({ fileGlobs }: DeputyConfigOptions): Linter.Config[] =>
     {
       name: "deputy/perfectionist/handpicked",
       files: [fileGlobs.ecma],
-      rules: handpicked,
+      rules: {
+        "perfectionist/sort-imports": [
+          error,
+          {
+            groups: [
+              "side-effect",
+              "builtin",
+              "external",
+              "internal",
+              ["parent", "sibling", "index", "subpath"],
+              "unknown",
+            ],
+            internalPattern:
+              internalPattern === undefined ? [] : [internalPattern],
+            partitionByNewLine: false,
+
+            type: "custom",
+            alphabet: importAlphabet,
+          },
+        ],
+        "perfectionist/sort-modules": off,
+        "perfectionist/sort-objects": [error, ...objectSort],
+        "perfectionist/sort-union-types": [
+          error,
+          {
+            groups: ["unknown", "nullish"],
+          },
+        ],
+      },
     },
   );

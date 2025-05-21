@@ -15,6 +15,10 @@
     ".": {
       "types": "./src/index.ts",
       "default": "./src/index.ts"
+    },
+    "./use-at-your-own-risk": {
+      "types": "./src/use-at-your-own-risk.ts",
+      "default": "./src/use-at-your-own-risk.ts"
     }
   },
   "files": [
@@ -50,6 +54,7 @@
     "yaml-eslint-parser": "catalog:parsers"
   },
   "devDependencies": {
+    "@eslint-deputy/imports": "workspace:*",
     "@eslint-deputy/node": "workspace:*",
     "@eslint-deputy/pnpm": "workspace:*",
     "@eslint-deputy/sonar": "workspace:*",
@@ -59,7 +64,6 @@
     "eslint": "catalog:dev",
     "jiti": "catalog:dev",
     "tsdown": "catalog:dev",
-    "type-fest": "catalog:types",
     "typescript": "catalog:dev"
   },
   "peerDependencies": {

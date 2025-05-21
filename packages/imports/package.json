@@ -1,12 +1,19 @@
 {
   "name": "@eslint-deputy/imports",
   "type": "module",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    }
+  },
   "dependencies": {
     "eslint-import-resolver-typescript": "catalog:plugins",
     "eslint-plugin-import-x": "catalog:plugins"
   },
   "devDependencies": {
     "@eslint-deputy/config": "workspace:*",
+    "@eslint-deputy/typegen": "workspace:*",
     "eslint": "catalog:dev"
   },
   "peerDependencies": {

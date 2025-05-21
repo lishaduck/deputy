@@ -11,6 +11,7 @@ export interface DeputyOptions {
   readonly allowDefaultProject?: string[] | undefined;
   readonly domains?: Domain[] | undefined;
   readonly environment?: DeputyEnvironment | undefined;
+  readonly internalPattern?: string | undefined;
   readonly rootDir?: string | undefined;
   readonly ruleConfigurations?: RuleConfigurations | undefined;
 }
@@ -45,6 +46,7 @@ export interface DeputyResolvedOptions {
   readonly allowDefaultProject: string[];
   readonly domains: Domain[];
   readonly environment: DeputyEnvironment;
+  readonly internalPattern: string | undefined;
   readonly rootDir: string | undefined;
   readonly ruleConfigurations: Required<ResolvedRuleConfigurations>;
 }
@@ -52,7 +54,9 @@ export interface DeputyResolvedOptions {
 export interface DeputyConfigOptions {
   readonly allowDefaultProject: string[];
   readonly environment: DeputyEnvironment;
+  readonly extensions: ExtensionBag;
   readonly fileGlobs: GlobBag;
+  readonly internalPattern: string | undefined;
   readonly rootDir: string | undefined;
   readonly ruleConfigurations: Required<ResolvedRuleConfigurations>;
 }
@@ -73,20 +77,33 @@ export interface GlobBag {
 
   /** These files only support types. */
   dts: string;
+
+  /** These files are configurations. */
+  configs: string;
 }
 
 export interface ExtensionBag {
+  /**
+   * Both JS and TS.
+   *
+   * And yes, I know that TS isn’t ECMA.
+   */
+  ecma: readonly Extension[];
+
   /** These files do not support types. */
-  js: Extension[];
+  js: readonly Extension[];
 
   /** These files do support types. */
-  ts: Extension[];
+  ts: readonly Extension[];
+
+  /** These files only support types. */
+  dts: readonly Extension[];
 }
 
 export type Extension = `.${string}`;
 
 /**
- * @param options Resolved state of the config.
+ * @param options - Resolved state of the config.
  * @returns An ESLint config to be included.
  */
 export type ConfigFactory = (

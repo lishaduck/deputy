@@ -1,6 +1,7 @@
 import { globalIgnores } from "eslint/config";
 import type { FlatConfigComposer } from "eslint-flat-config-utils";
 
+import { imports } from "@eslint-deputy/imports";
 import { node } from "@eslint-deputy/node";
 import { pnpm } from "@eslint-deputy/pnpm";
 import { sonar } from "@eslint-deputy/sonar";
@@ -8,7 +9,8 @@ import { sonar } from "@eslint-deputy/sonar";
 import { deputy } from "./src/index.ts";
 
 const _default: FlatConfigComposer = deputy({
-  domains: [node, pnpm, sonar],
+  domains: [node, pnpm, sonar, imports],
+  internalPattern: "^@eslint-deputy/",
   rootDir: import.meta.dirname,
 }).append(globalIgnores(["./src/typegen.d.ts"]));
 
