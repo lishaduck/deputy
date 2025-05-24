@@ -51,9 +51,19 @@ packages:
 catalog:
   "@eslint/config-helpers": ^0.2.2
   "@eslint/config-inspector": ^1.0.2
+  "@html-eslint/eslint-plugin": ^0.40.3
+  "@manypkg/cli": ^0.24.0
+  "@vitest/eslint-plugin": ^1.2.0
+  ci-info: ^4.2.0
   defu: ^6.1.4
   eslint-flat-config-utils: ^2.0.1
+  eslint-plugin-n: ^17.18.0
+  eslint-plugin-svelte: ^3.8.1
+  eslint-typegen: ^2.2.0
   globals: ^16.1.0
+  node-modules-inspector: ^0.6.8
+  prettier: ^3.5.3
+  typesync: ^0.14.3
 
 catalogs:
   plugins:
@@ -105,3 +115,5 @@ catalogs:
   types:
     "@types/confusing-browser-globals": ~1.0.3
     "@types/node": ^22.15.18
+  conflicts_peers_h5_8_3:
+    typescript: ^5.8.3

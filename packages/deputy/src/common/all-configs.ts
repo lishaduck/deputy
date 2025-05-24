@@ -1,6 +1,6 @@
-import type { Linter } from "eslint";
+import type { Linter } from "eslint/universal";
 
-import { configs } from "../configs/index.ts";
+import { packageConfigs } from "../configs/index.ts";
 import type { DeputyConfigOptions } from "../options.ts";
 import { restrictedSyntax } from "./restricted.ts";
 
@@ -36,9 +36,10 @@ export const emptyConfig: DeputyConfigOptions = {
       syntax: restrictedSyntax,
     },
   },
+  skipHeavyRules: false,
 };
 
 /** @internal */
-export const allConfigs: Linter.Config[] = configs.flatMap((config) =>
+export const allConfigs: Linter.Config[] = packageConfigs.flatMap((config) =>
   config(emptyConfig),
 );

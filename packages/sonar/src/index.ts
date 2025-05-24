@@ -1,22 +1,27 @@
-import { off, type Domain } from "@eslint-deputy/config";
 import sonarjs from "eslint-plugin-sonarjs";
+
+import { type Domain, error, off } from "@eslint-deputy/config";
+
 import type {} from "./typegen.d.ts";
 
 export const sonar: Domain = {
-  config: () => [
-    { ...sonarjs.configs["recommended"], name: "deputy-sonar/sonar" },
+  config: (options) => [
+    { ...sonarjs.configs.recommended, name: "deputy-sonar/sonar" },
     {
       name: "deputy-sonar/sonar/handpicked",
       rules: {
+        "sonarjs/no-commented-code": options.skipHeavyRules ? off : error,
+
         "sonarjs/no-redundant-optional": off, // Cater toward `exactOptionalPropertyTypes`.
         "sonarjs/todo-tag": off, // I’d prefer a slightly different approach. // TODO: Implement
 
         // We use the @typescript-eslint versions.
+        "sonarjs/class-name": off,
+        "sonarjs/cognitive-complexity": off,
         "sonarjs/deprecation": off,
         "sonarjs/function-return-type": off,
-        "sonarjs/class-name": off,
+        "sonarjs/no-invalid-await": off,
         "sonarjs/unused-import": off,
-        "sonarjs/cognitive-complexity": off,
       },
     },
   ],

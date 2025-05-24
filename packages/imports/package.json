@@ -7,14 +7,21 @@
       "default": "./src/index.ts"
     }
   },
+  "scripts": {
+    "prepare": "scripts/typegen.ts",
+    "typecheck": "tsc"
+  },
   "dependencies": {
     "eslint-import-resolver-typescript": "catalog:plugins",
     "eslint-plugin-import-x": "catalog:plugins"
   },
   "devDependencies": {
     "@eslint-deputy/config": "workspace:*",
+    "@eslint-deputy/tsconfig": "workspace:*",
     "@eslint-deputy/typegen": "workspace:*",
-    "eslint": "catalog:dev"
+    "@types/node": "catalog:types",
+    "eslint": "catalog:dev",
+    "typescript": "catalog:dev"
   },
   "peerDependencies": {
     "@eslint-deputy/config": "workspace:*",

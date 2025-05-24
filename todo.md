@@ -7,7 +7,7 @@
 - [ ] Add in CTA rules
 - [ ] Add in antfu rules
 - [ ] Add in psdtools rules
-- [ ] Add in elm-review rules
+- [ ] Add in elm-review (XO) rules
 - [ ] Add in Ducky rules
 - [ ] Create Effect domain
   - [ ] Add in Effect plugin

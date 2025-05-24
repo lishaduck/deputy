@@ -1,5 +1,5 @@
 import preferEarlyReturn from "@regru/eslint-plugin-prefer-early-return";
-import type { Linter } from "eslint";
+import type { Linter } from "eslint/universal";
 
 import { defineConfig } from "@eslint-deputy/define-config";
 

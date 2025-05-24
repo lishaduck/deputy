@@ -1,4 +1,4 @@
-import type { Linter } from "eslint";
+import type { Linter } from "eslint/universal";
 import promise from "eslint-plugin-promise";
 
 import { defineConfig } from "@eslint-deputy/define-config";

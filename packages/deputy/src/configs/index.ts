@@ -16,7 +16,7 @@ import { sorting } from "./sorting.ts";
 import { typescript } from "./typescript.ts";
 import { unicorn } from "./unicorn.ts";
 
-export const configs: NonNullable<Domain["config"]>[] = [
+export const packageConfigs: NonNullable<Domain["config"]>[] = [
   ignores,
   linterConfig,
 
@@ -34,6 +34,13 @@ export const configs: NonNullable<Domain["config"]>[] = [
   restricted,
   sorting,
   unicorn,
+
+  packageJson,
+];
+
+export const rootConfigs: NonNullable<Domain["config"]>[] = [
+  ignores,
+  linterConfig,
 
   packageJson,
 ];

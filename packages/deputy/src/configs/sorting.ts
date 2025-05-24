@@ -1,4 +1,4 @@
-import type { Linter } from "eslint";
+import type { Linter } from "eslint/universal";
 import perfectionist from "eslint-plugin-perfectionist";
 import { Alphabet } from "eslint-plugin-perfectionist/alphabet";
 
@@ -116,6 +116,7 @@ export const sorting = ({
             alphabet: importAlphabet,
           },
         ],
+        "perfectionist/sort-interfaces": [error, ...objectSort],
         "perfectionist/sort-modules": off,
         "perfectionist/sort-objects": [error, ...objectSort],
         "perfectionist/sort-union-types": [

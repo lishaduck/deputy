@@ -2,7 +2,7 @@ import fs from "node:fs/promises";
 
 import { flatConfigsToRulesDTS } from "eslint-typegen/core";
 import { concat, type Awaitable } from "eslint-flat-config-utils";
-import type { Linter } from "eslint";
+import type { Linter } from "eslint/universal";
 
 export async function generate(
   ...configs: Awaitable<Linter.Config | Linter.Config[]>[]

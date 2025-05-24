@@ -1,13 +1,19 @@
-import type { Linter } from "eslint";
+import type { Linter } from "eslint/universal";
 import unicornX from "eslint-plugin-unicorn-x";
 
 import { defineConfig, type TypedRules } from "@eslint-deputy/define-config";
 
 import type { DeputyConfigOptions } from "../options.ts";
-import { off } from "../severity.ts";
+import { error, off, warn } from "../severity.ts";
 
 const handpicked: TypedRules = {
-  "unicorn-x/empty-brace-spaces": off,
+  "unicorn-x/consistent-destructuring": warn,
+  "unicorn-x/custom-error-definition": error,
+  "unicorn-x/no-keyword-prefix": warn,
+  "unicorn-x/prefer-import-meta-properties": warn,
+  "unicorn-x/prefer-json-parse-buffer": warn,
+
+  "unicorn-x/empty-brace-spaces": off, // Prettier
   "unicorn-x/no-abusive-eslint-disable": off, // We use eslint-plugin-eslint-comments.
 };
 

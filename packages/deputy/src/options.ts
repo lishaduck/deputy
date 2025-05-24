@@ -1,4 +1,4 @@
-import type { Linter } from "eslint";
+import type { Linter } from "eslint/universal";
 import type { Arrayable } from "eslint-flat-config-utils";
 import type { RuleConfig as GlobalsRuleConfig } from "eslint-no-restricted/globals";
 import type { RuleConfig as PropertyRuleConfig } from "eslint-no-restricted/properties";
@@ -14,6 +14,7 @@ export interface DeputyOptions {
   readonly internalPattern?: string | undefined;
   readonly rootDir?: string | undefined;
   readonly ruleConfigurations?: RuleConfigurations | undefined;
+  readonly skipHeavyRules?: boolean | undefined;
 }
 
 export interface RuleConfigurations {
@@ -42,23 +43,22 @@ export interface ResolvedRuleConfigurations {
   readonly restricted: ResolvedRestrictedConfiguration;
 }
 
-export interface DeputyResolvedOptions {
+interface DeputyOptionsBase {
   readonly allowDefaultProject: string[];
-  readonly domains: Domain[];
-  readonly environment: DeputyEnvironment;
+  readonly environment: Required<DeputyEnvironment>;
   readonly internalPattern: string | undefined;
   readonly rootDir: string | undefined;
-  readonly ruleConfigurations: Required<ResolvedRuleConfigurations>;
+  readonly ruleConfigurations: ResolvedRuleConfigurations;
+  readonly skipHeavyRules: boolean;
 }
 
-export interface DeputyConfigOptions {
-  readonly allowDefaultProject: string[];
-  readonly environment: DeputyEnvironment;
+export interface DeputyResolvedOptions extends DeputyOptionsBase {
+  readonly domains: Domain[];
+}
+
+export interface DeputyConfigOptions extends DeputyOptionsBase {
   readonly extensions: ExtensionBag;
   readonly fileGlobs: GlobBag;
-  readonly internalPattern: string | undefined;
-  readonly rootDir: string | undefined;
-  readonly ruleConfigurations: Required<ResolvedRuleConfigurations>;
 }
 
 export interface GlobBag {
@@ -118,8 +118,10 @@ export interface Domain {
   additionalExtensions?: ExtensionBag;
 }
 
+export type PackageType = "app" | "internal" | "library" | "root";
+
 export interface DeputyEnvironment {
-  readonly type?: "app" | "internal" | "lib";
+  readonly type?: PackageType;
 
   readonly globals?: (keyof typeof globals | Linter.Globals)[];
 }

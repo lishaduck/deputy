@@ -1,24 +1,24 @@
 {
   "name": "@eslint-deputy/typegen",
+  "private": true,
   "type": "module",
   "exports": {
-    ".": "./index.ts"
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc"
   },
   "dependencies": {
     "eslint-flat-config-utils": "catalog:",
     "eslint-typegen": "^2.2.0"
   },
   "devDependencies": {
+    "@eslint-deputy/tsconfig": "workspace:*",
     "@types/node": "catalog:types",
-    "eslint": "catalog:dev"
+    "eslint": "catalog:dev",
+    "typescript": "catalog:dev"
   },
   "peerDependencies": {
-    "@types/node": "catalog:peers",
     "eslint": "catalog:peers"
-  },
-  "peerDependenciesMeta": {
-    "@types/node": {
-      "optional": true
-    }
   }
 }

@@ -1,6 +1,10 @@
 {
   "name": "@eslint-deputy/vitest",
   "type": "module",
+  "scripts": {
+    "prepare": "scripts/typegen.ts",
+    "typecheck": "tsc"
+  },
   "dependencies": {
     "@vitest/eslint-plugin": "^1.2.0"
   },
@@ -10,6 +14,10 @@
   },
   "devDependencies": {
     "@eslint-deputy/config": "workspace:*",
-    "eslint": "catalog:dev"
+    "@eslint-deputy/tsconfig": "workspace:*",
+    "@eslint-deputy/typegen": "workspace:*",
+    "@types/node": "catalog:types",
+    "eslint": "catalog:dev",
+    "typescript": "catalog:dev"
   }
 }

@@ -1,0 +1,37 @@
+{
+  "name": "@eslint-deputy/internal-config",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Our internal Deputy config.",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    }
+  },
+  "scripts": {
+    "typecheck": "tsc"
+  },
+  "dependencies": {
+    "@eslint-deputy/config": "workspace:*",
+    "@eslint-deputy/imports": "workspace:*",
+    "@eslint-deputy/node": "workspace:*",
+    "@eslint-deputy/pnpm": "workspace:*",
+    "@eslint-deputy/sonar": "workspace:*",
+    "ci-info": "catalog:",
+    "eslint-flat-config-utils": "catalog:"
+  },
+  "devDependencies": {
+    "@eslint-deputy/tsconfig": "workspace:*",
+    "@types/node": "catalog:types",
+    "eslint": "catalog:dev",
+    "typescript": "catalog:dev"
+  },
+  "peerDependencies": {
+    "eslint": "catalog:peers"
+  },
+  "engines": {
+    "node": "^20.18.0 || ^22.11.0 || >=24.0.0"
+  }
+}

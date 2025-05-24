@@ -1731,5 +1731,6 @@ export type SonarjsVariableName = []|[{
 // ----- sonarjs/xml-parser-xxe -----
 /** @internal */
 export type SonarjsXmlParserXxe = []|[("sonar-runtime" | "metric")]
-// Names of all the configs
-export type ConfigNames = 'deputy-sonar/sonar' | 'deputy-sonar/sonar'
+declare module "@eslint-deputy/define-config" {
+  interface RulesRecord extends RuleOptions {}
+}

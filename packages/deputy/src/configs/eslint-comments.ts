@@ -1,5 +1,5 @@
 import comments from "@eslint-community/eslint-plugin-eslint-comments/configs";
-import type { Linter } from "eslint";
+import type { Linter } from "eslint/universal";
 
 import { defineConfig } from "@eslint-deputy/define-config";
 

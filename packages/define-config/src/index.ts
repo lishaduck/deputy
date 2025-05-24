@@ -2,7 +2,7 @@ import {
   defineConfig as eslintDefineConfig,
   type ExtendsElement,
 } from "@eslint/config-helpers";
-import type { Linter } from "eslint";
+import type { Linter } from "eslint/universal";
 
 export interface RulesRecord extends Linter.RulesRecord {}
 

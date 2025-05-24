@@ -1,6 +1,10 @@
 {
   "name": "@eslint-deputy/turbo",
   "type": "module",
+  "scripts": {
+    "prepare": "scripts/typegen.ts",
+    "typecheck": "tsc"
+  },
   "dependencies": {
     "eslint-plugin-turbo": "catalog:plugins"
   },
@@ -11,7 +15,11 @@
   },
   "devDependencies": {
     "@eslint-deputy/config": "workspace:*",
+    "@eslint-deputy/tsconfig": "workspace:*",
+    "@eslint-deputy/typegen": "workspace:*",
+    "@types/node": "catalog:types",
     "eslint": "catalog:dev",
-    "turbo": "catalog:dev"
+    "turbo": "catalog:dev",
+    "typescript": "catalog:dev"
   }
 }

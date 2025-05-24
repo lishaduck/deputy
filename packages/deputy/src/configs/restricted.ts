@@ -1,4 +1,4 @@
-import type { Linter } from "eslint";
+import type { Linter } from "eslint/universal";
 import createNoRestrictedGlobals from "eslint-no-restricted/globals";
 import createNoRestrictedProperties from "eslint-no-restricted/properties";
 import createNoRestrictedSyntax from "eslint-no-restricted/syntax";

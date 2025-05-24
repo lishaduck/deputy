@@ -1,4 +1,4 @@
-import type { Linter } from "eslint";
+import type { Linter } from "eslint/universal";
 import deMorgan from "eslint-plugin-de-morgan";
 
 import { defineConfig } from "@eslint-deputy/define-config";

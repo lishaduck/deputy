@@ -1,4 +1,4 @@
-import type { Linter } from "eslint";
+import type { Linter } from "eslint/universal";
 import noUseExtendNative from "eslint-plugin-no-use-extend-native";
 
 import { defineConfig } from "@eslint-deputy/define-config";

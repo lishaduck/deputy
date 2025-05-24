@@ -1,7 +1,7 @@
 import js from "@eslint/js";
 import stylistic from "@stylistic/eslint-plugin";
 import confusingBrowserGlobals from "confusing-browser-globals";
-import type { Linter } from "eslint";
+import type { Linter } from "eslint/universal";
 import ts from "typescript-eslint";
 
 import { defineConfig, type TypedRules } from "@eslint-deputy/define-config";
@@ -94,6 +94,14 @@ const tseslintHandpicked: TypedRules = {
       },
     },
   ],
+  "@typescript-eslint/consistent-type-exports": [
+    2,
+    { fixMixedExportsWithInlineTypeSpecifier: true },
+  ],
+  "@typescript-eslint/consistent-type-imports": [
+    2,
+    { fixStyle: "inline-type-imports" },
+  ],
   "@typescript-eslint/default-param-last": error,
   "@typescript-eslint/method-signature-style": error,
   "@typescript-eslint/no-empty-object-type": [
@@ -164,6 +172,8 @@ const tseslintHandpicked: TypedRules = {
   "@typescript-eslint/return-await": [error, "always"],
   "@typescript-eslint/strict-boolean-expressions": warn,
   "@typescript-eslint/switch-exhaustiveness-check": error,
+
+  "@typescript-eslint/no-require-imports": off, // We use unicorn-x/prefer-module instead
 };
 
 const stylisticHandpicked: TypedRules = {
@@ -221,7 +231,7 @@ export const ecmascript = ({
           projectService: {
             allowDefaultProject,
           },
-          tsconfigRootDir: rootDir,
+          tsconfigRootDir: rootDir, // FIXME!
         },
       },
     },

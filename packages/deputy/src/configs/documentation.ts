@@ -1,4 +1,4 @@
-import type { Linter } from "eslint";
+import type { Linter } from "eslint/universal";
 import jsdoc from "eslint-plugin-jsdoc";
 import { getJsdocProcessorPlugin } from "eslint-plugin-jsdoc/getJsdocProcessorPlugin.js";
 import tsdoc from "eslint-plugin-tsdoc";
@@ -10,7 +10,14 @@ import type { DeputyConfigOptions, GlobBag } from "../options.ts";
 import { error, off, warn } from "../severity.ts";
 
 const handpicked: TypedRules = {
+  // TODO: Enforce @returns over @return
+
   "jsdoc/check-indentation": warn,
+  "jsdoc/check-param-names": [
+    2,
+    { checkDestructured: false, enableFixer: false },
+  ],
+  "jsdoc/check-tag-names": [2, { jsxTags: true }],
   "jsdoc/require-description": warn,
   "jsdoc/require-description-complete-sentence": warn,
   "jsdoc/require-hyphen-before-param-description": [
@@ -21,7 +28,7 @@ const handpicked: TypedRules = {
   "jsdoc/require-jsdoc": [warn, { publicOnly: true }],
   "jsdoc/sort-tags": [warn, { reportIntraTagGroupSpacing: false }],
   "jsdoc/tag-lines": [warn, "always", { count: 0, startLines: 1 }],
-  "jsdoc/text-escaping": error,
+  "jsdoc/text-escaping": [error, { escapeHTML: true, escapeMarkdown: true }],
 };
 
 const exampleDisables: TypedRules = {
@@ -132,7 +139,6 @@ export const documentation = ({
         jsdoc.configs["flat/logical-typescript-flavor"],
         jsdoc.configs["flat/requirements-typescript-flavor"],
       ],
-      rules: handpicked,
     },
     {
       name: "deputy/docs/ts",
@@ -146,7 +152,13 @@ export const documentation = ({
 
       plugins: { tsdoc },
 
-      rules: { ...handpicked, "tsdoc/syntax": error },
+      rules: { "tsdoc/syntax": error },
+    },
+    {
+      name: "deputy/docs/handpicked",
+      files: [fileGlobs.js, fileGlobs.ts],
+
+      rules: handpicked,
     },
 
     // ...examples(fileGlobs),

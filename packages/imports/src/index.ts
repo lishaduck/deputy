@@ -1,7 +1,7 @@
 import { error, off, warn, type Domain } from "@eslint-deputy/config";
 import importX from "eslint-plugin-import-x";
 import { createTypeScriptImportResolver } from "eslint-import-resolver-typescript";
-import { type ESLint } from "eslint";
+import { type ESLint } from "eslint/universal";
 import type {} from "./typegen.d.ts";
 
 export const imports: Domain = {
@@ -27,7 +27,7 @@ export const imports: Domain = {
       rules: {
         "import-x/export": error,
         "import-x/no-absolute-path": error,
-        "import-x/no-cycle": error,
+        "import-x/no-cycle": options.skipHeavyRules ? off : error,
         "import-x/no-default-export": error,
         // "import-x/no-relative-parent-imports": error, // import-js/eslint-plugin-import#2467
         "import-x/no-useless-path-segments": [error],

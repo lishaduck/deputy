@@ -1,0 +1,10 @@
+{
+  "name": "@eslint-deputy/tsconfig",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Our strict TypeScript configuration",
+  "exports": {
+    "./base.json": "./base.json"
+  }
+}

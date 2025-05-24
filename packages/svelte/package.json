@@ -4,6 +4,10 @@
   "dependencies": {
     "eslint-plugin-svelte": "^3.8.1"
   },
+  "scripts": {
+    "prepare": "scripts/typegen.ts",
+    "typecheck": "tsc"
+  },
   "peerDependencies": {
     "@eslint-deputy/config": "workspace:*",
     "eslint": "catalog:peers",
@@ -16,7 +20,11 @@
   },
   "devDependencies": {
     "@eslint-deputy/config": "workspace:*",
+    "@eslint-deputy/tsconfig": "workspace:*",
+    "@eslint-deputy/typegen": "workspace:*",
+    "@types/node": "catalog:types",
     "eslint": "catalog:dev",
-    "svelte": "catalog:dev"
+    "svelte": "catalog:dev",
+    "typescript": "catalog:dev"
   }
 }

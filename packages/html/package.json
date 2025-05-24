@@ -7,6 +7,10 @@
       "default": "./src/index.ts"
     }
   },
+  "scripts": {
+    "prepare": "scripts/typegen.ts",
+    "typecheck": "tsc"
+  },
   "dependencies": {
     "@html-eslint/eslint-plugin": "^0.40.3"
   },
@@ -16,7 +20,11 @@
   },
   "devDependencies": {
     "@eslint-deputy/config": "workspace:*",
+    "@eslint-deputy/tsconfig": "workspace:*",
+    "@eslint-deputy/typegen": "workspace:*",
+    "@types/node": "catalog:types",
     "eslint": "catalog:dev",
-    "jiti": "catalog:dev"
+    "jiti": "catalog:dev",
+    "typescript": "catalog:dev"
   }
 }

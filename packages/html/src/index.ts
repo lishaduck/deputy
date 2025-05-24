@@ -1,6 +1,7 @@
-import type { Domain } from "@eslint-deputy/config";
 import htmlEslint from "@html-eslint/eslint-plugin";
 import type { ESLint } from "eslint";
+
+import type { Domain } from "@eslint-deputy/config";
 
 export const html: Domain = {
   config: (options) => [

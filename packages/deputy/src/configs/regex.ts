@@ -1,4 +1,4 @@
-import type { Linter } from "eslint";
+import type { Linter } from "eslint/universal";
 import regexp from "eslint-plugin-regexp";
 
 import { defineConfig } from "@eslint-deputy/define-config";

@@ -16,5 +16,6 @@
       "rule": "*",
       "severity": "downgrade" // TODO: Figure out how to make infos show up as problems.
     }
-  ]
+  ],
+  "typescript.tsdk": "./node_modules/typescript/lib"
 }

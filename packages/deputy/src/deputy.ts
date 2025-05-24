@@ -1,9 +1,9 @@
 import { defu } from "defu";
-import type { Linter } from "eslint";
+import type { Linter } from "eslint/universal";
 import { composer, type FlatConfigComposer } from "eslint-flat-config-utils";
 
 import { restrictedSyntax } from "./common/restricted.ts";
-import { configs } from "./configs/index.ts";
+import { packageConfigs, rootConfigs } from "./configs/index.ts";
 import type {
   DeputyConfigOptions,
   DeputyOptions,
@@ -23,7 +23,10 @@ function resolveConfig(
     {
       allowDefaultProject: [],
       domains: [],
-      environment: {},
+      environment: {
+        type: "app",
+        globals: [],
+      },
       internalPattern: undefined,
       rootDir: undefined,
       ruleConfigurations: {
@@ -34,6 +37,7 @@ function resolveConfig(
           syntax: restrictedSyntax,
         },
       },
+      skipHeavyRules: false,
     } satisfies DeputyResolvedOptions,
   ) as DeputyResolvedOptions;
 }
@@ -99,10 +103,12 @@ function createConfig(
   options: DeputyResolvedOptions,
   configOptions: DeputyConfigOptions,
 ): Linter.Config[] {
-  return [
-    ...configs,
-    ...options.domains.map((domain) => domain.config),
-  ].flatMap((config) => config?.(configOptions) ?? []);
+  const configs =
+    configOptions.environment.type === "root" ?
+      rootConfigs
+    : [...packageConfigs, ...options.domains.map((domain) => domain.config)];
+
+  return configs.flatMap((config) => config?.(configOptions) ?? []);
 }
 
 /**

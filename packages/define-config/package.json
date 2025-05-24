@@ -1,5 +1,7 @@
 {
   "name": "@eslint-deputy/define-config",
+  "version": "0.1.0",
+  "description": "@eslint/config-helpers, but typed",
   "type": "module",
   "exports": {
     ".": {
@@ -7,15 +9,22 @@
       "default": "./src/index.ts"
     }
   },
+  "scripts": {
+    "typecheck": "tsc"
+  },
   "dependencies": {
     "@eslint/config-helpers": "catalog:"
+  },
+  "devDependencies": {
+    "@eslint-deputy/tsconfig": "workspace:*",
+    "@types/node": "catalog:types",
+    "eslint": "catalog:dev",
+    "typescript": "catalog:dev"
   },
   "peerDependencies": {
     "eslint": "catalog:peers"
   },
-  "devDependencies": {
-    "@eslint-deputy/config": "workspace:*",
-    "eslint": "catalog:dev",
-    "jiti": "catalog:dev"
+  "engines": {
+    "node": "^20.18.0 || ^22.11.0 || >=24.0.0"
   }
 }
