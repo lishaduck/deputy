@@ -2,6 +2,13 @@
   "name": "@eslint-deputy/define-config",
   "version": "0.1.0",
   "description": "@eslint/config-helpers, but typed",
+  "keywords": [
+    "eslint"
+  ],
+  "author": {
+    "name": "Eli"
+  },
+  "sideEffects": false,
   "type": "module",
   "exports": {
     ".": {
@@ -9,6 +16,9 @@
       "default": "./src/index.ts"
     }
   },
+  "files": [
+    "dist/"
+  ],
   "scripts": {
     "typecheck": "tsc"
   },

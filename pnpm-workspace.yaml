@@ -51,14 +51,10 @@ packages:
 catalog:
   "@eslint/config-helpers": ^0.2.2
   "@eslint/config-inspector": ^1.0.2
-  "@html-eslint/eslint-plugin": ^0.40.3
   "@manypkg/cli": ^0.24.0
-  "@vitest/eslint-plugin": ^1.2.0
   ci-info: ^4.2.0
   defu: ^6.1.4
   eslint-flat-config-utils: ^2.0.1
-  eslint-plugin-n: ^17.18.0
-  eslint-plugin-svelte: ^3.8.1
   eslint-typegen: ^2.2.0
   globals: ^16.1.0
   node-modules-inspector: ^0.6.8
@@ -69,16 +65,20 @@ catalogs:
   plugins:
     "@eslint-community/eslint-plugin-eslint-comments": ^4.5.0
     "@eslint/js": ^9.27.0
+    "@html-eslint/eslint-plugin": ^0.40.3
     "@regru/eslint-plugin-prefer-early-return": ^1.0.0
     "@stylistic/eslint-plugin": ^4.2.0
+    "@vitest/eslint-plugin": ^1.2.0
     confusing-browser-globals: ^1.0.11
     eslint-config-flat-gitignore: ^2.1.0
     eslint-import-resolver-typescript: ^4.3.5
     eslint-no-restricted: ^0.0.8
     eslint-plugin-de-morgan: ^1.2.1
+    eslint-plugin-command: ^3.2.1
     eslint-plugin-depend: ^1.2.0
     eslint-plugin-import-x: ^4.12.2
     eslint-plugin-jsdoc: ^50.6.17
+    eslint-plugin-n: ^17.18.0
     eslint-plugin-no-use-extend-native: ^0.7.2
     eslint-plugin-package-json: ^0.31.0
     eslint-plugin-perfectionist: ^4.13.0
@@ -86,10 +86,9 @@ catalogs:
     eslint-plugin-promise: ^7.2.1
     eslint-plugin-regexp: ^2.7.0
     eslint-plugin-sonarjs: ^3.0.2
+    eslint-plugin-svelte: ^3.8.1
     eslint-plugin-tsdoc: ^0.4.0
     eslint-plugin-turbo: ^2.5.3
-    eslint-plugin-unicorn: ^0.0.0
-    eslint-plugin-unicorn-: ^0.0.0
     eslint-plugin-unicorn-x: ^1.0.8
     typescript-eslint: ^8.32.1
 
@@ -115,5 +114,3 @@ catalogs:
   types:
     "@types/confusing-browser-globals": ~1.0.3
     "@types/node": ^22.15.18
-  conflicts_peers_h5_8_3:
-    typescript: ^5.8.3

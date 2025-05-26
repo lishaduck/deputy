@@ -1,3 +1,6 @@
 {
-  "extends": "@eslint-deputy/tsconfig/base.json"
+  "extends": "@eslint-deputy/tsconfig/base.json",
+  "compilerOptions": {
+    "isolatedDeclarations": false
+  }
 }

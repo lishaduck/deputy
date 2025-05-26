@@ -59,6 +59,7 @@ const coreHandpicked: TypedRules = {
   ],
   "no-return-assign": [error, "always"],
   "no-sequences": [error, { allowInParentheses: false }],
+  "no-unassigned-vars": error,
   "no-unmodified-loop-condition": error,
   "no-unneeded-ternary": [error, { defaultAssignment: false }],
   "no-unreachable-loop": error,

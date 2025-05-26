@@ -23,6 +23,7 @@ export const packageJson = ({
         "depend/ban-dependencies": error,
         "package-json/no-redundant-files": error,
         "package-json/require-engines": error,
+        // "package-json/require-license": error,
         // "package-json/require-repository": error // TODO: File/check for issue.
       },
     },

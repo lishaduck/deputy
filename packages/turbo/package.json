@@ -1,17 +1,28 @@
 {
   "name": "@eslint-deputy/turbo",
+  "version": "0.1.0",
+  "description": "Deputy domain for Turborepo",
+  "keywords": [
+    "eslint",
+    "eslint-deputy",
+    "deputy-domain",
+    "turbo",
+    "turborepo"
+  ],
+  "author": {
+    "name": "Eli"
+  },
+  "sideEffects": false,
   "type": "module",
+  "files": [
+    "dist/"
+  ],
   "scripts": {
-    "prepare": "scripts/typegen.ts",
+    "typegen": "scripts/typegen.ts",
     "typecheck": "tsc"
   },
   "dependencies": {
     "eslint-plugin-turbo": "catalog:plugins"
-  },
-  "peerDependencies": {
-    "@eslint-deputy/config": "workspace:*",
-    "eslint": "catalog:peers",
-    "turbo": "catalog:peers"
   },
   "devDependencies": {
     "@eslint-deputy/config": "workspace:*",
@@ -21,5 +32,13 @@
     "eslint": "catalog:dev",
     "turbo": "catalog:dev",
     "typescript": "catalog:dev"
+  },
+  "peerDependencies": {
+    "@eslint-deputy/config": "workspace:*",
+    "eslint": "catalog:peers",
+    "turbo": "catalog:peers"
+  },
+  "engines": {
+    "node": "^20.18.0 || ^22.11.0 || >=24.0.0"
   }
 }

@@ -1,16 +1,27 @@
 {
   "name": "@eslint-deputy/vitest",
+  "version": "0.1.0",
+  "description": "Deputy domain for Vitest",
+  "keywords": [
+    "eslint",
+    "eslint-deputy",
+    "deputy-domain",
+    "vitest"
+  ],
+  "author": {
+    "name": "Eli"
+  },
+  "sideEffects": false,
   "type": "module",
+  "files": [
+    "dist/"
+  ],
   "scripts": {
-    "prepare": "scripts/typegen.ts",
+    "typegen": "scripts/typegen.ts",
     "typecheck": "tsc"
   },
   "dependencies": {
-    "@vitest/eslint-plugin": "^1.2.0"
-  },
-  "peerDependencies": {
-    "@eslint-deputy/config": "workspace:*",
-    "eslint": "catalog:peers"
+    "@vitest/eslint-plugin": "catalog:plugins"
   },
   "devDependencies": {
     "@eslint-deputy/config": "workspace:*",
@@ -19,5 +30,12 @@
     "@types/node": "catalog:types",
     "eslint": "catalog:dev",
     "typescript": "catalog:dev"
+  },
+  "peerDependencies": {
+    "@eslint-deputy/config": "workspace:*",
+    "eslint": "catalog:peers"
+  },
+  "engines": {
+    "node": "^20.18.0 || ^22.11.0 || >=24.0.0"
   }
 }

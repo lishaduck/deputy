@@ -1,12 +1,37 @@
 {
   "name": "@eslint-deputy/svelte",
-  "type": "module",
-  "dependencies": {
-    "eslint-plugin-svelte": "^3.8.1"
+  "version": "0.1.0",
+  "description": "Deputy domain for Svelte",
+  "keywords": [
+    "eslint",
+    "eslint-deputy",
+    "deputy-domain",
+    "svelte",
+    "sveltejs"
+  ],
+  "author": {
+    "name": "Eli"
   },
+  "sideEffects": false,
+  "type": "module",
+  "files": [
+    "dist/"
+  ],
   "scripts": {
-    "prepare": "scripts/typegen.ts",
+    "typegen": "scripts/typegen.ts",
     "typecheck": "tsc"
+  },
+  "dependencies": {
+    "eslint-plugin-svelte": "catalog:plugins"
+  },
+  "devDependencies": {
+    "@eslint-deputy/config": "workspace:*",
+    "@eslint-deputy/tsconfig": "workspace:*",
+    "@eslint-deputy/typegen": "workspace:*",
+    "@types/node": "catalog:types",
+    "eslint": "catalog:dev",
+    "svelte": "catalog:dev",
+    "typescript": "catalog:dev"
   },
   "peerDependencies": {
     "@eslint-deputy/config": "workspace:*",
@@ -18,13 +43,7 @@
       "optional": true
     }
   },
-  "devDependencies": {
-    "@eslint-deputy/config": "workspace:*",
-    "@eslint-deputy/tsconfig": "workspace:*",
-    "@eslint-deputy/typegen": "workspace:*",
-    "@types/node": "catalog:types",
-    "eslint": "catalog:dev",
-    "svelte": "catalog:dev",
-    "typescript": "catalog:dev"
+  "engines": {
+    "node": "^20.18.0 || ^22.11.0 || >=24.0.0"
   }
 }

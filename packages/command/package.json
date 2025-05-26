@@ -1,15 +1,12 @@
 {
-  "name": "@eslint-deputy/imports",
+  "name": "@eslint-deputy/command",
   "version": "0.1.0",
-  "description": "Deputy domain for modules",
+  "description": "Deputy domain for codemods",
   "keywords": [
     "eslint",
     "eslint-deputy",
     "deputy-domain",
-    "esm",
-    "modules",
-    "import",
-    "export"
+    "codemod"
   ],
   "author": {
     "name": "Eli"
@@ -26,12 +23,11 @@
     "dist/"
   ],
   "scripts": {
-    "typegen": "scripts/typegen.ts",
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "typegen": "scripts/typegen.ts"
   },
   "dependencies": {
-    "eslint-import-resolver-typescript": "catalog:plugins",
-    "eslint-plugin-import-x": "catalog:plugins"
+    "eslint-plugin-command": "catalog:plugins"
   },
   "devDependencies": {
     "@eslint-deputy/config": "workspace:*",

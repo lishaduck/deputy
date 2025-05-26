@@ -1,5 +1,17 @@
 {
   "name": "@eslint-deputy/pnpm",
+  "version": "0.1.0",
+  "description": "Deputy domain for pnpm",
+  "keywords": [
+    "eslint",
+    "eslint-deputy",
+    "deputy-domain",
+    "pnpm"
+  ],
+  "author": {
+    "name": "Eli"
+  },
+  "sideEffects": false,
   "type": "module",
   "exports": {
     ".": {
@@ -7,16 +19,15 @@
       "default": "./src/index.ts"
     }
   },
+  "files": [
+    "dist/"
+  ],
   "scripts": {
-    "prepare": "scripts/typegen.ts",
+    "typegen": "scripts/typegen.ts",
     "typecheck": "tsc"
   },
   "dependencies": {
     "eslint-plugin-pnpm": "catalog:plugins"
-  },
-  "peerDependencies": {
-    "@eslint-deputy/config": "workspace:*",
-    "eslint": "catalog:peers"
   },
   "devDependencies": {
     "@eslint-deputy/config": "workspace:*",
@@ -25,5 +36,12 @@
     "@types/node": "catalog:types",
     "eslint": "catalog:dev",
     "typescript": "catalog:dev"
+  },
+  "peerDependencies": {
+    "@eslint-deputy/config": "workspace:*",
+    "eslint": "catalog:peers"
+  },
+  "engines": {
+    "node": "^20.18.0 || ^22.11.0 || >=24.0.0"
   }
 }

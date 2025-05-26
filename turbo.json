@@ -2,6 +2,7 @@
   "$schema": "./node_modules/turbo/schema.json",
   "tasks": {
     "//#lint": {},
-    "typecheck": {}
+    "typecheck": {},
+    "typegen": {}
   }
 }

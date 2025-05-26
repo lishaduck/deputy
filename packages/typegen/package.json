@@ -1,16 +1,30 @@
 {
   "name": "@eslint-deputy/typegen",
-  "private": true,
+  "version": "0.1.0",
+  "description": "Magically type ESLint configurations",
+  "keywords": [
+    "eslint",
+    "eslint-deputy",
+    "typegen",
+    "codegen"
+  ],
+  "author": {
+    "name": "Eli"
+  },
+  "sideEffects": false,
   "type": "module",
   "exports": {
     ".": "./src/index.ts"
   },
+  "files": [
+    "dist/"
+  ],
   "scripts": {
     "typecheck": "tsc"
   },
   "dependencies": {
     "eslint-flat-config-utils": "catalog:",
-    "eslint-typegen": "^2.2.0"
+    "eslint-typegen": "catalog:"
   },
   "devDependencies": {
     "@eslint-deputy/tsconfig": "workspace:*",
@@ -20,5 +34,8 @@
   },
   "peerDependencies": {
     "eslint": "catalog:peers"
+  },
+  "engines": {
+    "node": "^20.18.0 || ^22.11.0 || >=24.0.0"
   }
 }

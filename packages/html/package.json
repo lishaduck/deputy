@@ -1,5 +1,17 @@
 {
   "name": "@eslint-deputy/html",
+  "version": "0.1.0",
+  "description": "Deputy domain for HTML",
+  "keywords": [
+    "eslint",
+    "eslint-deputy",
+    "deputy-domain",
+    "html"
+  ],
+  "author": {
+    "name": "Eli"
+  },
+  "sideEffects": false,
   "type": "module",
   "exports": {
     ".": {
@@ -7,16 +19,15 @@
       "default": "./src/index.ts"
     }
   },
+  "files": [
+    "dist/"
+  ],
   "scripts": {
-    "prepare": "scripts/typegen.ts",
+    "typegen": "scripts/typegen.ts",
     "typecheck": "tsc"
   },
   "dependencies": {
-    "@html-eslint/eslint-plugin": "^0.40.3"
-  },
-  "peerDependencies": {
-    "@eslint-deputy/config": "workspace:*",
-    "eslint": "catalog:peers"
+    "@html-eslint/eslint-plugin": "catalog:plugins"
   },
   "devDependencies": {
     "@eslint-deputy/config": "workspace:*",
@@ -26,5 +37,12 @@
     "eslint": "catalog:dev",
     "jiti": "catalog:dev",
     "typescript": "catalog:dev"
+  },
+  "peerDependencies": {
+    "@eslint-deputy/config": "workspace:*",
+    "eslint": "catalog:peers"
+  },
+  "engines": {
+    "node": "^20.18.0 || ^22.11.0 || >=24.0.0"
   }
 }

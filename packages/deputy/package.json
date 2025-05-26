@@ -16,6 +16,7 @@
   "author": {
     "name": "Eli"
   },
+  "sideEffects": false,
   "type": "module",
   "exports": {
     ".": {
@@ -31,7 +32,7 @@
     "dist/"
   ],
   "scripts": {
-    "prepare": "scripts/typegen.ts",
+    "typegen": "scripts/typegen.ts",
     "typecheck": "tsc"
   },
   "dependencies": {
