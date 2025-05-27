@@ -1,9 +1,18 @@
 import fs from "node:fs/promises";
 
-import { flatConfigsToRulesDTS } from "eslint-typegen/core";
-import { concat, type Awaitable } from "eslint-flat-config-utils";
 import type { Linter } from "eslint/universal";
+import { type Awaitable, concat } from "eslint-flat-config-utils";
+import { flatConfigsToRulesDTS } from "eslint-typegen/core";
 
+/**
+ * Generate a `.d.ts` file to add type-safety to ESLint configs.
+ *
+ * @param configs - ESLint configurations to extract plugins from.
+ * @example
+ * ```ts
+ * generate({ plugins: {  } })
+ * ```
+ */
 export async function generate(
   ...configs: Awaitable<Linter.Config | Linter.Config[]>[]
 ): Promise<void> {

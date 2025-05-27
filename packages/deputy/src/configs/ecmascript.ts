@@ -96,11 +96,11 @@ const tseslintHandpicked: TypedRules = {
     },
   ],
   "@typescript-eslint/consistent-type-exports": [
-    2,
+    error,
     { fixMixedExportsWithInlineTypeSpecifier: true },
   ],
   "@typescript-eslint/consistent-type-imports": [
-    2,
+    error,
     { fixStyle: "inline-type-imports" },
   ],
   "@typescript-eslint/default-param-last": error,
@@ -202,6 +202,7 @@ const ecmascriptCustomized = (
 export const ecmascript = ({
   allowDefaultProject,
   environment,
+  extraTsExtensions,
   fileGlobs,
   rootDir,
   ruleConfigurations,
@@ -220,7 +221,7 @@ export const ecmascript = ({
       ],
 
       languageOptions: {
-        globals: getGlobals(environment.globals ?? []),
+        globals: getGlobals(environment.globals),
         parserOptions: {
           ecmaFeatures: {
             globalReturn: false,
@@ -229,10 +230,11 @@ export const ecmascript = ({
           },
           sourceType: "module",
 
+          extraFileExtensions: extraTsExtensions,
           projectService: {
             allowDefaultProject,
           },
-          tsconfigRootDir: rootDir, // FIXME!
+          tsconfigRootDir: rootDir,
         },
       },
     },

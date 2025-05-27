@@ -7,7 +7,10 @@ import { restrictedSyntax } from "./restricted.ts";
 /** @internal */
 export const emptyConfig: DeputyConfigOptions = {
   allowDefaultProject: [],
-  environment: {},
+  environment: {
+    type: "library",
+    globals: [],
+  },
   extensions: {
     ecma: [],
 
@@ -26,6 +29,7 @@ export const emptyConfig: DeputyConfigOptions = {
 
     configs: "",
   },
+  extraTsExtensions: [],
   internalPattern: undefined,
   rootDir: undefined,
   ruleConfigurations: {

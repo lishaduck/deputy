@@ -24,16 +24,18 @@
     "dist/"
   ],
   "scripts": {
-    "typegen": "scripts/typegen.ts",
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "typegen": "scripts/typegen.ts"
   },
   "dependencies": {
-    "eslint-plugin-n": "catalog:plugins"
+    "eslint-plugin-n": "catalog:plugins",
+    "eslint-plugin-security": "catalog:plugins"
   },
   "devDependencies": {
     "@eslint-deputy/config": "workspace:*",
     "@eslint-deputy/tsconfig": "workspace:*",
     "@eslint-deputy/typegen": "workspace:*",
+    "@types/eslint-plugin-security": "catalog:types",
     "@types/node": "catalog:types",
     "eslint": "catalog:dev",
     "typescript": "catalog:dev"

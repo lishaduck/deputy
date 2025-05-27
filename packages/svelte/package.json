@@ -18,11 +18,13 @@
     "dist/"
   ],
   "scripts": {
-    "typegen": "scripts/typegen.ts",
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "typegen": "scripts/typegen.ts"
   },
   "dependencies": {
-    "eslint-plugin-svelte": "catalog:plugins"
+    "@typescript-eslint/parser": "catalog:parsers",
+    "eslint-plugin-svelte": "catalog:plugins",
+    "svelte-eslint-parser": "catalog:parsers"
   },
   "devDependencies": {
     "@eslint-deputy/config": "workspace:*",

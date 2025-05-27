@@ -33,6 +33,7 @@
   "include": [
     "${configDir}/scripts/**/*.ts",
     "${configDir}/src/**/*.ts",
+    "${configDir}/src/types/**/*.d.cts",
     "${configDir}/*.config.ts"
   ],
   "exclude": ["${configDir}/**/node_modules/"]

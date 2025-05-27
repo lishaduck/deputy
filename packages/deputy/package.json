@@ -32,8 +32,8 @@
     "dist/"
   ],
   "scripts": {
-    "typegen": "scripts/typegen.ts",
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "typegen": "scripts/typegen.ts"
   },
   "dependencies": {
     "@eslint-community/eslint-plugin-eslint-comments": "catalog:plugins",

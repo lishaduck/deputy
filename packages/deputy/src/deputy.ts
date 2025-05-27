@@ -69,6 +69,10 @@ function resolveOptions(options: DeputyResolvedOptions): DeputyConfigOptions {
     (domain) => domain.additionalExtensions ?? [],
   );
 
+  const extraTsExtensions = domainExtensions.flatMap(
+    (extraExtensions) => extraExtensions.ts ?? [],
+  );
+
   const extensions: ExtensionBag = {
     get ecma() {
       return [...this.js, ...this.ts];
@@ -76,12 +80,11 @@ function resolveOptions(options: DeputyResolvedOptions): DeputyConfigOptions {
 
     js: [
       ...defaultJs,
-      ...domainExtensions.flatMap((extraExtensions) => extraExtensions.js),
+      ...domainExtensions.flatMap(
+        (extraExtensions) => extraExtensions.js ?? [],
+      ),
     ],
-    ts: [
-      ...defaultTs,
-      ...domainExtensions.flatMap((extraExtensions) => extraExtensions.ts),
-    ],
+    ts: [...defaultTs, ...extraTsExtensions],
 
     get dts() {
       return this.ts.flatMap(
@@ -95,6 +98,7 @@ function resolveOptions(options: DeputyResolvedOptions): DeputyConfigOptions {
   return {
     ...options,
     extensions,
+    extraTsExtensions,
     fileGlobs,
   };
 }
@@ -115,7 +119,7 @@ function createConfig(
  * Configure ESLint.
  *
  * @param options - Configuration and customizations for Deputy.
- * @returns A.
+ * @returns An extensive, opinionated ESLint configuration.
  *
  * @example
  * ```ts

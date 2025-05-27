@@ -6,9 +6,9 @@ import type {} from "./typegen.d.ts";
 
 export const sonar: Domain = {
   config: (options) => [
-    { ...sonarjs.configs.recommended, name: "deputy-sonar/sonar" },
+    { ...sonarjs.configs.recommended, name: "deputy-sonar/reccomended" },
     {
-      name: "deputy-sonar/sonar/handpicked",
+      name: "deputy-sonar/handpicked",
       rules: {
         "sonarjs/no-commented-code": options.skipHeavyRules ? off : error,
 

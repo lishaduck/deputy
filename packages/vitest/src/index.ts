@@ -1,6 +1,7 @@
+import test from "@vitest/eslint-plugin";
+
 import type { Domain } from "@eslint-deputy/config";
 
-// TODO: Implement
 export const vitest: Domain = {
-  config: () => [],
+  config: () => [test.configs.recommended],
 };

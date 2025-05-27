@@ -26,8 +26,8 @@
     "dist/"
   ],
   "scripts": {
-    "typegen": "scripts/typegen.ts",
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "typegen": "scripts/typegen.ts"
   },
   "dependencies": {
     "eslint-import-resolver-typescript": "catalog:plugins",

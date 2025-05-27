@@ -11,14 +11,20 @@
 - [ ] Add in Ducky rules
 - [ ] Create Effect domain
   - [ ] Add in Effect plugin
+- [ ] Create Storybook domain
 - [ ] Create Browser domain
-- [x] Investigate `eslint-plugin-mdx` v `@eslint/markdown`
-- [x] Add in `eslint-plugin-mdx` for Markdown
+- [ ] Add in Prose domain
+  - [x] Investigate `eslint-plugin-mdx` v `@eslint/markdown`
+  - [ ] Add in `eslint-plugin-mdx` for Markdown
+  - [ ] Spelling
 - [ ] Try `eslint-import-resolver-next`
-- [ ] Document what I skipped
-  - [ ] fsecond
-  - [ ] React stuff
+- [ ] Documentation
+  - [ ] SSR domains depend on browser and node domains
+  - [ ] I skipped
+    - [ ] fsecond
+    - [ ] Arrow function stuff
+    - [ ] React, Astro, playwright, Jest, etc.
 - [ ] Check that all domains are implemented, not just stubs.
-- [ ] Investigate size
+- [ ] Investigate size & speed lol
 
 - [x] File JJK issue about adding `jjk.path` setting

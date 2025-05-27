@@ -10,14 +10,12 @@ import type { DeputyConfigOptions, GlobBag } from "../options.ts";
 import { error, off, warn } from "../severity.ts";
 
 const handpicked: TypedRules = {
-  // TODO: Enforce @returns over @return
-
   "jsdoc/check-indentation": warn,
   "jsdoc/check-param-names": [
-    2,
+    error,
     { checkDestructured: false, enableFixer: false },
   ],
-  "jsdoc/check-tag-names": [2, { jsxTags: true }],
+  "jsdoc/check-tag-names": [error, { jsxTags: true }],
   "jsdoc/require-description": warn,
   "jsdoc/require-description-complete-sentence": warn,
   "jsdoc/require-hyphen-before-param-description": [
@@ -48,8 +46,7 @@ const exampleDisables: TypedRules = {
   // Unlikely to have inadvertent debugging within examples
   "no-console": off,
 
-  // Often wish to start `@example` code after newline; also may use
-  //   empty lines for spacing
+  // Often wish to start `@example` code after newline; also may use empty lines for spacing
   "no-multiple-empty-lines": off,
 
   // Many variables in examples will be `undefined`
@@ -157,6 +154,14 @@ export const documentation = ({
     {
       name: "deputy/docs/handpicked",
       files: [fileGlobs.js, fileGlobs.ts],
+
+      settings: {
+        jsdoc: {
+          tagNamePreference: {
+            return: false,
+          },
+        },
+      },
 
       rules: handpicked,
     },

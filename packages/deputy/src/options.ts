@@ -59,6 +59,7 @@ export interface DeputyResolvedOptions extends DeputyOptionsBase {
 export interface DeputyConfigOptions extends DeputyOptionsBase {
   readonly extensions: ExtensionBag;
   readonly fileGlobs: GlobBag;
+  readonly extraTsExtensions: Extension[];
 }
 
 export interface GlobBag {
@@ -115,7 +116,7 @@ export interface Domain {
 
   config?: ConfigFactory;
 
-  additionalExtensions?: ExtensionBag;
+  additionalExtensions?: Partial<Pick<ExtensionBag, "js" | "ts">>;
 }
 
 export type PackageType = "app" | "internal" | "library" | "root";

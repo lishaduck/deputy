@@ -1,6 +1,8 @@
+import createCommands from "eslint-plugin-command/config";
+
 import type { Domain } from "@eslint-deputy/config";
 
-// TODO: Implement
 export const command: Domain = {
-  config: () => [],
+  // TODO: Allow specifying custom commands.
+  config: () => [createCommands()],
 };

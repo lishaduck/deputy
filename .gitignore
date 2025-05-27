@@ -1,2 +1,3 @@
 node_modules/
 .turbo/
+typegen.d.ts

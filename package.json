@@ -6,7 +6,6 @@
   "license": "UPL-1.0",
   "type": "module",
   "scripts": {
-    "prepare": "turbo typegen",
     "lint": "eslint --flag=unstable_config_lookup_from_file"
   },
   "devDependencies": {
