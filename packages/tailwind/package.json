@@ -1,0 +1,51 @@
+{
+  "name": "@eslint-deputy/tailwind",
+  "version": "0.1.0",
+  "description": "Deputy domain for Tailwind CSS",
+  "keywords": [
+    "eslint",
+    "eslint-deputy",
+    "deputy-domain",
+    "tailwind",
+    "tailwindcss"
+  ],
+  "author": {
+    "name": "Eli"
+  },
+  "sideEffects": false,
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    }
+  },
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "typecheck": "tsc",
+    "typegen": "scripts/typegen.ts"
+  },
+  "dependencies": {
+    "eslint-plugin-better-tailwindcss": "catalog:plugins"
+  },
+  "devDependencies": {
+    "@eslint-deputy/config": "workspace:*",
+    "@eslint-deputy/tsconfig": "workspace:*",
+    "@eslint-deputy/typegen": "workspace:*",
+    "@types/node": "catalog:types",
+    "eslint": "catalog:dev",
+    "jiti": "catalog:dev",
+    "tailwindcss": "catalog:dev",
+    "typescript": "catalog:dev"
+  },
+  "peerDependencies": {
+    "@eslint-deputy/config": "workspace:*",
+    "eslint": "catalog:peers",
+    "tailwindcss": "catalog:peers"
+  },
+  "engines": {
+    "node": "^20.19.0 || ^22.12.0 || >=24.0.0"
+  }
+}

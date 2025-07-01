@@ -6,15 +6,15 @@
   - [x] What is `local-pkg` for?
 - [ ] Add in CTA rules
 - [ ] Add in antfu rules
-- [ ] Add in psdtools rules
+- [x] Add in psdtools rules
 - [ ] Add in elm-review (XO) rules
 - [ ] Add in Ducky rules
 - [ ] Create Effect domain
   - [ ] Add in Effect plugin
 - [ ] Create Storybook domain
 - [ ] Create Browser domain
-- [ ] Create Tailwind domain
-  - [ ] Add in `eslint-plugin-better-tailwindcss`
+- [x] Create Tailwind domain
+  - [x] Add in `eslint-plugin-better-tailwindcss`
 - [ ] Add in Prose domain
   - [x] Investigate `eslint-plugin-mdx` v `@eslint/markdown`
   - [ ] Add in `eslint-plugin-mdx` for Markdown
