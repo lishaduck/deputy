@@ -13,6 +13,8 @@
   - [ ] Add in Effect plugin
 - [ ] Create Storybook domain
 - [ ] Create Browser domain
+- [ ] Create Tailwind domain
+  - [ ] Add in `eslint-plugin-better-tailwindcss`
 - [ ] Add in Prose domain
   - [x] Investigate `eslint-plugin-mdx` v `@eslint/markdown`
   - [ ] Add in `eslint-plugin-mdx` for Markdown

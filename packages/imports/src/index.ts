@@ -1,5 +1,4 @@
 import type { ESLint } from "eslint";
-import { createTypeScriptImportResolver } from "eslint-import-resolver-typescript";
 import { createNodeResolver, importX } from "eslint-plugin-import-x";
 
 import { type Domain, error, off, warn } from "@eslint-deputy/config";
@@ -16,10 +15,9 @@ export const imports: Domain = {
       settings: {
         "import-x/internal-regex": options.internalPattern,
         "import-x/resolver-next": [
-          createTypeScriptImportResolver({
-            extensions: [...options.extensions.ecma],
+          createNodeResolver({
+            extensions: [...options.extensions.ecma, ".json", ".node"],
           }),
-          createNodeResolver({ extensions: [...options.extensions.ecma] }),
         ],
       },
 
@@ -29,7 +27,7 @@ export const imports: Domain = {
         "import-x/no-cycle": options.skipHeavyRules ? off : error,
         "import-x/no-default-export": error,
         // "import-x/no-relative-parent-imports": error, // import-js/eslint-plugin-import#2467
-        "import-x/no-useless-path-segments": [error],
+        "import-x/no-useless-path-segments": error,
 
         "import-x/first": warn,
         "import-x/no-anonymous-default-export": warn,

@@ -5,6 +5,8 @@ import type { RuleConfig as PropertyRuleConfig } from "eslint-no-restricted/prop
 import type { RuleConfig as SyntaxRuleConfig } from "eslint-no-restricted/syntax";
 import type globals from "globals";
 
+import type { RulesRecord } from "@eslint-deputy/define-config";
+
 import type { TypescriptEslintNoDeprecated } from "./typegen.js";
 
 export interface DeputyOptions {
@@ -58,8 +60,8 @@ export interface DeputyResolvedOptions extends DeputyOptionsBase {
 
 export interface DeputyConfigOptions extends DeputyOptionsBase {
   readonly extensions: ExtensionBag;
-  readonly fileGlobs: GlobBag;
   readonly extraTsExtensions: Extension[];
+  readonly fileGlobs: GlobBag;
 }
 
 export interface GlobBag {
@@ -109,7 +111,7 @@ export type Extension = `.${string}`;
  */
 export type ConfigFactory = (
   options: DeputyConfigOptions,
-) => Arrayable<Linter.Config>;
+) => Arrayable<Linter.Config<RulesRecord>>;
 
 export interface Domain {
   preset?: () => DeputyOptions;

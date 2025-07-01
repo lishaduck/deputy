@@ -1,6 +1,6 @@
 {
   "eslint.options": {
-    "flags": ["unstable_config_lookup_from_file"]
+    "flags": ["v10_config_lookup_from_file"]
   },
   "eslint.probe": [
     "javascript",

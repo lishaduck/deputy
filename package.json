@@ -6,22 +6,33 @@
   "license": "UPL-1.0",
   "type": "module",
   "scripts": {
-    "lint": "eslint --flag=unstable_config_lookup_from_file"
+    "check-deduped-deps": "pnpm dedupe --check --prefer-offline",
+    "format": "prettier . --write --experimental-cli",
+    "format:check": "prettier . --check --experimental-cli",
+    "knip": "knip",
+    "lint": "eslint --flag=v10_config_lookup_from_file",
+    "manypkg": "manypkg check",
+    "merge-checks": "turbo run typecheck knip lint format:check manypkg typesync:check",
+    "typesync": "typesync",
+    "typesync:check": "typesync --dry=fail"
   },
   "devDependencies": {
     "@eslint-deputy/internal-config": "workspace:*",
     "@eslint-deputy/tsconfig": "workspace:*",
-    "@eslint/config-inspector": "catalog:",
-    "@manypkg/cli": "catalog:",
+    "@eslint/config-inspector": "catalog:dev",
+    "@manypkg/cli": "catalog:dev",
+    "@prettier/plugin-oxc": "catalog:dev",
     "@types/node": "catalog:types",
-    "node-modules-inspector": "catalog:",
-    "prettier": "catalog:",
+    "eslint": "catalog:dev",
+    "knip": "catalog:dev",
+    "node-modules-inspector": "catalog:dev",
+    "prettier": "catalog:dev",
     "turbo": "catalog:dev",
     "typescript": "catalog:dev",
-    "typesync": "catalog:"
+    "typesync": "catalog:dev"
   },
-  "packageManager": "pnpm@10.11.1+sha512.e519b9f7639869dc8d5c3c5dfef73b3f091094b0a006d7317353c72b124e80e1afd429732e28705ad6bfa1ee879c1fce46c128ccebd3192101f43dd67c667912",
+  "packageManager": "pnpm@10.12.4+sha512.5ea8b0deed94ed68691c9bad4c955492705c5eeb8a87ef86bc62c74a26b037b08ff9570f108b2e4dbd1dd1a9186fea925e527f141c648e85af45631074680184",
   "engines": {
-    "node": "^20.18.0 || ^22.11.0 || >=24.0.0"
+    "node": "^20.19.0 || ^22.12.0 || >=24.0.0"
   }
 }

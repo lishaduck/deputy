@@ -8,7 +8,9 @@ import globals from "globals";
  * @returns A merged object of globals.
  *
  * @example
- * console.log(getGlobals(["node"]))
+ * ```ts
+ * console.log(getGlobals(["node"])
+ * ```
  */
 export function getGlobals(
   environmentGlobals: (keyof typeof globals | Linter.Globals)[],

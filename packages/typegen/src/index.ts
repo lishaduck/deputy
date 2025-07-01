@@ -19,7 +19,7 @@ export async function generate(
   const config = await concat(...configs);
 
   let dts = await flatConfigsToRulesDTS(config, {
-    includeAugmentation: true,
+    includeAugmentation: false,
   });
 
   dts += `

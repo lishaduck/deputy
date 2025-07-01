@@ -1,8 +1,76 @@
 {
   "$schema": "./node_modules/turbo/schema.json",
+  "globalDependencies": [
+    "pnpm-workspace.yaml"
+  ],
   "tasks": {
+    "topo": {
+      "dependsOn": [
+        "^topo"
+      ]
+    },
     "//#lint": {},
-    "typecheck": {},
-    "typegen": {}
+    "typecheck": {
+      "dependsOn": [
+        "^topo"
+      ]
+    },
+    "typegen": {},
+    "//#format": {
+      "outputs": [
+        "node_modules/.cache/prettier/**"
+      ],
+      "inputs": [
+        "**/*.ts",
+        "**/*.js",
+        "**/*.md",
+        "**/*.json",
+        "**/*.html",
+        "**/*.css",
+        "!**/dist/**",
+        "!**/node_modules/**"
+      ]
+    },
+    "//#format:check": {
+      "outputs": [
+        "node_modules/.cache/prettier/**"
+      ],
+      "inputs": [
+        "**/*.ts",
+        "**/*.js",
+        "**/*.md",
+        "**/*.json",
+        "**/*.html",
+        "**/*.css",
+        "!**/dist/**",
+        "!**/node_modules/**"
+      ]
+    },
+    "//#manypkg": {
+      "inputs": [
+        "**/package.json"
+      ]
+    },
+    "//#typesync": {
+      "inputs": [
+        "**/package.json"
+      ]
+    },
+    "//#typesync:check": {
+      "inputs": [
+        "**/package.json",
+        ".typesyncrc"
+      ]
+    },
+    "//#check-deduped-deps": {
+      "inputs": [
+        "pnpm-lock.yaml",
+        ".pnpmfile.cjs"
+      ],
+      "outputs": [
+        "**/node_modules/"
+      ]
+    },
+    "//#knip": {}
   }
 }

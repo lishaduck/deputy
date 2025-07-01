@@ -36,5 +36,5 @@
     "${configDir}/src/types/**/*.d.cts",
     "${configDir}/*.config.ts"
   ],
-  "exclude": ["${configDir}/**/node_modules/"]
+  "exclude": ["${configDir}/**/node_modules/**"]
 }

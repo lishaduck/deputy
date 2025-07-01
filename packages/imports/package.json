@@ -30,7 +30,6 @@
     "typegen": "scripts/typegen.ts"
   },
   "dependencies": {
-    "eslint-import-resolver-typescript": "catalog:plugins",
     "eslint-plugin-import-x": "catalog:plugins"
   },
   "devDependencies": {
@@ -46,6 +45,6 @@
     "eslint": "catalog:peers"
   },
   "engines": {
-    "node": "^20.18.0 || ^22.11.0 || >=24.0.0"
+    "node": "^20.19.0 || ^22.12.0 || >=24.0.0"
   }
 }

@@ -65,8 +65,7 @@ const exampleDisables: TypedRules = {
   ...ts.configs.disableTypeChecked.rules,
 };
 
-// TODO: Get jsdoc/ to support fenced code blocks.
-function _examples(fileGlobs: GlobBag): Linter.Config[] {
+function examples(fileGlobs: GlobBag): Linter.Config[] {
   return [
     {
       name: "deputy/docs/examples/setup",
@@ -77,6 +76,8 @@ function _examples(fileGlobs: GlobBag): Linter.Config[] {
           checkDefaults: true,
           checkParams: true,
           checkProperties: true,
+
+          exampleCodeRegex: "^```([\\s\\S]*)```\\s*$",
 
           parser: ts.parser as Linter.Parser,
         }),
@@ -166,5 +167,5 @@ export const documentation = ({
       rules: handpicked,
     },
 
-    // ...examples(fileGlobs),
+    ...examples(fileGlobs),
   );
