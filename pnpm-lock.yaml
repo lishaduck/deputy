@@ -230,6 +230,9 @@ importers:
 
   packages/command:
     dependencies:
+      '@eslint-deputy/define-config':
+        specifier: workspace:*
+        version: link:../define-config
       eslint-plugin-command:
         specifier: catalog:plugins
         version: 3.3.1(eslint@9.30.0(jiti@2.4.2))
@@ -374,6 +377,9 @@ importers:
 
   packages/html:
     dependencies:
+      '@eslint-deputy/define-config':
+        specifier: workspace:*
+        version: link:../define-config
       '@html-eslint/eslint-plugin':
         specifier: catalog:plugins
         version: 0.42.0(eslint@9.30.0(jiti@2.4.2))
@@ -402,6 +408,9 @@ importers:
 
   packages/imports:
     dependencies:
+      '@eslint-deputy/define-config':
+        specifier: workspace:*
+        version: link:../define-config
       eslint-plugin-import-x:
         specifier: catalog:plugins
         version: 4.16.1(@typescript-eslint/scope-manager@8.35.1)(@typescript-eslint/utils@8.35.1(eslint@9.30.0(jiti@2.4.2))(typescript@5.8.3))(eslint@9.30.0(jiti@2.4.2))
@@ -430,6 +439,9 @@ importers:
       '@eslint-deputy/config':
         specifier: workspace:*
         version: link:../deputy
+      '@eslint-deputy/define-config':
+        specifier: workspace:*
+        version: link:../define-config
       '@eslint-deputy/imports':
         specifier: workspace:*
         version: link:../imports
@@ -464,6 +476,9 @@ importers:
 
   packages/node:
     dependencies:
+      '@eslint-deputy/define-config':
+        specifier: workspace:*
+        version: link:../define-config
       eslint-plugin-n:
         specifier: catalog:plugins
         version: 17.20.0(eslint@9.30.0(jiti@2.4.2))(typescript@5.8.3)
@@ -495,6 +510,9 @@ importers:
 
   packages/pnpm:
     dependencies:
+      '@eslint-deputy/define-config':
+        specifier: workspace:*
+        version: link:../define-config
       eslint-plugin-pnpm:
         specifier: catalog:plugins
         version: 0.3.1(eslint@9.30.0(jiti@2.4.2))
@@ -520,6 +538,9 @@ importers:
 
   packages/sonar:
     dependencies:
+      '@eslint-deputy/define-config':
+        specifier: workspace:*
+        version: link:../define-config
       eslint-plugin-sonarjs:
         specifier: catalog:plugins
         version: 3.0.4(eslint@9.30.0(jiti@2.4.2))
@@ -545,6 +566,9 @@ importers:
 
   packages/svelte:
     dependencies:
+      '@eslint-deputy/define-config':
+        specifier: workspace:*
+        version: link:../define-config
       '@typescript-eslint/parser':
         specifier: catalog:parsers
         version: 8.35.1(eslint@9.30.0(jiti@2.4.2))(typescript@5.8.3)
@@ -579,6 +603,9 @@ importers:
 
   packages/tailwind:
     dependencies:
+      '@eslint-deputy/define-config':
+        specifier: workspace:*
+        version: link:../define-config
       eslint-plugin-better-tailwindcss:
         specifier: catalog:plugins
         version: 3.4.3(eslint@9.30.0(jiti@2.4.2))(tailwindcss@4.1.11)
@@ -612,6 +639,9 @@ importers:
 
   packages/turbo:
     dependencies:
+      '@eslint-deputy/define-config':
+        specifier: workspace:*
+        version: link:../define-config
       eslint-plugin-turbo:
         specifier: catalog:plugins
         version: 2.5.4(eslint@9.30.0(jiti@2.4.2))(turbo@2.5.4)
@@ -662,6 +692,9 @@ importers:
 
   packages/vitest:
     dependencies:
+      '@eslint-deputy/define-config':
+        specifier: workspace:*
+        version: link:../define-config
       '@vitest/eslint-plugin':
         specifier: catalog:plugins
         version: 1.3.3(eslint@9.30.0(jiti@2.4.2))(typescript@5.8.3)

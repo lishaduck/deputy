@@ -27,6 +27,7 @@
     "typegen": "scripts/typegen.ts"
   },
   "dependencies": {
+    "@eslint-deputy/define-config": "workspace:*",
     "@html-eslint/eslint-plugin": "catalog:plugins"
   },
   "devDependencies": {

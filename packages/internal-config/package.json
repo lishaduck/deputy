@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@eslint-deputy/config": "workspace:*",
+    "@eslint-deputy/define-config": "workspace:*",
     "@eslint-deputy/imports": "workspace:*",
     "@eslint-deputy/node": "workspace:*",
     "@eslint-deputy/pnpm": "workspace:*",

@@ -28,6 +28,7 @@
     "typegen": "scripts/typegen.ts"
   },
   "dependencies": {
+    "@eslint-deputy/define-config": "workspace:*",
     "eslint-plugin-sonarjs": "catalog:plugins"
   },
   "devDependencies": {
