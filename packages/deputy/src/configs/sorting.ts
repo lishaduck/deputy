@@ -5,7 +5,7 @@ import { Alphabet } from "eslint-plugin-perfectionist/alphabet";
 import { defineConfig } from "@eslint-deputy/define-config";
 
 import type { DeputyConfigOptions } from "../options.ts";
-import { error, off } from "../severity.ts";
+import { off, warn } from "../severity.ts";
 import type { PerfectionistSortObjects } from "../typegen.js";
 
 // See azat-io/eslint-plugin-perfectionist#546.
@@ -84,6 +84,7 @@ export const sorting = ({
     {
       name: "deputy/sorting",
       files: [fileGlobs.ecma],
+      // TODO: Set to warn
       extends: [{ ...perfectionist.configs["recommended-natural"] }],
 
       settings: {
@@ -98,7 +99,7 @@ export const sorting = ({
       files: [fileGlobs.ecma],
       rules: {
         "perfectionist/sort-imports": [
-          error,
+          warn,
           {
             groups: [
               "side-effect",
@@ -116,11 +117,11 @@ export const sorting = ({
             alphabet: importAlphabet,
           },
         ],
-        "perfectionist/sort-interfaces": [error, ...objectSort],
+        "perfectionist/sort-interfaces": [warn, ...objectSort],
         "perfectionist/sort-modules": off,
-        "perfectionist/sort-objects": [error, ...objectSort],
+        "perfectionist/sort-objects": [warn, ...objectSort],
         "perfectionist/sort-union-types": [
-          error,
+          warn,
           {
             groups: ["unknown", "nullish"],
           },

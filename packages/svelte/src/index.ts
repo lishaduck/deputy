@@ -7,9 +7,14 @@ import { type Domain, error, off, warn } from "@eslint-deputy/config";
 const SVELTE_GLOB = "**/*.svelte{,.js,.ts}";
 
 export const svelte = (svelteConfig: SvelteConfig): Domain => ({
-  additionalExtensions: {
-    ts: [".svelte"],
-  },
+  additionalExtensions: [
+    {
+      extension: ".svelte",
+      executable: true,
+      moduleSystem: "ambiguous",
+      types: true,
+    },
+  ],
   config: () => [
     ...sv.configs.recommended,
 

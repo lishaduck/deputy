@@ -4,31 +4,41 @@
     "target": "ES2022",
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
-    "esModuleInterop": true,
+    "allowArbitraryExtensions": true,
     "allowImportingTsExtensions": true,
+    "rewriteRelativeImportExtensions": true,
     "resolveJsonModule": true,
+
+    "types": ["node"],
     "lib": ["ES2023"],
 
-    "strict": true,
-    "noFallthroughCasesInSwitch": true,
-    "forceConsistentCasingInFileNames": true,
-    "noImplicitReturns": true,
-    "noImplicitOverride": true,
+    "noEmit": true,
+    "composite": true,
+    "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json",
+    "sourceMap": true,
+    "declarationMap": true,
+
     "exactOptionalPropertyTypes": true,
     "noUncheckedIndexedAccess": true,
-    "noPropertyAccessFromIndexSignature": true,
+
     "allowUnusedLabels": false,
     "allowUnreachableCode": false,
+    "erasableSyntaxOnly": true,
+    "noImplicitReturns": true,
+    "noImplicitOverride": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "noPropertyAccessFromIndexSignature": true,
+
+    "useDefineForClassFields": true,
+    "libReplacement": false,
 
     "verbatimModuleSyntax": true,
-    "erasableSyntaxOnly": true,
-    "declaration": true,
+    "moduleDetection": "force",
     "isolatedDeclarations": true,
-
-    "noEmit": true,
-    "skipLibCheck": false,
-    "experimentalDecorators": false,
-    "useDefineForClassFields": true
+    "skipLibCheck": true,
+    "strict": true
   },
   "include": [
     "${configDir}/scripts/**/*.ts",
@@ -36,5 +46,9 @@
     "${configDir}/src/types/**/*.d.cts",
     "${configDir}/*.config.ts"
   ],
-  "exclude": ["${configDir}/**/node_modules/**"]
+  "exclude": [
+    "${configDir}/**/.turbo/**",
+    "${configDir}/**/dist/**",
+    "${configDir}/**/node_modules/**"
+  ]
 }

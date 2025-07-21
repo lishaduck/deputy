@@ -32,13 +32,16 @@
     "eslint-plugin-better-tailwindcss": "catalog:plugins"
   },
   "devDependencies": {
+    "@arethetypeswrong/core": "catalog:dev",
     "@eslint-deputy/config": "workspace:*",
     "@eslint-deputy/tsconfig": "workspace:*",
     "@eslint-deputy/typegen": "workspace:*",
     "@types/node": "catalog:types",
     "eslint": "catalog:dev",
     "jiti": "catalog:dev",
+    "publint": "catalog:dev",
     "tailwindcss": "catalog:dev",
+    "tsdown": "catalog:dev",
     "typescript": "catalog:dev"
   },
   "peerDependencies": {

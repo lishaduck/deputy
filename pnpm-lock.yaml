@@ -25,6 +25,9 @@ catalogs:
       specifier: ^16.2.0
       version: 16.2.0
   dev:
+    '@arethetypeswrong/core':
+      specifier: ^0.18.2
+      version: 0.18.2
     '@eslint/config-inspector':
       specifier: ^1.1.0
       version: 1.1.0
@@ -49,6 +52,9 @@ catalogs:
     prettier:
       specifier: ^3.6.2
       version: 3.6.2
+    publint:
+      specifier: ^0.3.12
+      version: 0.3.12
     svelte:
       specifier: ^5.34.9
       version: 5.34.9
@@ -237,6 +243,9 @@ importers:
         specifier: catalog:plugins
         version: 3.3.1(eslint@9.30.0(jiti@2.4.2))
     devDependencies:
+      '@arethetypeswrong/core':
+        specifier: catalog:dev
+        version: 0.18.2
       '@eslint-deputy/config':
         specifier: workspace:*
         version: link:../deputy
@@ -252,6 +261,12 @@ importers:
       eslint:
         specifier: catalog:dev
         version: 9.30.0(jiti@2.4.2)
+      publint:
+        specifier: catalog:dev
+        version: 0.3.12
+      tsdown:
+        specifier: catalog:dev
+        version: 0.12.9(@arethetypeswrong/core@0.18.2)(oxc-resolver@11.3.0)(publint@0.3.12)(typescript@5.8.3)
       typescript:
         specifier: catalog:dev
         version: 5.8.3
@@ -262,6 +277,9 @@ importers:
         specifier: 'catalog:'
         version: 0.3.0(eslint@9.30.0(jiti@2.4.2))
     devDependencies:
+      '@arethetypeswrong/core':
+        specifier: catalog:dev
+        version: 0.18.2
       '@eslint-deputy/tsconfig':
         specifier: workspace:*
         version: link:../tsconfig
@@ -271,6 +289,12 @@ importers:
       eslint:
         specifier: catalog:dev
         version: 9.30.0(jiti@2.4.2)
+      publint:
+        specifier: catalog:dev
+        version: 0.3.12
+      tsdown:
+        specifier: catalog:dev
+        version: 0.12.9(@arethetypeswrong/core@0.18.2)(oxc-resolver@11.3.0)(publint@0.3.12)(typescript@5.8.3)
       typescript:
         specifier: catalog:dev
         version: 5.8.3
@@ -370,7 +394,7 @@ importers:
         version: 2.4.2
       tsdown:
         specifier: catalog:dev
-        version: 0.12.9(oxc-resolver@11.3.0)(publint@0.3.12)(typescript@5.8.3)
+        version: 0.12.9(@arethetypeswrong/core@0.18.2)(oxc-resolver@11.3.0)(publint@0.3.12)(typescript@5.8.3)
       typescript:
         specifier: catalog:dev
         version: 5.8.3
@@ -384,6 +408,9 @@ importers:
         specifier: catalog:plugins
         version: 0.42.0(eslint@9.30.0(jiti@2.4.2))
     devDependencies:
+      '@arethetypeswrong/core':
+        specifier: catalog:dev
+        version: 0.18.2
       '@eslint-deputy/config':
         specifier: workspace:*
         version: link:../deputy
@@ -402,6 +429,12 @@ importers:
       jiti:
         specifier: catalog:dev
         version: 2.4.2
+      publint:
+        specifier: catalog:dev
+        version: 0.3.12
+      tsdown:
+        specifier: catalog:dev
+        version: 0.12.9(@arethetypeswrong/core@0.18.2)(oxc-resolver@11.3.0)(publint@0.3.12)(typescript@5.8.3)
       typescript:
         specifier: catalog:dev
         version: 5.8.3
@@ -415,6 +448,9 @@ importers:
         specifier: catalog:plugins
         version: 4.16.1(@typescript-eslint/scope-manager@8.35.1)(@typescript-eslint/utils@8.35.1(eslint@9.30.0(jiti@2.4.2))(typescript@5.8.3))(eslint@9.30.0(jiti@2.4.2))
     devDependencies:
+      '@arethetypeswrong/core':
+        specifier: catalog:dev
+        version: 0.18.2
       '@eslint-deputy/config':
         specifier: workspace:*
         version: link:../deputy
@@ -430,6 +466,12 @@ importers:
       eslint:
         specifier: catalog:dev
         version: 9.30.0(jiti@2.4.2)
+      publint:
+        specifier: catalog:dev
+        version: 0.3.12
+      tsdown:
+        specifier: catalog:dev
+        version: 0.12.9(@arethetypeswrong/core@0.18.2)(oxc-resolver@11.3.0)(publint@0.3.12)(typescript@5.8.3)
       typescript:
         specifier: catalog:dev
         version: 5.8.3
@@ -486,6 +528,9 @@ importers:
         specifier: catalog:plugins
         version: 3.0.1
     devDependencies:
+      '@arethetypeswrong/core':
+        specifier: catalog:dev
+        version: 0.18.2
       '@eslint-deputy/config':
         specifier: workspace:*
         version: link:../deputy
@@ -504,6 +549,12 @@ importers:
       eslint:
         specifier: catalog:dev
         version: 9.30.0(jiti@2.4.2)
+      publint:
+        specifier: catalog:dev
+        version: 0.3.12
+      tsdown:
+        specifier: catalog:dev
+        version: 0.12.9(@arethetypeswrong/core@0.18.2)(oxc-resolver@11.3.0)(publint@0.3.12)(typescript@5.8.3)
       typescript:
         specifier: catalog:dev
         version: 5.8.3
@@ -517,6 +568,9 @@ importers:
         specifier: catalog:plugins
         version: 0.3.1(eslint@9.30.0(jiti@2.4.2))
     devDependencies:
+      '@arethetypeswrong/core':
+        specifier: catalog:dev
+        version: 0.18.2
       '@eslint-deputy/config':
         specifier: workspace:*
         version: link:../deputy
@@ -532,6 +586,12 @@ importers:
       eslint:
         specifier: catalog:dev
         version: 9.30.0(jiti@2.4.2)
+      publint:
+        specifier: catalog:dev
+        version: 0.3.12
+      tsdown:
+        specifier: catalog:dev
+        version: 0.12.9(@arethetypeswrong/core@0.18.2)(oxc-resolver@11.3.0)(publint@0.3.12)(typescript@5.8.3)
       typescript:
         specifier: catalog:dev
         version: 5.8.3
@@ -545,6 +605,9 @@ importers:
         specifier: catalog:plugins
         version: 3.0.4(eslint@9.30.0(jiti@2.4.2))
     devDependencies:
+      '@arethetypeswrong/core':
+        specifier: catalog:dev
+        version: 0.18.2
       '@eslint-deputy/config':
         specifier: workspace:*
         version: link:../deputy
@@ -560,6 +623,12 @@ importers:
       eslint:
         specifier: catalog:dev
         version: 9.30.0(jiti@2.4.2)
+      publint:
+        specifier: catalog:dev
+        version: 0.3.12
+      tsdown:
+        specifier: catalog:dev
+        version: 0.12.9(@arethetypeswrong/core@0.18.2)(oxc-resolver@11.3.0)(publint@0.3.12)(typescript@5.8.3)
       typescript:
         specifier: catalog:dev
         version: 5.8.3
@@ -579,6 +648,9 @@ importers:
         specifier: catalog:parsers
         version: 1.2.0(svelte@5.34.9)
     devDependencies:
+      '@arethetypeswrong/core':
+        specifier: catalog:dev
+        version: 0.18.2
       '@eslint-deputy/config':
         specifier: workspace:*
         version: link:../deputy
@@ -594,9 +666,15 @@ importers:
       eslint:
         specifier: catalog:dev
         version: 9.30.0(jiti@2.4.2)
+      publint:
+        specifier: catalog:dev
+        version: 0.3.12
       svelte:
         specifier: catalog:dev
         version: 5.34.9
+      tsdown:
+        specifier: catalog:dev
+        version: 0.12.9(@arethetypeswrong/core@0.18.2)(oxc-resolver@11.3.0)(publint@0.3.12)(typescript@5.8.3)
       typescript:
         specifier: catalog:dev
         version: 5.8.3
@@ -610,6 +688,9 @@ importers:
         specifier: catalog:plugins
         version: 3.4.3(eslint@9.30.0(jiti@2.4.2))(tailwindcss@4.1.11)
     devDependencies:
+      '@arethetypeswrong/core':
+        specifier: catalog:dev
+        version: 0.18.2
       '@eslint-deputy/config':
         specifier: workspace:*
         version: link:../deputy
@@ -628,14 +709,24 @@ importers:
       jiti:
         specifier: catalog:dev
         version: 2.4.2
+      publint:
+        specifier: catalog:dev
+        version: 0.3.12
       tailwindcss:
         specifier: catalog:dev
         version: 4.1.11
+      tsdown:
+        specifier: catalog:dev
+        version: 0.12.9(@arethetypeswrong/core@0.18.2)(oxc-resolver@11.3.0)(publint@0.3.12)(typescript@5.8.3)
       typescript:
         specifier: catalog:dev
         version: 5.8.3
 
-  packages/tsconfig: {}
+  packages/tsconfig:
+    devDependencies:
+      tsdown:
+        specifier: catalog:dev
+        version: 0.12.9(@arethetypeswrong/core@0.18.2)(oxc-resolver@11.3.0)(publint@0.3.12)(typescript@5.8.3)
 
   packages/turbo:
     dependencies:
@@ -646,6 +737,9 @@ importers:
         specifier: catalog:plugins
         version: 2.5.4(eslint@9.30.0(jiti@2.4.2))(turbo@2.5.4)
     devDependencies:
+      '@arethetypeswrong/core':
+        specifier: catalog:dev
+        version: 0.18.2
       '@eslint-deputy/config':
         specifier: workspace:*
         version: link:../deputy
@@ -661,6 +755,12 @@ importers:
       eslint:
         specifier: catalog:dev
         version: 9.30.0(jiti@2.4.2)
+      publint:
+        specifier: catalog:dev
+        version: 0.3.12
+      tsdown:
+        specifier: catalog:dev
+        version: 0.12.9(@arethetypeswrong/core@0.18.2)(oxc-resolver@11.3.0)(publint@0.3.12)(typescript@5.8.3)
       turbo:
         specifier: catalog:dev
         version: 2.5.4
@@ -677,6 +777,9 @@ importers:
         specifier: 'catalog:'
         version: 2.2.0(eslint@9.30.0(jiti@2.4.2))
     devDependencies:
+      '@arethetypeswrong/core':
+        specifier: catalog:dev
+        version: 0.18.2
       '@eslint-deputy/tsconfig':
         specifier: workspace:*
         version: link:../tsconfig
@@ -686,6 +789,12 @@ importers:
       eslint:
         specifier: catalog:dev
         version: 9.30.0(jiti@2.4.2)
+      publint:
+        specifier: catalog:dev
+        version: 0.3.12
+      tsdown:
+        specifier: catalog:dev
+        version: 0.12.9(@arethetypeswrong/core@0.18.2)(oxc-resolver@11.3.0)(publint@0.3.12)(typescript@5.8.3)
       typescript:
         specifier: catalog:dev
         version: 5.8.3
@@ -699,6 +808,9 @@ importers:
         specifier: catalog:plugins
         version: 1.3.3(eslint@9.30.0(jiti@2.4.2))(typescript@5.8.3)
     devDependencies:
+      '@arethetypeswrong/core':
+        specifier: catalog:dev
+        version: 0.18.2
       '@eslint-deputy/config':
         specifier: workspace:*
         version: link:../deputy
@@ -714,6 +826,12 @@ importers:
       eslint:
         specifier: catalog:dev
         version: 9.30.0(jiti@2.4.2)
+      publint:
+        specifier: catalog:dev
+        version: 0.3.12
+      tsdown:
+        specifier: catalog:dev
+        version: 0.12.9(@arethetypeswrong/core@0.18.2)(oxc-resolver@11.3.0)(publint@0.3.12)(typescript@5.8.3)
       typescript:
         specifier: catalog:dev
         version: 5.8.3
@@ -727,9 +845,16 @@ packages:
     resolution: {integrity: sha512-30iZtAPgz+LTIYoeivqYo853f02jBYSd5uGnGpkFV0M3xOt9aN73erkgYAmZU43x4VfqcnLxW9Kpg3R5LC4YYw==}
     engines: {node: '>=6.0.0'}
 
+  '@andrewbranch/untar.js@1.0.3':
+    resolution: {integrity: sha512-Jh15/qVmrLGhkKJBdXlK1+9tY4lZruYjsgkDFj08ZmDiWVBLJcqkok7Z0/R0In+i1rScBpJlSvrTS2Lm41Pbnw==}
+
   '@apidevtools/json-schema-ref-parser@11.9.3':
     resolution: {integrity: sha512-60vepv88RwcJtSHrD6MjIL6Ta3SOYbgfnkHb+ppAVK+o9mXprRtulx7VlRl3lN3bbvysAfCS7WMVfhUYemB0IQ==}
     engines: {node: '>= 16'}
+
+  '@arethetypeswrong/core@0.18.2':
+    resolution: {integrity: sha512-GiwTmBFOU1/+UVNqqCGzFJYfBXEytUkiI+iRZ6Qx7KmUVtLm00sYySkfe203C9QtPG11yOz1ZaMek8dT/xnlgg==}
+    engines: {node: '>=20'}
 
   '@babel/generator@7.27.5':
     resolution: {integrity: sha512-ZGhA37l0e/g2s1Cnzdix0O3aLYm66eF8aufiVteOgnwxgnRP8GoyMj7VWsgWnQbVKXyge7hqrFh2K2TQM6t1Hw==}
@@ -751,6 +876,9 @@ packages:
   '@babel/types@7.27.7':
     resolution: {integrity: sha512-8OLQgDScAOHXnAz2cV+RfzzNMipuLVBz2biuAJFMV9bfkNf393je3VM8CLkjQodW5+iWsSJdSgSWT6rsZoXHPw==}
     engines: {node: '>=6.9.0'}
+
+  '@braidai/lang@1.1.1':
+    resolution: {integrity: sha512-5uM+no3i3DafVgkoW7ayPhEGHNNBZCSj5TrGDQt0ayEKQda5f3lAXlmQg0MR5E0gKgmTzUUEtSWHsEC3h9jUcg==}
 
   '@emnapi/core@1.4.3':
     resolution: {integrity: sha512-4m62DuCE07lw01soJwPiBGC0nAww0Q+RY70VZ+n49yDIO13yyinhbWCeNnaob0lakDtWQzSdtNWzJeOJt2ma+g==}
@@ -1057,6 +1185,9 @@ packages:
 
   '@jsdevtools/ono@7.1.3':
     resolution: {integrity: sha512-4JQNk+3mVzK3xh2rqd6RB4J46qUR19azEHBneZyTZM+c456qOrbbM/5xcR8huNCCcbVt7+UmizG6GuUvPvKUYg==}
+
+  '@loaderkit/resolve@1.0.4':
+    resolution: {integrity: sha512-rJzYKVcV4dxJv+vW6jlvagF8zvGxHJ2+HTr1e2qOejfmGhAApgJHl8Aog4mMszxceTRiKTTbnpgmTO1bEZHV/A==}
 
   '@manypkg/cli@0.24.0':
     resolution: {integrity: sha512-O1vbx4TnwaeeDXlNaa+N0LIKg3JmI2gEG8JaGn97UuXgiXJIYlAhfepJTykICV0i0oQHvb0xNfNmvYhwJ/cGgA==}
@@ -1762,6 +1893,9 @@ packages:
     resolution: {integrity: sha512-cYY9mypksY8NRqgDB1XD1RiJL338v/551niynFTGkZOO2LHuB2OmOYxDIe/ttN9AHwrqdum1360G3ald0W9kCg==}
     engines: {node: '>=8'}
 
+  cjs-module-lexer@1.4.3:
+    resolution: {integrity: sha512-9z8TZaGM1pfswYeXrUpzPrkx8UnWYdhJclsiYMm6x/w5+nN+8Tf/LnAgfLGQCm59qAOxU8WwHEq2vNwF6i4j+Q==}
+
   clean-regexp@1.0.0:
     resolution: {integrity: sha512-GfisEZEJvzKrmGWkvfhgzcz/BllN1USeqD2V6tg14OAOgaCD2Z/PUEuxnAZ/nPvmaHRG7a8y77p1T/IRQ4D1Hw==}
     engines: {node: '>=4'}
@@ -2256,6 +2390,9 @@ packages:
       picomatch:
         optional: true
 
+  fflate@0.8.2:
+    resolution: {integrity: sha512-cPJU47OaAoCbg0pBvzsgpTPhmhqI5eJjh/JIu8tPj5q+T7iLvW/JAYUqmE7KOB4R1ZyEhzBaIQpQpardBF5z8A==}
+
   file-entry-cache@8.0.0:
     resolution: {integrity: sha512-XXTUwCvisa5oacNGRP9SfNtYBNAMi+RPwBFmblZEF7N7swHYQS6/Zfk7SRwx4D5j3CH211YNRco1DEMNVfZCnQ==}
     engines: {node: '>=16.0.0'}
@@ -2736,6 +2873,10 @@ packages:
 
   lru-cache@10.4.3:
     resolution: {integrity: sha512-JNAzZcXrCt42VGLuYz0zfAzDfAvJWW6AfYlDBQyDV5DClI2m5sAmK+OIO7s59XfsRsWHp02jAJrRadPRGTt6SQ==}
+
+  lru-cache@11.1.0:
+    resolution: {integrity: sha512-QIXZUBJUx+2zHUdQujWejBkcD9+cs94tLn0+YL8UrCh+D5sCXZ4c7LaEH48pNwRY3MLDgqUFyhlCyjJPf1WP0A==}
+    engines: {node: 20 || >=22}
 
   magic-string@0.30.17:
     resolution: {integrity: sha512-sNPKHvyjVf7gyjwS4xGTaW/mCnF8wnjtifKBEhxfZ7E/S8tQ0rssrwGNn6q8JH/ohItJfSQp9mBtQYuTlH5QnA==}
@@ -3543,6 +3684,11 @@ packages:
       eslint: ^8.57.0 || ^9.0.0
       typescript: '>=4.8.4 <5.9.0'
 
+  typescript@5.6.1-rc:
+    resolution: {integrity: sha512-E3b2+1zEFu84jB0YQi9BORDjz9+jGbwwy1Zi3G0LUNw7a7cePUrHMRNy8aPh53nXpkFGVHSxIZo5vKTfYaFiBQ==}
+    engines: {node: '>=14.17'}
+    hasBin: true
+
   typescript@5.8.3:
     resolution: {integrity: sha512-p1diW6TqL9L07nNxvRMM7hMMw4c5XOo/1ibL4aAIGmSAt9slTE1Xgw5KWuof2uTOvCg9BY7ZRi+GaF+7sfgPeQ==}
     engines: {node: '>=14.17'}
@@ -3654,6 +3800,10 @@ packages:
 
   util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
+
+  validate-npm-package-name@5.0.1:
+    resolution: {integrity: sha512-OljLrQ9SQdOUqTaQxqL5dEfZWrXExyyWsozYlAWFawPVNuD83igl7uJD2RTkNMbniIYgt8l81eCJGIdQF7avLQ==}
+    engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
 
   validate-npm-package-name@6.0.1:
     resolution: {integrity: sha512-OaI//3H0J7ZkR1OqlhGA8cA+Cbk/2xFOQpJOt5+s27/ta9eZwpeervh4Mxh4w0im/kdgktowaqVNR7QOrUd7Yg==}
@@ -3776,11 +3926,24 @@ snapshots:
       '@jridgewell/gen-mapping': 0.3.8
       '@jridgewell/trace-mapping': 0.3.25
 
+  '@andrewbranch/untar.js@1.0.3': {}
+
   '@apidevtools/json-schema-ref-parser@11.9.3':
     dependencies:
       '@jsdevtools/ono': 7.1.3
       '@types/json-schema': 7.0.15
       js-yaml: 4.1.0
+
+  '@arethetypeswrong/core@0.18.2':
+    dependencies:
+      '@andrewbranch/untar.js': 1.0.3
+      '@loaderkit/resolve': 1.0.4
+      cjs-module-lexer: 1.4.3
+      fflate: 0.8.2
+      lru-cache: 11.1.0
+      semver: 7.7.2
+      typescript: 5.6.1-rc
+      validate-npm-package-name: 5.0.1
 
   '@babel/generator@7.27.5':
     dependencies:
@@ -3802,6 +3965,8 @@ snapshots:
     dependencies:
       '@babel/helper-string-parser': 7.27.1
       '@babel/helper-validator-identifier': 7.27.1
+
+  '@braidai/lang@1.1.1': {}
 
   '@emnapi/core@1.4.3':
     dependencies:
@@ -4065,6 +4230,10 @@ snapshots:
       '@jridgewell/sourcemap-codec': 1.5.0
 
   '@jsdevtools/ono@7.1.3': {}
+
+  '@loaderkit/resolve@1.0.4':
+    dependencies:
+      '@braidai/lang': 1.1.1
 
   '@manypkg/cli@0.24.0':
     dependencies:
@@ -4697,6 +4866,8 @@ snapshots:
   chownr@3.0.0: {}
 
   ci-info@4.2.0: {}
+
+  cjs-module-lexer@1.4.3: {}
 
   clean-regexp@1.0.0:
     dependencies:
@@ -5344,6 +5515,8 @@ snapshots:
     optionalDependencies:
       picomatch: 4.0.2
 
+  fflate@0.8.2: {}
+
   file-entry-cache@8.0.0:
     dependencies:
       flat-cache: 4.0.1
@@ -5827,6 +6000,8 @@ snapshots:
   lowercase-keys@3.0.0: {}
 
   lru-cache@10.4.3: {}
+
+  lru-cache@11.1.0: {}
 
   magic-string@0.30.17:
     dependencies:
@@ -6673,7 +6848,7 @@ snapshots:
       picomatch: 4.0.2
       typescript: 5.8.3
 
-  tsdown@0.12.9(oxc-resolver@11.3.0)(publint@0.3.12)(typescript@5.8.3):
+  tsdown@0.12.9(@arethetypeswrong/core@0.18.2)(oxc-resolver@11.3.0)(publint@0.3.12)(typescript@5.8.3):
     dependencies:
       ansis: 4.1.0
       cac: 6.7.14
@@ -6689,6 +6864,7 @@ snapshots:
       tinyglobby: 0.2.14
       unconfig: 7.3.2
     optionalDependencies:
+      '@arethetypeswrong/core': 0.18.2
       publint: 0.3.12
       typescript: 5.8.3
     transitivePeerDependencies:
@@ -6774,6 +6950,8 @@ snapshots:
       typescript: 5.8.3
     transitivePeerDependencies:
       - supports-color
+
+  typescript@5.6.1-rc: {}
 
   typescript@5.8.3: {}
 
@@ -6867,6 +7045,8 @@ snapshots:
       punycode: 2.3.1
 
   util-deprecate@1.0.2: {}
+
+  validate-npm-package-name@5.0.1: {}
 
   validate-npm-package-name@6.0.1: {}
 

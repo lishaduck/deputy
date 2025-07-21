@@ -34,11 +34,14 @@
     "eslint-plugin-import-x": "catalog:plugins"
   },
   "devDependencies": {
+    "@arethetypeswrong/core": "catalog:dev",
     "@eslint-deputy/config": "workspace:*",
     "@eslint-deputy/tsconfig": "workspace:*",
     "@eslint-deputy/typegen": "workspace:*",
     "@types/node": "catalog:types",
     "eslint": "catalog:dev",
+    "publint": "catalog:dev",
+    "tsdown": "catalog:dev",
     "typescript": "catalog:dev"
   },
   "peerDependencies": {

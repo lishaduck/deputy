@@ -26,7 +26,7 @@ declare module "eslint-plugin-jsdoc" {
         >;
     };
 
-    export { _default as default };
+    export default _default;
   }
 
   export = Plugin;

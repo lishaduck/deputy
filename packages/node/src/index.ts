@@ -33,13 +33,36 @@ export const node: Domain = {
         "n/no-missing-require": off, // TypeScript handles this.
         "n/no-process-exit": off, // We use unicorn-x/no-process-exit instead.
 
+        "n/callback-return": error,
+        "n/hashbang": [
+          error,
+          {
+            ignoreUnpublished: true,
+          },
+        ],
+        "n/no-mixed-requires": [
+          error,
+          {
+            allowCall: true,
+            grouping: true,
+          },
+        ],
         "n/no-new-require": error,
         "n/no-path-concat": error,
         "n/no-sync": error,
         "n/no-top-level-await": [error, { ignoreBin: true }],
+        "n/prefer-global/buffer": [error, "never"],
+        "n/prefer-global/console": [error, "always"],
+        "n/prefer-global/process": [error, "never"],
+        "n/prefer-global/text-decoder": [error, "always"],
+        "n/prefer-global/text-encoder": [error, "always"],
+        "n/prefer-global/url": [error, "always"],
+        "n/prefer-global/url-search-params": [error, "always"],
+        "n/prefer-promises/dns": error,
+        "n/prefer-promises/fs": error,
       },
     },
 
-    security.configs.recommended,
+    { ...security.configs.recommended, files: [options.fileGlobs.ecma] },
   ],
 };

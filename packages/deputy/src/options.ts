@@ -70,28 +70,28 @@ export interface GlobBag {
    *
    * And yes, I know that TS isn’t ECMA.
    */
-  ecma: string;
+  readonly ecma: string;
 
   /** These files do not support types. */
-  js: string;
+  readonly js: string;
 
   /** These files do support types. */
-  ts: string;
+  readonly ts: string;
 
   /** These files only support types. */
-  dts: string;
+  readonly dts: string;
 
   /** These files use CommonJS. */
-  cjs: string;
+  readonly cjs: string;
 
   /** These files use ECMAScript modules. */
-  esm: string;
+  readonly esm: string;
 
   /** These files use an ambiguous module system. */
-  ambiguousModules: string;
+  readonly ambiguousModules: string;
 
   /** These files are configurations. */
-  configs: string;
+  readonly configs: string;
 }
 
 export interface ExtensionBag {
@@ -121,6 +121,20 @@ export interface ExtensionBag {
   ambiguousModules: readonly Extension[];
 }
 
+export interface ExtensionInfo {
+  /** The extension for which support is being added. */
+  readonly extension: Extension;
+
+  /** These files support adding runable code. */
+  readonly executable: boolean;
+
+  /** These files support types. */
+  readonly types: boolean;
+
+  /** These files use a certain module system. */
+  readonly moduleSystem: "ambiguous" | "cjs" | "esm";
+}
+
 export type Extension = `.${string}`;
 
 /**
@@ -136,7 +150,7 @@ export interface Domain {
 
   config?: ConfigFactory;
 
-  additionalExtensions?: Partial<Pick<ExtensionBag, "js" | "ts">>;
+  additionalExtensions?: ExtensionInfo[];
 }
 
 export type PackageType = "app" | "internal" | "library" | "root";

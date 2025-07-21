@@ -10,6 +10,7 @@ import type {
   DeputyResolvedOptions,
   Extension,
   ExtensionBag,
+  ExtensionInfo,
   GlobBag,
 } from "./options.ts";
 import type {} from "./typegen.d.ts";
@@ -42,9 +43,6 @@ function resolveConfig(
   ) as DeputyResolvedOptions;
 }
 
-const defaultJs = [".js", ".mjs", ".cjs"] as const;
-const defaultTs = [".ts", ".mts", ".cts"] as const;
-
 function extensionsToGlob(extensions: readonly Extension[]): string {
   return `**/*.{${extensions.map((extension) => extension.slice(1)).join(",")}}`;
 }
@@ -68,40 +66,80 @@ function extensionsBagToGlob(extensionsBag: ExtensionBag): GlobBag {
   };
 }
 
+const baseExtensions = [
+  {
+    extension: ".js",
+
+    executable: true,
+    moduleSystem: "ambiguous",
+    types: false,
+  },
+  {
+    extension: ".mjs",
+
+    executable: true,
+    moduleSystem: "esm",
+    types: false,
+  },
+  {
+    extension: ".cjs",
+
+    executable: true,
+    moduleSystem: "cjs",
+    types: false,
+  },
+  {
+    extension: ".ts",
+
+    executable: true,
+    moduleSystem: "ambiguous",
+    types: true,
+  },
+  {
+    extension: ".mts",
+
+    executable: true,
+    moduleSystem: "esm",
+    types: true,
+  },
+  {
+    extension: ".cts",
+
+    executable: true,
+    moduleSystem: "cjs",
+    types: true,
+  },
+] as const satisfies ExtensionInfo[];
+
 function resolveOptions(options: DeputyResolvedOptions): DeputyConfigOptions {
   const domainExtensions = options.domains.flatMap(
     (domain) => domain.additionalExtensions ?? [],
   );
-
-  const extraTsExtensions = domainExtensions.flatMap(
-    (extraExtensions) => extraExtensions.ts ?? [],
-  );
+  const extensionsInfo = [...baseExtensions, ...domainExtensions];
 
   const extensions: ExtensionBag = {
     get ecma() {
       return [...this.js, ...this.ts];
     },
 
-    js: [
-      ...defaultJs,
-      ...domainExtensions.flatMap(
-        (extraExtensions) => extraExtensions.js ?? [],
-      ),
-    ],
-    ts: [...defaultTs, ...extraTsExtensions],
+    js: extensionsInfo.flatMap((info) => (info.types ? [] : info.extension)),
+    ts: extensionsInfo.flatMap((info) => (info.types ? info.extension : [])),
 
-    // TODO: make this more adaptive.
-    get ambiguousModules() {
-      return this.ecma.filter(
-        (val) => !val.startsWith(".c") && !val.startsWith(".m"),
-      );
-    },
-    cjs: [".cjs", ".cts"],
-    esm: [".mjs", ".mts"],
+    ambiguousModules: extensionsInfo.flatMap((info) =>
+      info.moduleSystem === "ambiguous" ? info.extension : [],
+    ),
+    cjs: extensionsInfo.flatMap((info) =>
+      info.moduleSystem === "cjs" ? info.extension : [],
+    ),
+    esm: extensionsInfo.flatMap((info) =>
+      info.moduleSystem === "esm" ? info.extension : [],
+    ),
 
     get dts() {
-      return this.ts.flatMap(
-        (extension) => [`.d${extension}`, `.d.*${extension}`] as const,
+      return extensionsInfo.flatMap((info) =>
+        info.types ?
+          ([`.d${info.extension}`, `.d.*${info.extension}`] as const)
+        : [],
       );
     },
   };
@@ -111,7 +149,9 @@ function resolveOptions(options: DeputyResolvedOptions): DeputyConfigOptions {
   return {
     ...options,
     extensions,
-    extraTsExtensions,
+    extraTsExtensions: extensionsInfo.flatMap((info) =>
+      info.types ? info.extension : [],
+    ),
     fileGlobs,
   };
 }

@@ -26,9 +26,12 @@
     "@eslint/config-helpers": "catalog:"
   },
   "devDependencies": {
+    "@arethetypeswrong/core": "catalog:dev",
     "@eslint-deputy/tsconfig": "workspace:*",
     "@types/node": "catalog:types",
     "eslint": "catalog:dev",
+    "publint": "catalog:dev",
+    "tsdown": "catalog:dev",
     "typescript": "catalog:dev"
   },
   "peerDependencies": {

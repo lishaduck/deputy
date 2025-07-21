@@ -4,7 +4,7 @@ import type { Linter } from "eslint/universal";
 import { defineConfig } from "@eslint-deputy/define-config";
 
 import type { DeputyConfigOptions } from "../options.ts";
-import { warn } from "../severity.ts";
+import { error, warn } from "../severity.ts";
 
 export const eslintComments = ({
   fileGlobs,
@@ -19,6 +19,10 @@ export const eslintComments = ({
       name: "deputy/eslint-comments/handpicked",
       files: [fileGlobs.ecma],
       rules: {
+        "@eslint-community/eslint-comments/disable-enable-pair": [
+          error,
+          { allowWholeFile: true },
+        ],
         "@eslint-community/eslint-comments/require-description": warn,
       },
     },

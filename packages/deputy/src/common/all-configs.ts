@@ -17,6 +17,10 @@ export const emptyConfig: DeputyConfigOptions = {
     js: [],
     ts: [],
 
+    ambiguousModules: [],
+    cjs: [],
+    esm: [],
+
     dts: [],
   },
   fileGlobs: {
@@ -24,6 +28,10 @@ export const emptyConfig: DeputyConfigOptions = {
 
     js: "",
     ts: "",
+
+    ambiguousModules: "",
+    cjs: "",
+    esm: "",
 
     dts: "",
 
