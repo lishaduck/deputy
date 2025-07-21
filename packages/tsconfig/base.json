@@ -21,13 +21,10 @@
     "exactOptionalPropertyTypes": true,
     "noUncheckedIndexedAccess": true,
 
-    "allowUnusedLabels": false,
     "allowUnreachableCode": false,
     "erasableSyntaxOnly": true,
     "noImplicitReturns": true,
     "noImplicitOverride": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "noPropertyAccessFromIndexSignature": true,
 
