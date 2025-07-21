@@ -14,6 +14,7 @@ export const sonar: Domain = {
 
         "sonarjs/no-redundant-optional": off, // Cater toward `exactOptionalPropertyTypes`.
         "sonarjs/todo-tag": off, // I’d prefer a slightly different approach. // TODO: Implement
+        "sonarjs/updated-loop-counter": off, // Deprecated.
 
         // We use the @typescript-eslint versions.
         "sonarjs/class-name": off,

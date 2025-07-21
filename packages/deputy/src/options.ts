@@ -81,6 +81,15 @@ export interface GlobBag {
   /** These files only support types. */
   dts: string;
 
+  /** These files use CommonJS. */
+  cjs: string;
+
+  /** These files use ECMAScript modules. */
+  esm: string;
+
+  /** These files use an ambiguous module system. */
+  ambiguousModules: string;
+
   /** These files are configurations. */
   configs: string;
 }
@@ -101,6 +110,15 @@ export interface ExtensionBag {
 
   /** These files only support types. */
   dts: readonly Extension[];
+
+  /** These files use CommonJS. */
+  cjs: readonly Extension[];
+
+  /** These files use ECMAScript modules. */
+  esm: readonly Extension[];
+
+  /** These files use an ambiguous module system. */
+  ambiguousModules: readonly Extension[];
 }
 
 export type Extension = `.${string}`;

@@ -174,7 +174,7 @@ const tseslintHandpicked: TypedRules = {
   "@typescript-eslint/strict-boolean-expressions": warn,
   "@typescript-eslint/switch-exhaustiveness-check": error,
 
-  "@typescript-eslint/no-require-imports": off, // We use unicorn-x/prefer-module instead
+  "@typescript-eslint/no-require-imports": off, // We use unicorn-x/prefer-module instead.
 };
 
 const stylisticHandpicked: TypedRules = {

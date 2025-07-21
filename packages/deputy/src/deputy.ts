@@ -56,6 +56,10 @@ function extensionsBagToGlob(extensionsBag: ExtensionBag): GlobBag {
     js: extensionsToGlob(extensionsBag.js),
     ts: extensionsToGlob(extensionsBag.ts),
 
+    ambiguousModules: extensionsToGlob(extensionsBag.ambiguousModules),
+    cjs: extensionsToGlob(extensionsBag.cjs),
+    esm: extensionsToGlob(extensionsBag.esm),
+
     dts: extensionsToGlob(extensionsBag.dts),
 
     get configs() {
@@ -85,6 +89,15 @@ function resolveOptions(options: DeputyResolvedOptions): DeputyConfigOptions {
       ),
     ],
     ts: [...defaultTs, ...extraTsExtensions],
+
+    // TODO: make this more adaptive.
+    get ambiguousModules() {
+      return this.ecma.filter(
+        (val) => !val.startsWith(".c") && !val.startsWith(".m"),
+      );
+    },
+    cjs: [".cjs", ".cts"],
+    esm: [".mjs", ".mts"],
 
     get dts() {
       return this.ts.flatMap(

@@ -12,9 +12,15 @@ const handpicked: TypedRules = {
   "unicorn-x/no-keyword-prefix": warn,
   "unicorn-x/prefer-import-meta-properties": warn,
   "unicorn-x/prefer-json-parse-buffer": warn,
+  "unicorn-x/prefer-switch": [
+    error,
+    { emptyDefaultCase: "do-nothing-comment" },
+  ],
 
-  "unicorn-x/empty-brace-spaces": off, // Prettier
+  "unicorn-x/empty-brace-spaces": off, // We use Prettier instead.
+  "unicorn-x/filename-case": off, // This rule is project-specific.
   "unicorn-x/no-abusive-eslint-disable": off, // We use eslint-plugin-eslint-comments.
+  "unicorn-x/no-null": off, // This rule is too strict.
 };
 
 const handpickedDts: TypedRules = {

@@ -13,7 +13,9 @@ export const promises = ({ fileGlobs }: DeputyConfigOptions): Linter.Config[] =>
       name: "deputy/promises/handpicked",
       files: [fileGlobs.ecma],
       rules: {
+        "promise/no-multiple-resolved": warn,
         "promise/prefer-await-to-callbacks": warn,
+        "promise/prefer-await-to-then": warn,
         "promise/prefer-catch": warn,
       },
     },
