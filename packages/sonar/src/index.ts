@@ -2,8 +2,6 @@ import sonarjs from "eslint-plugin-sonarjs";
 
 import { type Domain, error, off } from "@eslint-deputy/config";
 
-import type {} from "./typegen.d.ts";
-
 export const sonar: Domain = {
   config: (options) => [
     { ...sonarjs.configs.recommended, name: "deputy-sonar/reccomended" },

@@ -12,7 +12,7 @@
     "knip": "knip",
     "lint": "eslint --flag=v10_config_lookup_from_file",
     "manypkg": "manypkg check",
-    "merge-checks": "turbo run typecheck knip lint format:check manypkg typesync:check",
+    "merge-checks": "turbo run typecheck knip lint format:check manypkg typesync:check --continue=dependencies-successful",
     "typesync": "typesync",
     "typesync:check": "typesync --dry=fail"
   },

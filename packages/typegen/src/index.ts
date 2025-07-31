@@ -10,7 +10,7 @@ import { flatConfigsToRulesDTS } from "eslint-typegen/core";
  * @param configs - ESLint configurations to extract plugins from.
  * @example
  * ```ts
- * generate({ plugins: {  } })
+ * generate({ plugins: {} })
  * ```
  */
 export async function generate(

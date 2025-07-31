@@ -1,6 +1,6 @@
 {
   "extends": "@eslint-deputy/tsconfig/base.json",
   "compilerOptions": {
-    "types": ["eslint-plugin-security", "node"]
+    "types": ["eslint-plugin-security", "node", "./src/typegen.d.ts"]
   }
 }

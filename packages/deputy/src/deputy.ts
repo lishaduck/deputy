@@ -13,7 +13,6 @@ import type {
   ExtensionInfo,
   GlobBag,
 } from "./options.ts";
-import type {} from "./typegen.d.ts";
 
 function resolveConfig(
   options: DeputyOptions | undefined,

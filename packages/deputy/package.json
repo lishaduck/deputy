@@ -69,7 +69,8 @@
     "eslint": "catalog:dev",
     "jiti": "catalog:dev",
     "tsdown": "catalog:dev",
-    "typescript": "catalog:dev"
+    "typescript": "catalog:dev",
+    "unplugin-unused": "catalog:dev"
   },
   "peerDependencies": {
     "@types/node": "catalog:peers",

@@ -32,7 +32,8 @@
     "eslint": "catalog:dev",
     "publint": "catalog:dev",
     "tsdown": "catalog:dev",
-    "typescript": "catalog:dev"
+    "typescript": "catalog:dev",
+    "unplugin-unused": "catalog:dev"
   },
   "peerDependencies": {
     "eslint": "catalog:peers"

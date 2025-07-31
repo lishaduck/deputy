@@ -7,6 +7,14 @@ export const pnpm: Domain = {
     ...pnpmPlugin.configs.json,
     ...pnpmPlugin.configs.yaml,
     {
+      name: "deputy-pnpm/core",
+      settings: {
+        pnpm: {
+          ensureWorkspaceFile: true,
+        },
+      },
+    },
+    {
       name: "deputy-pnpm/yaml/handpicked",
       files: ["pnpm-workspace.yaml"],
       rules: {

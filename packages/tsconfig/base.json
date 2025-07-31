@@ -9,7 +9,7 @@
     "rewriteRelativeImportExtensions": true,
     "resolveJsonModule": true,
 
-    "types": ["node"],
+    "types": [],
     "lib": ["ES2023"],
 
     "noEmit": true,
