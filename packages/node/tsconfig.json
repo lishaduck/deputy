@@ -1,6 +1,18 @@
 {
   "extends": "@eslint-deputy/tsconfig/base.json",
   "compilerOptions": {
-    "types": ["eslint-plugin-security", "node", "./src/typegen.d.ts"]
-  }
+    "types": ["eslint-plugin-security", "node", "./src/typegen.d.ts"],
+    "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json"
+  },
+  "references": [
+    {
+      "path": "../define-config"
+    },
+    {
+      "path": "../deputy"
+    },
+    {
+      "path": "../typegen"
+    }
+  ]
 }

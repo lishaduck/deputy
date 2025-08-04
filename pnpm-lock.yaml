@@ -133,11 +133,11 @@ catalogs:
       specifier: ^4.16.1
       version: 4.16.1
     eslint-plugin-jsdoc:
-      specifier: ^51.4.1
-      version: 51.4.1
+      specifier: ^52.0.1
+      version: 52.0.1
     eslint-plugin-n:
-      specifier: ^17.21.2
-      version: 17.21.2
+      specifier: ^17.21.3
+      version: 17.21.3
     eslint-plugin-no-use-extend-native:
       specifier: ^0.7.2
       version: 0.7.2
@@ -348,7 +348,7 @@ importers:
         version: 1.2.0(eslint@9.32.0(jiti@2.5.1))
       eslint-plugin-jsdoc:
         specifier: catalog:plugins
-        version: 51.4.1(eslint@9.32.0(jiti@2.5.1))
+        version: 52.0.1(eslint@9.32.0(jiti@2.5.1))
       eslint-plugin-no-use-extend-native:
         specifier: catalog:plugins
         version: 0.7.2(eslint@9.32.0(jiti@2.5.1))
@@ -541,7 +541,7 @@ importers:
         version: link:../define-config
       eslint-plugin-n:
         specifier: catalog:plugins
-        version: 17.21.2(eslint@9.32.0(jiti@2.5.1))(typescript@5.8.3)
+        version: 17.21.3(eslint@9.32.0(jiti@2.5.1))(typescript@5.8.3)
       eslint-plugin-security:
         specifier: catalog:plugins
         version: 3.0.1
@@ -1150,10 +1150,6 @@ packages:
 
   '@eslint/object-schema@2.1.6':
     resolution: {integrity: sha512-RBMg5FRL0I0gs51M/guSAj5/e14VQ4tpZnQNWwuDT66P14I43ItmPfIZRhO9fUVIPOAQXU47atlywZ/czoqFPA==}
-    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
-
-  '@eslint/plugin-kit@0.3.3':
-    resolution: {integrity: sha512-1+WqvgNMhmlAambTvT3KPtCl/Ibr68VldY2XY40SL1CE0ZXiakFR/cbTspaF5HsnpDMvcYYoJHfl4980NBjGag==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
   '@eslint/plugin-kit@0.3.4':
@@ -2239,14 +2235,14 @@ packages:
       eslint-import-resolver-node:
         optional: true
 
-  eslint-plugin-jsdoc@51.4.1:
-    resolution: {integrity: sha512-y4CA9OkachG8v5nAtrwvcvjIbdcKgSyS6U//IfQr4FZFFyeBFwZFf/tfSsMr46mWDJgidZjBTqoCRlXywfFBMg==}
+  eslint-plugin-jsdoc@52.0.1:
+    resolution: {integrity: sha512-zJdjpC9z4x28BBdCoxH+/h0BdDLZ9KXQGVKU9gHt3TQJ9kMraep+DgfTIVaXu9u1wy0HyhK2eFMp3icQBV4dkw==}
     engines: {node: '>=20.11.0'}
     peerDependencies:
       eslint: ^7.0.0 || ^8.0.0 || ^9.0.0
 
-  eslint-plugin-n@17.21.2:
-    resolution: {integrity: sha512-s3ai4Msfk5mbSvOgCkYo6k5+zP3W/OK+AvLmMmx++Ki4a5CPO7luIDwOnjUZm/t+oZYP0YADTxe+u4JqnT8+Dg==}
+  eslint-plugin-n@17.21.3:
+    resolution: {integrity: sha512-MtxYjDZhMQgsWRm/4xYLL0i2EhusWT7itDxlJ80l1NND2AL2Vi5Mvneqv/ikG9+zpran0VsVRXTEHrpLmUZRNw==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     peerDependencies:
       eslint: '>=8.23.0'
@@ -4222,11 +4218,6 @@ snapshots:
 
   '@eslint/object-schema@2.1.6': {}
 
-  '@eslint/plugin-kit@0.3.3':
-    dependencies:
-      '@eslint/core': 0.15.1
-      levn: 0.4.1
-
   '@eslint/plugin-kit@0.3.4':
     dependencies:
       '@eslint/core': 0.15.1
@@ -4234,7 +4225,7 @@ snapshots:
 
   '@html-eslint/eslint-plugin@0.43.1(eslint@9.32.0(jiti@2.5.1))':
     dependencies:
-      '@eslint/plugin-kit': 0.3.3
+      '@eslint/plugin-kit': 0.3.4
       '@html-eslint/parser': 0.43.0
       '@html-eslint/template-parser': 0.43.0
       '@html-eslint/template-syntax-parser': 0.43.0
@@ -5286,7 +5277,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-plugin-jsdoc@51.4.1(eslint@9.32.0(jiti@2.5.1)):
+  eslint-plugin-jsdoc@52.0.1(eslint@9.32.0(jiti@2.5.1)):
     dependencies:
       '@es-joy/jsdoccomment': 0.52.0(eslint@9.32.0(jiti@2.5.1))
       are-docs-informative: 0.0.2
@@ -5302,7 +5293,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-plugin-n@17.21.2(eslint@9.32.0(jiti@2.5.1))(typescript@5.8.3):
+  eslint-plugin-n@17.21.3(eslint@9.32.0(jiti@2.5.1))(typescript@5.8.3):
     dependencies:
       '@eslint-community/eslint-utils': 4.7.0(eslint@9.32.0(jiti@2.5.1))
       enhanced-resolve: 5.18.2
@@ -5431,7 +5422,7 @@ snapshots:
     dependencies:
       '@babel/helper-validator-identifier': 7.27.1
       '@eslint-community/eslint-utils': 4.7.0(eslint@9.32.0(jiti@2.5.1))
-      '@eslint/plugin-kit': 0.3.3
+      '@eslint/plugin-kit': 0.3.4
       ci-info: 4.3.0
       clean-regexp: 1.0.0
       core-js-compat: 3.43.0

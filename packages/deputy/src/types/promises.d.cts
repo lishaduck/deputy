@@ -1,11 +1,13 @@
 declare module "eslint-plugin-promise" {
-  import type { Linter } from "eslint/universal";
+  import type { ESLint, Linter } from "eslint";
 
-  namespace Plugin {
-    export const configs: {
+  interface Plugin extends ESLint.Plugin {
+    configs: {
       "flat/recommended": Linter.Config;
     };
   }
+
+  const Plugin: Plugin;
 
   export = Plugin;
 }

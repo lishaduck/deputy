@@ -12,11 +12,10 @@
     "types": [],
     "lib": ["ES2023"],
 
-    "noEmit": true,
     "composite": true,
-    "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json",
     "sourceMap": true,
     "declarationMap": true,
+    "outDir": "${configDir}/node_modules/.cache/tsbuildinfo/",
 
     "exactOptionalPropertyTypes": true,
     "noUncheckedIndexedAccess": true,

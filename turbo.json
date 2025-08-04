@@ -10,11 +10,7 @@
       ]
     },
     "//#lint": {},
-    "typecheck": {
-      "dependsOn": [
-        "^topo"
-      ]
-    },
+    "//#typecheck": {},
     "typegen": {},
     "//#format": {
       "outputs": [

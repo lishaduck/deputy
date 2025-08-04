@@ -1,7 +1,52 @@
 {
   "extends": "@eslint-deputy/tsconfig/base.json",
   "compilerOptions": {
-    "isolatedDeclarations": false
+    "isolatedDeclarations": false,
+    "types": ["node"]
   },
-  "include": ["*.config.ts"]
+  "include": ["*.config.ts"],
+  "references": [
+    {
+      "path": "packages/command"
+    },
+    {
+      "path": "packages/define-config"
+    },
+    {
+      "path": "packages/deputy"
+    },
+    {
+      "path": "packages/html"
+    },
+    {
+      "path": "packages/imports"
+    },
+    {
+      "path": "packages/internal-config"
+    },
+    {
+      "path": "packages/node"
+    },
+    {
+      "path": "packages/pnpm"
+    },
+    {
+      "path": "packages/sonar"
+    },
+    {
+      "path": "packages/svelte"
+    },
+    {
+      "path": "packages/tailwind"
+    },
+    {
+      "path": "packages/turbo"
+    },
+    {
+      "path": "packages/typegen"
+    },
+    {
+      "path": "packages/vitest"
+    }
+  ]
 }

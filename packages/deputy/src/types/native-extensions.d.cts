@@ -1,11 +1,13 @@
 declare module "eslint-plugin-no-use-extend-native" {
-  import type { Linter } from "eslint/universal";
+  import type { ESLint, Linter } from "eslint";
 
-  namespace Plugin {
-    export const configs: {
+  interface Plugin extends ESLint.Plugin {
+    configs: {
       recommended: Linter.Config;
     };
   }
+
+  const Plugin: Plugin;
 
   export = Plugin;
 }

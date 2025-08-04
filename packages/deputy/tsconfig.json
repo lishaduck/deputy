@@ -6,9 +6,18 @@
       "node",
       "./src/types/early-return.d.cts",
       "./src/types/eslint-comments.d.cts",
-      "./src/types/jsdoc.d.cts",
       "./src/types/native-extensions.d.cts",
       "./src/types/promises.d.cts"
-    ]
-  }
+    ],
+    "skipLibCheck": false,
+    "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json"
+  },
+  "references": [
+    {
+      "path": "../define-config"
+    },
+    {
+      "path": "../typegen"
+    }
+  ]
 }

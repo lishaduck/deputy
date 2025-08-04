@@ -48,7 +48,7 @@ export const restrictedSyntax: SyntaxRuleConfig[] = [
   },
   {
     name: "no-enums",
-    // When microsoft/TypeScript#61414 lands, prefer enum annotations.
+    // TODO: When microsoft/TypeScript#61414 lands, prefer enum annotations.
     message: "Avoid `enum`; prefer using objects instead.",
     selector: "TSEnumDeclaration",
   },

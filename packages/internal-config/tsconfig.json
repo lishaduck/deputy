@@ -1,6 +1,27 @@
 {
   "extends": "@eslint-deputy/tsconfig/base.json",
   "compilerOptions": {
-    "types": ["node"]
-  }
+    "types": ["node"],
+    "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json"
+  },
+  "references": [
+    {
+      "path": "../define-config"
+    },
+    {
+      "path": "../deputy"
+    },
+    {
+      "path": "../imports"
+    },
+    {
+      "path": "../node"
+    },
+    {
+      "path": "../pnpm"
+    },
+    {
+      "path": "../sonar"
+    }
+  ]
 }
