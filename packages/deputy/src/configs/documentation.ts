@@ -73,7 +73,6 @@ function _examples(fileGlobs: GlobBag): Linter.Config[] {
       files: [fileGlobs.ecma],
 
       plugins: {
-        // @ts-expect-error(TS2322): Wow!
         examples: getJsdocProcessorPlugin({
           checkDefaults: true,
           checkParams: true,
