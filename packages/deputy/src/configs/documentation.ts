@@ -78,8 +78,6 @@ function _examples(fileGlobs: GlobBag): Linter.Config[] {
           checkParams: true,
           checkProperties: true,
 
-          exampleCodeRegex: "^```([\\s\\S]*)```\\s*$",
-
           parser: ts.parser as Linter.Parser,
         }),
       },

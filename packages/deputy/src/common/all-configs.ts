@@ -2,7 +2,7 @@ import type { Linter } from "eslint/universal";
 
 import { packageConfigs } from "../configs/index.ts";
 import type { DeputyConfigOptions } from "../options.ts";
-import { restrictedSyntax } from "./restricted.ts";
+import * as restricted from "./restricted.ts";
 
 /** @internal */
 export const emptyConfig: DeputyConfigOptions = {
@@ -23,6 +23,7 @@ export const emptyConfig: DeputyConfigOptions = {
 
     dts: [],
   },
+  extraTsExtensions: [],
   fileGlobs: {
     ecma: "",
 
@@ -37,16 +38,11 @@ export const emptyConfig: DeputyConfigOptions = {
 
     configs: "",
   },
-  extraTsExtensions: [],
   internalPattern: undefined,
   rootDir: undefined,
   ruleConfigurations: {
     deprecations: undefined,
-    restricted: {
-      globals: [],
-      properties: [],
-      syntax: restrictedSyntax,
-    },
+    restricted,
   },
   skipHeavyRules: false,
 };

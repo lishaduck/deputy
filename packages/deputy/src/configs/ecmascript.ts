@@ -122,7 +122,6 @@ const tseslintHandpicked: TypedRules = {
       ignoreTypeValueShadow: true,
     },
   ],
-  "@typescript-eslint/no-unnecessary-type-conversion": warn,
   "@typescript-eslint/no-unused-expressions": [
     error,
     {

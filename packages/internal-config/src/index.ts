@@ -2,7 +2,11 @@ import ci from "ci-info";
 import { globalIgnores } from "eslint/config";
 import type { FlatConfigComposer } from "eslint-flat-config-utils";
 
-import { deputy, type PackageType } from "@eslint-deputy/config";
+import {
+  deputy,
+  type PackageType,
+  type RuleConfigurations,
+} from "@eslint-deputy/config";
 import { imports } from "@eslint-deputy/imports";
 import { node } from "@eslint-deputy/node";
 import { pnpm } from "@eslint-deputy/pnpm";
@@ -12,12 +16,14 @@ export interface ConfigOptions {
   type: PackageType;
   allowDefaultProject?: string[];
   rootDir: string;
+  ruleConfigurations?: RuleConfigurations;
 }
 
 export const config = ({
   type,
   allowDefaultProject = [],
   rootDir,
+  ruleConfigurations,
   // eslint-disable-next-line @typescript-eslint/promise-function-async -- returns a Composer.
 }: ConfigOptions): FlatConfigComposer =>
   deputy({
@@ -27,6 +33,7 @@ export const config = ({
     internalPattern: "^@eslint-deputy/",
     rootDir,
     skipHeavyRules: !ci.isCI,
+    ruleConfigurations,
   }).append(
     globalIgnores(["**/typegen.d.ts"], "Nobody ever did care 'bout typegen"),
   );

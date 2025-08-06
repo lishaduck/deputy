@@ -19,6 +19,7 @@ export function getGlobals(
 
   for (const globalish of environmentGlobals) {
     const globalSet =
+      // eslint-disable-next-line security/detect-object-injection -- `globalish` is set by the user, so not our problem.
       typeof globalish === "string" ? globals[globalish] : globalish;
 
     allGlobals = {

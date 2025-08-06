@@ -2,7 +2,7 @@ import { defu } from "defu";
 import type { Linter } from "eslint/universal";
 import { composer, type FlatConfigComposer } from "eslint-flat-config-utils";
 
-import { restrictedSyntax } from "./common/restricted.ts";
+import * as restricted from "./common/restricted.ts";
 import { packageConfigs, rootConfigs } from "./configs/index.ts";
 import type {
   DeputyConfigOptions,
@@ -31,11 +31,7 @@ function resolveConfig(
       rootDir: undefined,
       ruleConfigurations: {
         deprecations: undefined,
-        restricted: {
-          globals: [],
-          properties: [],
-          syntax: restrictedSyntax,
-        },
+        restricted,
       },
       skipHeavyRules: false,
     } satisfies DeputyResolvedOptions,

@@ -1,8 +1,10 @@
+import type { RuleConfig as PropertiesRuleConfig } from "eslint-no-restricted/properties";
+import type { RuleConfig as GlobalsRuleConfig } from "eslint-no-restricted/globals";
 import type { RuleConfig as SyntaxRuleConfig } from "eslint-no-restricted/syntax";
 
 // TODO: Move this to a separate package.
 
-export const restrictedSyntax: SyntaxRuleConfig[] = [
+export const syntax: SyntaxRuleConfig[] = [
   {
     name: "no-label",
     message:
@@ -53,3 +55,7 @@ export const restrictedSyntax: SyntaxRuleConfig[] = [
     selector: "TSEnumDeclaration",
   },
 ];
+
+export const globals: GlobalsRuleConfig[] = [];
+
+export const properties: PropertiesRuleConfig[] = [];

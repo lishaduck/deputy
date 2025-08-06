@@ -1,10 +1,10 @@
 import type { KnipConfig } from "knip";
 
 export default {
-  treatConfigHintsAsErrors: true,
   ignoreExportsUsedInFile: {
-    interface: true,
     type: true,
+    interface: true,
   },
   includeEntryExports: true,
+  treatConfigHintsAsErrors: true,
 } satisfies KnipConfig;
