@@ -1,6 +1,6 @@
 # Deputy
 
-Inspired by Sheriff, Deputy is a lightweight, strict, and powerful ESLint config.
+Inspired by [Sheriff], Deputy is a lightweight(ish), strict, and powerful TypeScript-first ESLint config.
 
 ## Philosophy
 
@@ -12,5 +12,7 @@ Inspired by Sheriff, Deputy is a lightweight, strict, and powerful ESLint config
 ## Usage
 
 We use warnings to indicate the severity of an issue when developing.
-However, that’s not to say than any rules are not important.
+However, that’s not to say that any rules are unimportant, if they were, we wouldn’t have them in the first place.
 Ensure you pass `--max-warnings=0` to ESLint to ensure that all warnings are treated as errors.
+
+[Sheriff]: https://github.com/AndreaPontrandolfo/sheriff

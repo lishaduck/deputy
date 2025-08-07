@@ -7,10 +7,10 @@
 - [ ] Add in CTA rules
 - [ ] Add in antfu rules
 - [x] Add in psdtools rules
-- [-] Add in elm-review (XO) rules
+- [x] Add in elm-review rules
+- [x] Add in XO rules
+- [ ] Add in XO TypeScript rules
 - [ ] Add in Ducky rules
-- [ ] Create Effect domain
-  - [ ] Add in Effect plugin
 - [ ] Create Storybook domain
 - [ ] Create Browser domain
 - [x] Create Tailwind domain

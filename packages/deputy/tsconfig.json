@@ -2,7 +2,6 @@
   "extends": "@eslint-deputy/tsconfig/base.json",
   "compilerOptions": {
     "types": [
-      "confusing-browser-globals",
       "node",
       "./src/types/early-return.d.cts",
       "./src/types/eslint-comments.d.cts",

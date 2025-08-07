@@ -17,6 +17,7 @@
     "declarationMap": true,
     "outDir": "${configDir}/node_modules/.cache/tsbuildinfo/",
 
+    "strict": true,
     "exactOptionalPropertyTypes": true,
     "noUncheckedIndexedAccess": true,
 
@@ -31,10 +32,10 @@
     "libReplacement": false,
 
     "verbatimModuleSyntax": true,
-    "moduleDetection": "force",
+    "isolatedModules": true,
     "isolatedDeclarations": true,
-    "skipLibCheck": true,
-    "strict": true
+    "moduleDetection": "force",
+    "skipLibCheck": true
   },
   "include": [
     "${configDir}/scripts/**/*.ts",

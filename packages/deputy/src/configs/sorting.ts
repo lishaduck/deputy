@@ -25,6 +25,11 @@ const objectSort: PerfectionistSortObjects = [
         elementNamePattern: "^(?:id)$",
       },
       {
+        groupName: "from",
+        selector: "property",
+        elementNamePattern: "^(?:from)$",
+      },
+      {
         groupName: "name",
         selector: "property",
         elementNamePattern: "^(?:name)$",
@@ -64,6 +69,7 @@ const objectSort: PerfectionistSortObjects = [
     ],
     groups: [
       "id",
+      "from",
       "name",
       "type",
       "group",
