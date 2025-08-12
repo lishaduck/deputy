@@ -22,9 +22,12 @@ export const packageJson = ({
         // TODO: Move to `no-restricted-dependencies` once JoshuaKGoldberg/eslint-plugin-package-json#54 is resolved.
         "depend/ban-dependencies": error,
         "package-json/no-redundant-files": error,
-        "package-json/require-engines": error,
+        // "package-json/require-bugs": error,
+        // "package-json/require-devEngines": error,
+        // "package-json/require-homepage": error,
         // "package-json/require-license": error,
-        // "package-json/require-repository": error // TODO: File/check for issue.
+        // "package-json/require-repository": error,
+        // "package-json/require-sideEffects": error,
       },
     },
     environment.type === "library" ?
@@ -33,6 +36,7 @@ export const packageJson = ({
         files: [GLOB_PACKAGE_JSON],
         rules: {
           "package-json/require-author": error,
+          "package-json/require-engines": error,
           "package-json/require-files": error,
           "package-json/require-keywords": error,
         },
@@ -41,7 +45,7 @@ export const packageJson = ({
         name: "deputy/package-json/app",
         files: [GLOB_PACKAGE_JSON],
         rules: {
-          // TODO: package-json/require-private // TODO: File/check for issue.
+          // "package-json/require-private": error,
         },
       },
   );

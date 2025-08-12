@@ -5,6 +5,10 @@ strictDepBuilds: true
 shellEmulator: true
 engineStrict: true
 nodeVersion: "20.19.0"
+ignorePatchFailures: false
+verifyDepsBeforeRun: warn
+disallowWorkspaceCycles: true
+# enableGlobalVirtualStore: true
 catalogMode: strict
 
 ignoredBuiltDependencies:
@@ -147,6 +151,7 @@ catalogs:
     typescript: ~5.9.2
     typesync: ^0.14.3
     unplugin-unused: ^0.5.1
+    update-ts-references: ^3.6.1
 
   types:
     "@types/confusing-browser-globals": ~1.0.3

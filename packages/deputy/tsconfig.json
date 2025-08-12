@@ -1,13 +1,7 @@
 {
   "extends": "@eslint-deputy/tsconfig/base.json",
   "compilerOptions": {
-    "types": [
-      "node",
-      "./src/types/early-return.d.cts",
-      "./src/types/eslint-comments.d.cts",
-      "./src/types/native-extensions.d.cts",
-      "./src/types/promises.d.cts"
-    ],
+    "types": ["node"],
     "skipLibCheck": false,
     "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json"
   },
