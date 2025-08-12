@@ -19,7 +19,8 @@
   - [x] Investigate `eslint-plugin-mdx` v `@eslint/markdown`
   - [ ] Add in `eslint-plugin-mdx` for Markdown
   - [ ] Spelling
-- [ ] Try `eslint-import-resolver-next`
+- [ ] [Migrate unrs-resolver back to oxc](https://github.com/unrs/unrs-resolver/issues/167)
+- [ ] Add in ESLint plugin domain
 - [ ] Documentation
   - [ ] SSR domains depend on browser and node domains
   - [ ] I skipped
@@ -28,5 +29,3 @@
     - [ ] React, Astro, playwright, Jest, etc.
 - [ ] Check that all domains are implemented, not just stubs.
 - [ ] Investigate size & speed lol
-
-- [x] File JJK issue about adding `jjk.path` setting
