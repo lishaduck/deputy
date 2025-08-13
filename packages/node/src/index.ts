@@ -27,8 +27,8 @@ export const node: Domain = {
 
       rules: {
         "n/no-deprecated-api": off, // We use @typescript-eslint/no-deprecated instead.
-        "n/no-extraneous-import": off, // Bundlers make these assumptions incorrect.
-        "n/no-extraneous-require": off, // Bundlers make these assumptions incorrect.
+        "n/no-extraneous-import": off, // We use `import-x` for this.
+        "n/no-extraneous-require": off, // We use `import-x` for this.
         "n/no-missing-import": off, // TypeScript handles this.
         "n/no-missing-require": off, // TypeScript handles this.
         "n/no-process-exit": off, // We use unicorn-x/no-process-exit instead.

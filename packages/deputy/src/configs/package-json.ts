@@ -18,6 +18,12 @@ export const packageJson = ({
       name: "deputy/package-json/handpicked",
       files: [GLOB_PACKAGE_JSON],
       plugins: { depend },
+      settings: {
+        packageJson: {
+          enforceForPrivate: true,
+        },
+      },
+
       rules: {
         // TODO: Move to `no-restricted-dependencies` once JoshuaKGoldberg/eslint-plugin-package-json#54 is resolved.
         "depend/ban-dependencies": error,
