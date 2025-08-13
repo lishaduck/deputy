@@ -14,7 +14,7 @@
     "lint": "eslint --flag=v10_config_lookup_from_file",
     "manypkg": "manypkg check",
     "merge-checks": "turbo run typecheck knip lint format:check manypkg typesync:check ts-references:check --continue=dependencies-successful",
-    "prepare": "turbo build",
+    "prepare": "turbo run typegen build",
     "ts-references:check": "update-ts-references --check",
     "ts-references:update": "update-ts-references",
     "typecheck": "tsc -b",
