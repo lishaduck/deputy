@@ -46,6 +46,18 @@
       "path": "packages/typegen"
     },
     {
+      "path": "packages/types___eslint-community__eslint-plugin-eslint-comments"
+    },
+    {
+      "path": "packages/types___regru__eslint-plugin-prefer-early-return"
+    },
+    {
+      "path": "packages/types__eslint-plugin-no-use-extend-native"
+    },
+    {
+      "path": "packages/types__eslint-plugin-promise"
+    },
+    {
       "path": "packages/vitest"
     }
   ]
