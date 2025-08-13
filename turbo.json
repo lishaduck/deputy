@@ -58,7 +58,8 @@
     },
     "//#typesync": {
       "inputs": [
-        "**/package.json"
+        "**/package.json",
+        ".typesyncrc"
       ]
     },
     "//#typesync:check": {
@@ -67,13 +68,22 @@
         ".typesyncrc"
       ]
     },
+    "//#ts-references:check": {
+      "inputs": [
+        "**/package.json",
+        "**/tsconfig.json"
+      ]
+    },
+    "//#ts-references:update": {
+      "inputs": [
+        "**/package.json",
+        "**/tsconfig.json"
+      ]
+    },
     "//#check-deduped-deps": {
       "inputs": [
         "pnpm-lock.yaml",
         ".pnpmfile.cjs"
-      ],
-      "outputs": [
-        "**/node_modules/"
       ]
     },
     "//#knip": {}
