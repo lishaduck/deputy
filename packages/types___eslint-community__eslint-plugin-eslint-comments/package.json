@@ -21,7 +21,7 @@
   "sideEffects": false,
   "type": "module",
   "exports": {
-    ".": {
+    "./configs": {
       "types": "./index.d.cts"
     }
   },
