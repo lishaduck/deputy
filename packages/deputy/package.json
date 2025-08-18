@@ -20,8 +20,8 @@
   "type": "module",
   "exports": {
     ".": {
-      "types": "./src/index.ts",
-      "default": "./src/index.ts"
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
     },
     "./use-at-your-own-risk": {
       "types": "./src/use-at-your-own-risk.ts",
@@ -32,6 +32,7 @@
     "dist/"
   ],
   "scripts": {
+    "build": "tsdown",
     "typecheck": "tsc",
     "typegen": "./scripts/typegen.ts"
   },
@@ -63,6 +64,7 @@
   },
   "devDependencies": {
     "@eslint-deputy/tsconfig": "workspace:*",
+    "@eslint-deputy/tsdown-config": "workspace:*",
     "@eslint-deputy/typegen": "workspace:*",
     "@types/confusing-browser-globals": "catalog:types",
     "@types/eslint-community__eslint-plugin-eslint-comments": "workspace:@eslint-deputy/types___eslint-community__eslint-plugin-eslint-comments@*",

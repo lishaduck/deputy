@@ -1,48 +1,34 @@
 {
-  "name": "@eslint-deputy/typegen",
+  "name": "@eslint-deputy/tsdown-config",
   "version": "0.1.0",
-  "description": "Magically type ESLint configurations",
-  "keywords": [
-    "eslint",
-    "eslint-deputy",
-    "typegen",
-    "codegen"
-  ],
-  "author": {
-    "name": "Eli"
-  },
+  "private": true,
+  "description": "Our correct bundler configuration",
   "sideEffects": false,
   "type": "module",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "default": "./dist/index.js"
+      "default": "./src/index.ts"
     }
   },
-  "files": [
-    "dist/"
-  ],
   "scripts": {
-    "build": "tsdown",
     "typecheck": "tsc"
-  },
-  "dependencies": {
-    "eslint-flat-config-utils": "catalog:",
-    "eslint-typegen": "catalog:"
   },
   "devDependencies": {
     "@arethetypeswrong/core": "catalog:dev",
     "@eslint-deputy/tsconfig": "workspace:*",
-    "@eslint-deputy/tsdown-config": "workspace:*",
     "@types/node": "catalog:types",
     "eslint": "catalog:dev",
+    "jiti": "catalog:dev",
     "publint": "catalog:dev",
     "tsdown": "catalog:dev",
     "typescript": "catalog:dev",
     "unplugin-unused": "catalog:dev"
   },
   "peerDependencies": {
-    "eslint": "catalog:peers"
+    "@arethetypeswrong/core": "catalog:dev",
+    "publint": "catalog:dev",
+    "tsdown": "catalog:dev",
+    "unplugin-unused": "catalog:dev"
   },
   "engines": {
     "node": "^20.19.0 || ^22.12.0 || >=24.0.0"

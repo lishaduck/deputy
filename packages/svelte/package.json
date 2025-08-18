@@ -18,6 +18,7 @@
     "dist/"
   ],
   "scripts": {
+    "build": "tsdown",
     "typecheck": "tsc",
     "typegen": "./scripts/typegen.ts"
   },
@@ -31,6 +32,7 @@
     "@arethetypeswrong/core": "catalog:dev",
     "@eslint-deputy/config": "workspace:*",
     "@eslint-deputy/tsconfig": "workspace:*",
+    "@eslint-deputy/tsdown-config": "workspace:*",
     "@eslint-deputy/typegen": "workspace:*",
     "@types/node": "catalog:types",
     "eslint": "catalog:dev",

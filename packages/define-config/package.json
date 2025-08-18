@@ -12,14 +12,15 @@
   "type": "module",
   "exports": {
     ".": {
-      "types": "./src/index.ts",
-      "default": "./src/index.ts"
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
     }
   },
   "files": [
     "dist/"
   ],
   "scripts": {
+    "build": "tsdown",
     "typecheck": "tsc"
   },
   "dependencies": {
@@ -28,6 +29,7 @@
   "devDependencies": {
     "@arethetypeswrong/core": "catalog:dev",
     "@eslint-deputy/tsconfig": "workspace:*",
+    "@eslint-deputy/tsdown-config": "workspace:*",
     "@types/node": "catalog:types",
     "eslint": "catalog:dev",
     "publint": "catalog:dev",

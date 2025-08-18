@@ -261,6 +261,9 @@ importers:
       '@eslint-deputy/tsconfig':
         specifier: workspace:*
         version: link:../tsconfig
+      '@eslint-deputy/tsdown-config':
+        specifier: workspace:*
+        version: link:../tsdown-config
       '@eslint-deputy/typegen':
         specifier: workspace:*
         version: link:../typegen
@@ -295,6 +298,9 @@ importers:
       '@eslint-deputy/tsconfig':
         specifier: workspace:*
         version: link:../tsconfig
+      '@eslint-deputy/tsdown-config':
+        specifier: workspace:*
+        version: link:../tsdown-config
       '@types/node':
         specifier: catalog:types
         version: 24.2.1
@@ -392,6 +398,9 @@ importers:
       '@eslint-deputy/tsconfig':
         specifier: workspace:*
         version: link:../tsconfig
+      '@eslint-deputy/tsdown-config':
+        specifier: workspace:*
+        version: link:../tsdown-config
       '@eslint-deputy/typegen':
         specifier: workspace:*
         version: link:../typegen
@@ -447,6 +456,9 @@ importers:
       '@eslint-deputy/tsconfig':
         specifier: workspace:*
         version: link:../tsconfig
+      '@eslint-deputy/tsdown-config':
+        specifier: workspace:*
+        version: link:../tsdown-config
       '@eslint-deputy/typegen':
         specifier: workspace:*
         version: link:../typegen
@@ -490,6 +502,9 @@ importers:
       '@eslint-deputy/tsconfig':
         specifier: workspace:*
         version: link:../tsconfig
+      '@eslint-deputy/tsdown-config':
+        specifier: workspace:*
+        version: link:../tsdown-config
       '@eslint-deputy/typegen':
         specifier: workspace:*
         version: link:../typegen
@@ -570,6 +585,9 @@ importers:
       '@eslint-deputy/tsconfig':
         specifier: workspace:*
         version: link:../tsconfig
+      '@eslint-deputy/tsdown-config':
+        specifier: workspace:*
+        version: link:../tsdown-config
       '@eslint-deputy/typegen':
         specifier: workspace:*
         version: link:../typegen
@@ -613,6 +631,9 @@ importers:
       '@eslint-deputy/tsconfig':
         specifier: workspace:*
         version: link:../tsconfig
+      '@eslint-deputy/tsdown-config':
+        specifier: workspace:*
+        version: link:../tsdown-config
       '@eslint-deputy/typegen':
         specifier: workspace:*
         version: link:../typegen
@@ -653,6 +674,9 @@ importers:
       '@eslint-deputy/tsconfig':
         specifier: workspace:*
         version: link:../tsconfig
+      '@eslint-deputy/tsdown-config':
+        specifier: workspace:*
+        version: link:../tsdown-config
       '@eslint-deputy/typegen':
         specifier: workspace:*
         version: link:../typegen
@@ -699,6 +723,9 @@ importers:
       '@eslint-deputy/tsconfig':
         specifier: workspace:*
         version: link:../tsconfig
+      '@eslint-deputy/tsdown-config':
+        specifier: workspace:*
+        version: link:../tsdown-config
       '@eslint-deputy/typegen':
         specifier: workspace:*
         version: link:../typegen
@@ -742,6 +769,9 @@ importers:
       '@eslint-deputy/tsconfig':
         specifier: workspace:*
         version: link:../tsconfig
+      '@eslint-deputy/tsdown-config':
+        specifier: workspace:*
+        version: link:../tsdown-config
       '@eslint-deputy/typegen':
         specifier: workspace:*
         version: link:../typegen
@@ -772,6 +802,36 @@ importers:
 
   packages/tsconfig: {}
 
+  packages/tsdown-config:
+    devDependencies:
+      '@arethetypeswrong/core':
+        specifier: catalog:dev
+        version: 0.18.2
+      '@eslint-deputy/tsconfig':
+        specifier: workspace:*
+        version: link:../tsconfig
+      '@types/node':
+        specifier: catalog:types
+        version: 24.2.1
+      eslint:
+        specifier: catalog:dev
+        version: 9.33.0(jiti@2.5.1)
+      jiti:
+        specifier: catalog:dev
+        version: 2.5.1
+      publint:
+        specifier: catalog:dev
+        version: 0.3.12
+      tsdown:
+        specifier: catalog:dev
+        version: 0.14.1(@arethetypeswrong/core@0.18.2)(oxc-resolver@11.3.0)(publint@0.3.12)(typescript@5.9.2)(unplugin-unused@0.5.1)
+      typescript:
+        specifier: catalog:dev
+        version: 5.9.2
+      unplugin-unused:
+        specifier: catalog:dev
+        version: 0.5.1
+
   packages/turbo:
     dependencies:
       '@eslint-deputy/define-config':
@@ -790,6 +850,9 @@ importers:
       '@eslint-deputy/tsconfig':
         specifier: workspace:*
         version: link:../tsconfig
+      '@eslint-deputy/tsdown-config':
+        specifier: workspace:*
+        version: link:../tsdown-config
       '@eslint-deputy/typegen':
         specifier: workspace:*
         version: link:../typegen
@@ -830,6 +893,9 @@ importers:
       '@eslint-deputy/tsconfig':
         specifier: workspace:*
         version: link:../tsconfig
+      '@eslint-deputy/tsdown-config':
+        specifier: workspace:*
+        version: link:../tsdown-config
       '@types/node':
         specifier: catalog:types
         version: 24.2.1
@@ -915,6 +981,9 @@ importers:
       '@eslint-deputy/tsconfig':
         specifier: workspace:*
         version: link:../tsconfig
+      '@eslint-deputy/tsdown-config':
+        specifier: workspace:*
+        version: link:../tsdown-config
       '@eslint-deputy/typegen':
         specifier: workspace:*
         version: link:../typegen

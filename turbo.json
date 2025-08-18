@@ -9,11 +9,16 @@
         "^topo"
       ]
     },
-    "build": {},
+    "build": {
+      "dependsOn": [
+        "typegen"
+      ]
+    },
     "//#lint": {},
     "typecheck": {
       "dependsOn": [
-        "^typecheck"
+        "^typecheck",
+        "typegen"
       ],
       "inputs": [
         "node_modules/.cache/tsbuildinfo/**",
@@ -86,6 +91,7 @@
         ".pnpmfile.cjs"
       ]
     },
-    "//#knip": {}
+    "//#knip:dev": {},
+    "//#knip:prod": {}
   }
 }
