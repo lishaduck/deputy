@@ -10,6 +10,9 @@
       ]
     },
     "build": {
+      "outputs": [
+        "dist/"
+      ],
       "dependsOn": [
         "typegen"
       ]
@@ -25,7 +28,11 @@
         "node_modules/.cache/tsbuildinfo.json"
       ]
     },
-    "typegen": {},
+    "typegen": {
+      "dependsOn": [
+        "^build"
+      ]
+    },
     "//#format": {
       "outputs": [
         "node_modules/.cache/prettier/**"

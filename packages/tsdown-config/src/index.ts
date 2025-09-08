@@ -8,7 +8,8 @@ const defaultConfig = {
   failOnWarn: true,
   publint: true,
   unused: {
-    ignore: ["@eslint-deputy/define-config"],
+    depKinds: ["dependencies"],
+    ignore: ["@eslint-deputy/define-config", "@types/node"],
   },
 } satisfies UserConfig;
 

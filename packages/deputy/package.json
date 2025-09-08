@@ -24,8 +24,8 @@
       "default": "./dist/index.js"
     },
     "./use-at-your-own-risk": {
-      "types": "./src/use-at-your-own-risk.ts",
-      "default": "./src/use-at-your-own-risk.ts"
+      "types": "./dist/use-at-your-own-risk.d.ts",
+      "default": "./dist/use-at-your-own-risk.js"
     }
   },
   "files": [

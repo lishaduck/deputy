@@ -10,6 +10,7 @@ verifyDepsBeforeRun: warn
 disallowWorkspaceCycles: true
 enableGlobalVirtualStore: true
 catalogMode: strict
+cleanupUnusedCatalogs: true
 
 ignoredBuiltDependencies:
   - esbuild
@@ -115,7 +116,7 @@ catalogs:
     eslint-plugin-sonarjs: ^3.0.4
     eslint-plugin-svelte: ^3.11.0
     eslint-plugin-tsdoc: ^0.4.0
-    eslint-plugin-turbo: ^2.5.5
+    eslint-plugin-turbo: ^2.5.6
     eslint-plugin-unicorn-x: ^3.2.1
     typescript-eslint: ^8.39.1
 
@@ -146,11 +147,11 @@ catalogs:
     publint: ^0.3.12
     svelte: ^5.38.1
     tailwindcss: ^4.1.11
-    tsdown: ^0.14.1
-    turbo: ^2.5.5
+    tsdown: ^0.14.2
+    turbo: ^2.5.6
     typescript: ~5.9.2
     typesync: ^0.14.3
-    unplugin-unused: ^0.5.1
+    unplugin-unused: ^0.5.2
     update-ts-references: ^3.6.2
 
   types:
