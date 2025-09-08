@@ -58,9 +58,7 @@
     "eslint-plugin-tsdoc": "catalog:plugins",
     "eslint-plugin-unicorn-x": "catalog:plugins",
     "globals": "catalog:",
-    "jsonc-eslint-parser": "catalog:parsers",
-    "typescript-eslint": "catalog:plugins",
-    "yaml-eslint-parser": "catalog:parsers"
+    "typescript-eslint": "catalog:plugins"
   },
   "devDependencies": {
     "@eslint-deputy/tsconfig": "workspace:*",
@@ -73,7 +71,6 @@
     "@types/node": "catalog:types",
     "@types/regru__eslint-plugin-prefer-early-return": "workspace:@eslint-deputy/types___regru__eslint-plugin-prefer-early-return@*",
     "eslint": "catalog:dev",
-    "jiti": "catalog:dev",
     "tsdown": "catalog:dev",
     "typescript": "catalog:dev",
     "unplugin-unused": "catalog:dev"

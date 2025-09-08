@@ -27,7 +27,6 @@ export const packageJson = ({
       rules: {
         // TODO: Move to `no-restricted-dependencies` once JoshuaKGoldberg/eslint-plugin-package-json#54 is resolved.
         "depend/ban-dependencies": error,
-        "package-json/no-redundant-files": error,
         // "package-json/require-bugs": error,
         // "package-json/require-devEngines": error,
         // "package-json/require-homepage": error,

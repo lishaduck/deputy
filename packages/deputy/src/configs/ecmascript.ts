@@ -74,6 +74,7 @@ const coreHandpicked: TypedRules = {
   "prefer-object-has-own": error,
   "prefer-object-spread": error,
   "prefer-template": error,
+  "preserve-caught-error": warn,
   "require-atomic-updates": error,
   strict: [warn, "safe"],
 
@@ -213,11 +214,12 @@ export const ecmascript = ({
       files: [fileGlobs.ecma],
       extends: [
         { ...js.configs.recommended, name: "eslint/recommended" },
-        ts.configs.strictTypeChecked as Linter.Config[],
+        ts.configs.strictTypeChecked,
 
         // `strictTypeChecked` already includes `base` and `eslintRecommended`
         // This is an implementation detail, so be careful when upgrading.
-        ts.configs.stylisticTypeChecked[2] as Linter.Config,
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion -- It works. Hopefully.
+        ts.configs.stylisticTypeChecked[2]!,
       ],
 
       languageOptions: {

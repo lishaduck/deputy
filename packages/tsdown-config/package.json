@@ -17,8 +17,6 @@
     "@arethetypeswrong/core": "catalog:dev",
     "@eslint-deputy/tsconfig": "workspace:*",
     "@types/node": "catalog:types",
-    "eslint": "catalog:dev",
-    "jiti": "catalog:dev",
     "publint": "catalog:dev",
     "tsdown": "catalog:dev",
     "typescript": "catalog:dev",

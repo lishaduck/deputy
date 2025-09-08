@@ -40,7 +40,6 @@
     "@eslint-deputy/typegen": "workspace:*",
     "@types/node": "catalog:types",
     "eslint": "catalog:dev",
-    "jiti": "catalog:dev",
     "publint": "catalog:dev",
     "tailwindcss": "catalog:dev",
     "tsdown": "catalog:dev",

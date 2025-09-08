@@ -5,27 +5,24 @@ export default {
     type: true,
     interface: true,
   },
-  includeEntryExports: true,
   treatConfigHintsAsErrors: true,
 
   workspaces: {
-    ".": {
-      entry: ["node-modules-inspector.config.ts"],
+    "packages/*": {
+      project: ["src/**/*.ts!", "!scripts/*.ts!"],
     },
 
-    // Ignore `@types/*` packages.
-    "packages/types___eslint-community__eslint-plugin-eslint-comments": {
-      includeEntryExports: false,
+    "packages/deputy": {
+      ignoreDependencies: ["@types/node"],
+      project: ["src/**/*.ts!", "!scripts/*.ts!"],
     },
-    "packages/types___regru__eslint-plugin-prefer-early-return": {
-      includeEntryExports: false,
+
+    "packages/tsconfig": {
+      project: ["base.json"],
     },
-    "packages/types__eslint-plugin-no-use-extend-native": {
-      includeEntryExports: false,
-    },
-    "packages/types__eslint-plugin-promise": {
-      includeEntryExports: false,
-    },
+
+    // Revert `@types/*` packages' project glob.
+    "packages/types__*": {},
   },
 
   ignoreDependencies: [

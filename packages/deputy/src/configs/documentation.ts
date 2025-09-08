@@ -65,8 +65,7 @@ const exampleDisables: TypedRules = {
   ...ts.configs.disableTypeChecked.rules,
 };
 
-// Enabling this breaks ESLint fixes.
-function _examples(fileGlobs: GlobBag): Linter.Config[] {
+function examples(fileGlobs: GlobBag): Linter.Config[] {
   return [
     {
       name: "deputy/docs/examples/setup",
@@ -166,5 +165,5 @@ export const documentation = ({
       rules: handpicked,
     },
 
-    // ...examples(fileGlobs),
+    ...examples(fileGlobs),
   );
