@@ -1,5 +1,6 @@
 import type { ESLint } from "eslint";
-import { createNodeResolver, importX } from "eslint-plugin-import-x";
+import { createTypeScriptImportResolver } from "eslint-import-resolver-typescript";
+import { importX } from "eslint-plugin-import-x";
 
 import { type Domain, error, off, warn } from "@eslint-deputy/config";
 
@@ -13,7 +14,8 @@ export const imports: Domain = {
       settings: {
         "import-x/internal-regex": options.internalPattern,
         "import-x/resolver-next": [
-          createNodeResolver({
+          createTypeScriptImportResolver({
+            alwaysTryTypes: true,
             extensions: [...options.extensions.ecma, ".json", ".node"],
           }),
         ],

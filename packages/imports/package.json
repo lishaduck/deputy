@@ -32,6 +32,7 @@
   },
   "dependencies": {
     "@eslint-deputy/define-config": "workspace:*",
+    "eslint-import-resolver-typescript": "catalog:",
     "eslint-plugin-import-x": "catalog:plugins"
   },
   "devDependencies": {

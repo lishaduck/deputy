@@ -6,7 +6,7 @@ import { defineConfig } from "@eslint-deputy/define-config";
 
 import type { DeputyConfigOptions } from "../options.ts";
 import { off, warn } from "../severity.ts";
-import type { PerfectionistSortObjects } from "../typegen.js";
+import type { PerfectionistSortObjects } from "../typegen.d.ts";
 
 // See azat-io/eslint-plugin-perfectionist#546.
 const importAlphabet = Alphabet.generateRecommendedAlphabet()

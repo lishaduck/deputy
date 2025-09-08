@@ -7,7 +7,7 @@ import type globals from "globals";
 
 import type { RulesRecord } from "@eslint-deputy/define-config";
 
-import type { TypescriptEslintNoDeprecated } from "./typegen.js";
+import type { TypescriptEslintNoDeprecated } from "./typegen.d.ts";
 
 export interface DeputyOptions {
   readonly allowDefaultProject?: string[] | undefined;

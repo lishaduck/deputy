@@ -10,7 +10,6 @@ verifyDepsBeforeRun: warn
 disallowWorkspaceCycles: true
 enableGlobalVirtualStore: true
 catalogMode: strict
-cleanupUnusedCatalogs: true
 
 ignoredBuiltDependencies:
   - esbuild
@@ -79,6 +78,7 @@ catalog:
   ci-info: ^4.3.0
   defu: ^6.1.4
   eslint-flat-config-utils: ^2.1.1
+  eslint-import-resolver-typescript: ^4.4.4
   eslint-typegen: ^2.3.0
   globals: ^16.3.0
 
