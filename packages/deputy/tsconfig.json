@@ -10,6 +10,9 @@
       "path": "../define-config"
     },
     {
+      "path": "../tsdown-config"
+    },
+    {
       "path": "../typegen"
     }
   ]

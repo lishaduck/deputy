@@ -12,6 +12,9 @@
       "path": "../deputy"
     },
     {
+      "path": "../tsdown-config"
+    },
+    {
       "path": "../typegen"
     }
   ]

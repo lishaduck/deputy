@@ -40,6 +40,9 @@
       "path": "packages/tailwind"
     },
     {
+      "path": "packages/tsdown-config"
+    },
+    {
       "path": "packages/turbo"
     },
     {

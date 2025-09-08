@@ -3,5 +3,10 @@
   "compilerOptions": {
     "types": ["node"],
     "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json"
-  }
+  },
+  "references": [
+    {
+      "path": "../tsdown-config"
+    }
+  ]
 }
