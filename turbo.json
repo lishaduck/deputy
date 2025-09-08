@@ -18,11 +18,8 @@
       ]
     },
     "//#lint": {},
-    "typecheck": {
-      "dependsOn": [
-        "^typecheck",
-        "typegen"
-      ],
+    "//#typecheck": {
+      "dependsOn": [],
       "inputs": [
         "node_modules/.cache/tsbuildinfo/**",
         "node_modules/.cache/tsbuildinfo.json"

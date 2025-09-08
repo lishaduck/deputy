@@ -32,8 +32,8 @@ export const config = ({
     environment: { type },
     internalPattern: "^@eslint-deputy/",
     rootDir,
-    skipHeavyRules: !ci.isCI,
     ruleConfigurations,
+    skipHeavyRules: !ci.isCI,
   }).append(
     globalIgnores(["**/typegen.d.ts"], "Nobody ever did care 'bout typegen"),
   );

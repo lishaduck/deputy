@@ -2,8 +2,7 @@
   "extends": "@eslint-deputy/tsconfig/base.json",
   "compilerOptions": {
     "types": ["node"],
-    "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json",
-    "skipLibCheck": false
+    "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json"
   },
   "include": ["index.d.cts", "*.config.ts"]
 }
