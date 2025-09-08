@@ -6,6 +6,6 @@ interface Plugin extends ESLint.Plugin {
   };
 }
 
-declare const Plugin: Plugin;
+declare const plugin: Plugin;
 
-export = Plugin;
+export = plugin;

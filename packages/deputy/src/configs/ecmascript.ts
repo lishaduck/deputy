@@ -178,6 +178,96 @@ const tseslintHandpicked: TypedRules = {
   "@typescript-eslint/no-require-imports": off, // We use unicorn-x/prefer-module instead.
 };
 
+const namingConvention: TypedRules = {
+  "@typescript-eslint/naming-convention": [
+    2,
+    {
+      selector: "default",
+
+      format: ["camelCase"],
+
+      leadingUnderscore: "forbid",
+      trailingUnderscore: "forbid",
+    },
+    {
+      selector: "default",
+
+      format: ["camelCase"],
+      modifiers: ["exported"],
+
+      leadingUnderscore: "allow",
+      trailingUnderscore: "forbid",
+    },
+    {
+      selector: "variable",
+      types: ["string", "number"],
+
+      format: ["camelCase", "UPPER_CASE"],
+      modifiers: ["const"],
+
+      leadingUnderscore: "forbid",
+      trailingUnderscore: "forbid",
+    },
+    {
+      selector: "objectLiteralProperty",
+
+      format: null,
+
+      leadingUnderscore: "allowSingleOrDouble",
+      trailingUnderscore: "forbid",
+    },
+    {
+      selector: "typeLike",
+
+      format: ["PascalCase"],
+
+      leadingUnderscore: "forbid",
+      trailingUnderscore: "forbid",
+    },
+    // https://typescript-eslint.io/rules/naming-convention/#enforce-that-boolean-variables-are-prefixed-with-an-allowed-verb
+    {
+      selector: "variable",
+      types: ["boolean"],
+
+      format: ["PascalCase"],
+      prefix: ["is", "are", "has", "should", "can"],
+
+      leadingUnderscore: "forbid",
+      trailingUnderscore: "forbid",
+    },
+    // https://typescript-eslint.io/rules/naming-convention/#enforce-that-interface-names-do-not-begin-with-an-i
+    {
+      selector: "interface",
+
+      format: ["PascalCase"],
+
+      custom: {
+        match: false,
+        regex: "^I[A-Z]",
+      },
+    },
+    {
+      selector: "parameter",
+
+      format: ["camelCase"],
+
+      leadingUnderscore: "allow",
+    },
+    {
+      selector: "variable",
+
+      modifiers: ["destructured"],
+
+      format: null,
+    },
+    {
+      selector: "typeProperty",
+
+      format: null,
+    },
+  ],
+};
+
 const stylisticHandpicked: TypedRules = {
   "@stylistic/padding-line-between-statements": [
     error,
@@ -250,6 +340,11 @@ export const ecmascript = ({
       name: "deputy/es/ts/handpicked",
       files: [fileGlobs.ecma],
       rules: tseslintHandpicked,
+    },
+    {
+      name: "deputy/es/naming",
+      files: [fileGlobs.ecma],
+      rules: namingConvention,
     },
     {
       name: "deputy/es/stylistic/handpicked",

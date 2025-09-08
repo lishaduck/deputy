@@ -1,6 +1,6 @@
 # TODO
 
-- [ ] Add in Sheriff rules
+- [x] Add in Sheriff rules
 - [x] Add in lintroll rules
 - [ ] Add in szxx rules
   - [x] What is `local-pkg` for?
