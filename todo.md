@@ -2,9 +2,9 @@
 
 - [x] Add in Sheriff rules
 - [x] Add in lintroll rules
-- [ ] Add in szxx rules
+- [x] Add in szxx rules
   - [x] What is `local-pkg` for?
-- [ ] Add in CTA rules
+- [x] Add in CTA rules
 - [ ] Add in antfu rules
 - [x] Add in psdtools rules
 - [x] Add in elm-review rules

@@ -70,7 +70,11 @@ const coreHandpicked: TypedRules = {
   "no-void": [error, { allowAsStatement: true }],
   "object-shorthand": error,
   "operator-assignment": [error, "always"],
-  "prefer-arrow-callback": error,
+  "prefer-arrow-callback": [
+    error,
+    { allowNamedFunctions: false, allowUnboundThis: true },
+  ],
+  "prefer-exponentiation-operator": warn,
   "prefer-object-has-own": error,
   "prefer-object-spread": error,
   "prefer-template": error,
