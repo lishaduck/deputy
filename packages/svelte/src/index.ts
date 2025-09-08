@@ -10,6 +10,7 @@ export const svelte = (svelteConfig: SvelteConfig): Domain => ({
   additionalExtensions: [
     {
       extension: ".svelte",
+
       executable: true,
       moduleSystem: "ambiguous",
       types: true,

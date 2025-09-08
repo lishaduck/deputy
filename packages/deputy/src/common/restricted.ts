@@ -1,5 +1,5 @@
-import type { RuleConfig as PropertiesRuleConfig } from "eslint-no-restricted/properties";
 import type { RuleConfig as GlobalsRuleConfig } from "eslint-no-restricted/globals";
+import type { RuleConfig as PropertiesRuleConfig } from "eslint-no-restricted/properties";
 import type { RuleConfig as SyntaxRuleConfig } from "eslint-no-restricted/syntax";
 
 // TODO: Move this to a separate package.
