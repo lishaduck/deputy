@@ -229,6 +229,14 @@ const namingConvention: TypedRules = {
       trailingUnderscore: "forbid",
     },
     // https://typescript-eslint.io/rules/naming-convention/#enforce-that-boolean-variables-are-prefixed-with-an-allowed-verb
+    // Ensure destructured boolean variables keep original names (no prefix enforcement).
+    {
+      selector: "variable",
+      modifiers: ["destructured"],
+      types: ["boolean"],
+
+      format: null,
+    },
     {
       selector: "variable",
       types: ["boolean"],
@@ -238,13 +246,6 @@ const namingConvention: TypedRules = {
 
       leadingUnderscore: "forbid",
       trailingUnderscore: "forbid",
-    },
-    // https://typescript-eslint.io/rules/naming-convention/#ignore-destructured-names
-    {
-      selector: "variable",
-      modifiers: ["destructured"],
-
-      format: null,
     },
     // https://typescript-eslint.io/rules/naming-convention/#enforce-that-interface-names-do-not-begin-with-an-i
     {
@@ -264,6 +265,7 @@ const namingConvention: TypedRules = {
 
       leadingUnderscore: "allow",
     },
+    // https://typescript-eslint.io/rules/naming-convention/#ignore-destructured-names
     {
       selector: "variable",
       modifiers: ["destructured"],
