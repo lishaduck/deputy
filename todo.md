@@ -19,6 +19,7 @@
   - [x] Investigate `eslint-plugin-mdx` v `@eslint/markdown`
   - [ ] Add in `eslint-plugin-mdx` for Markdown
   - [ ] Spelling
+- [ ] Move JSDoc & Perfectionist to their own domains
 - [ ] [Migrate unrs-resolver back to oxc](https://github.com/unrs/unrs-resolver/issues/167)
 - [ ] Add in ESLint plugin domain
 - [ ] Documentation

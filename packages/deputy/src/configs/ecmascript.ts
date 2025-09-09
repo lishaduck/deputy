@@ -184,7 +184,7 @@ const tseslintHandpicked: TypedRules = {
 
 const namingConvention: TypedRules = {
   "@typescript-eslint/naming-convention": [
-    2,
+    warn,
     {
       selector: "default",
 
@@ -195,19 +195,19 @@ const namingConvention: TypedRules = {
     },
     {
       selector: "default",
+      modifiers: ["exported"],
 
       format: ["camelCase"],
-      modifiers: ["exported"],
 
       leadingUnderscore: "allow",
       trailingUnderscore: "forbid",
     },
     {
       selector: "variable",
+      modifiers: ["const"],
       types: ["string", "number"],
 
       format: ["camelCase", "UPPER_CASE"],
-      modifiers: ["const"],
 
       leadingUnderscore: "forbid",
       trailingUnderscore: "forbid",
@@ -239,6 +239,13 @@ const namingConvention: TypedRules = {
       leadingUnderscore: "forbid",
       trailingUnderscore: "forbid",
     },
+    // https://typescript-eslint.io/rules/naming-convention/#ignore-destructured-names
+    {
+      selector: "variable",
+      modifiers: ["destructured"],
+
+      format: null,
+    },
     // https://typescript-eslint.io/rules/naming-convention/#enforce-that-interface-names-do-not-begin-with-an-i
     {
       selector: "interface",
@@ -259,7 +266,6 @@ const namingConvention: TypedRules = {
     },
     {
       selector: "variable",
-
       modifiers: ["destructured"],
 
       format: null,

@@ -42,12 +42,17 @@ const objectSort: PerfectionistSortObjects = [
       {
         groupName: "group",
         selector: "property",
-        elementNamePattern: "^(?:group)$",
+        elementNamePattern: "^(?:group|groupName)$",
       },
       {
         groupName: "files",
         selector: "property",
         elementNamePattern: "^(?:files)$",
+      },
+      {
+        groupName: "selector",
+        selector: "property",
+        elementNamePattern: "^(?:selector)$",
       },
 
       // Footers
@@ -74,6 +79,7 @@ const objectSort: PerfectionistSortObjects = [
       "type",
       "group",
       "files",
+      "selector",
       "unknown",
       "previous",
       "next",

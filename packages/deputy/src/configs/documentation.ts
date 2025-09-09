@@ -15,7 +15,6 @@ const handpicked: TypedRules = {
     error,
     { checkDestructured: false, enableFixer: false },
   ],
-  "jsdoc/check-tag-names": [error, { jsxTags: true }],
   "jsdoc/require-description": warn,
   "jsdoc/require-description-complete-sentence": warn,
   "jsdoc/require-hyphen-before-param-description": [
@@ -135,6 +134,8 @@ export const documentation = ({
         jsdoc.configs["flat/logical-typescript-flavor"],
         jsdoc.configs["flat/requirements-typescript-flavor"],
       ],
+
+      rules: { "jsdoc/check-tag-names": [error, { jsxTags: true }] },
     },
     {
       name: "deputy/docs/ts",
