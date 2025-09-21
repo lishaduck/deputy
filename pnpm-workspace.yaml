@@ -133,7 +133,7 @@ catalogs:
     "@prettier/plugin-oxc": ^0.0.4
     eslint: ^9.35.0
     jiti: ^2.5.1
-    knip: ^5.63.1
+    knip: https://pkg.pr.new/knip@06d4df8
     node-modules-inspector: ^1.1.1
     prettier: ^3.6.2
     publint: ^0.3.12

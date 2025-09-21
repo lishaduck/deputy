@@ -1,9 +1,4 @@
-import process from "node:process";
-
 import type { KnipConfig } from "knip";
-
-const isProductionMode =
-  process.argv.includes("--production") || process.argv.includes("--strict");
 
 export default {
   ignoreExportsUsedInFile: {
@@ -23,11 +18,11 @@ export default {
     },
 
     "packages/define-config": {
-      ignoreDependencies: isProductionMode ? ["eslint"] : [],
+      ignoreDependencies: ["eslint!"],
       project: ["src/**/*.ts!", "!scripts/*.ts!"],
     },
     "packages/svelte": {
-      ignoreDependencies: isProductionMode ? ["svelte-eslint-parser"] : [],
+      ignoreDependencies: ["svelte-eslint-parser!"],
       project: ["src/**/*.ts!", "!scripts/*.ts!"],
     },
 
@@ -37,7 +32,7 @@ export default {
 
     // Revert `@types/*` packages' project glob.
     "packages/types__*": {
-      ignoreDependencies: isProductionMode ? ["eslint"] : [],
+      ignoreDependencies: ["eslint!"],
     },
   },
 
