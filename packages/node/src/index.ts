@@ -63,6 +63,17 @@ export const node: Domain = {
       },
     },
 
+    {
+      name: "deputy-node/configurations",
+      files: [options.fileGlobs.configs],
+
+      rules: {
+        "n/no-unsupported-features/es-builtins": off,
+        "n/no-unsupported-features/es-syntax": off,
+        "n/no-unsupported-features/node-builtins": off,
+      },
+    },
+
     { ...security.configs.recommended, files: [options.fileGlobs.ecma] },
   ],
 };

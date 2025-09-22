@@ -30,6 +30,15 @@ const handpicked: TypedRules = {
 
 const exampleDisables: TypedRules = {
   // "always" newline rule at end unlikely in sample code
+  "@stylistic/eol-last": 0,
+  // Often wish to start `@example` code after newline; also may use
+  //   empty lines for spacing
+  "@stylistic/no-multiple-empty-lines": 0,
+
+  // Can generally look nicer to pad a little even if code imposes more stringency
+  "@stylistic/padded-blocks": 0,
+
+  // "always" newline rule at end unlikely in sample code
   "eol-last": off,
 
   // Wouldn't generally expect example paths to resolve relative to JS file
@@ -41,6 +50,11 @@ const exampleDisables: TypedRules = {
 
   // The end of a multiline comment would end the comment the example is in.
   "jsdoc/require-jsdoc": off,
+
+  // See import/no-unresolved
+  "n/no-missing-import": 0,
+
+  "n/no-missing-require": 0,
 
   // Unlikely to have inadvertent debugging within examples
   "no-console": off,
