@@ -2,10 +2,11 @@ import type { UserConfig } from "tsdown";
 
 const defaultConfig = {
   attw: {
-    profile: "esmOnly",
+    profile: "esm-only",
   },
   dts: true,
   failOnWarn: true,
+  fixedExtension: false,
   publint: true,
   unused: {
     depKinds: ["dependencies"],
@@ -24,12 +25,17 @@ const defaultConfig = {
  * export default tsdownConfig();
  * ```
  */
-export function tsdownConfig(userConfig?: UserConfig): UserConfig {
+export function tsdownConfig(
+  userConfig?: UserConfig | UserConfig[],
+): UserConfig | UserConfig[] {
   if (Array.isArray(userConfig)) {
-    return userConfig.map((config) => ({
-      ...defaultConfig,
-      ...config,
-    }));
+    return userConfig.map(
+      (config) =>
+        ({
+          ...defaultConfig,
+          ...config,
+        }) satisfies UserConfig,
+    );
   }
 
   return {
@@ -38,4 +44,4 @@ export function tsdownConfig(userConfig?: UserConfig): UserConfig {
   };
 }
 
-export type { UserConfig } from "tsdown";
+export type { UserConfigExport } from "tsdown";

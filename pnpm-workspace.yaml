@@ -139,7 +139,7 @@ catalogs:
     publint: ^0.3.13
     svelte: ^5.39.5
     tailwindcss: ^4.1.13
-    tsdown: ^0.15.4
+    tsdown: ^0.19.0-beta.5
     turbo: ^2.5.7
     typescript: ~5.9.2
     typesync: ^0.14.3
