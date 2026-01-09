@@ -8,6 +8,7 @@
     "deputy-domain",
     "codemod"
   ],
+  "license": "UPL-1.0",
   "author": {
     "name": "Eli"
   },

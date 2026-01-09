@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "description": "Our strict TypeScript configuration",
+  "license": "UPL-1.0",
   "type": "module",
   "exports": {
     "./base.json": "./base.json"

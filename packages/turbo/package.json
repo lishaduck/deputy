@@ -9,6 +9,7 @@
     "turbo",
     "turborepo"
   ],
+  "license": "UPL-1.0",
   "author": {
     "name": "Eli"
   },

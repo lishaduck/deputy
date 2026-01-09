@@ -11,12 +11,15 @@ export const restricted = ({
   ruleConfigurations: { restricted: restrictedConfig },
 }: DeputyConfigOptions): Linter.Config[] => {
   const noRestrictedGlobals = createNoRestrictedGlobals(
+    "no-restricted-globals",
     ...restrictedConfig.globals,
   );
   const noRestrictedProperties = createNoRestrictedProperties(
+    "no-restricted-properties",
     ...restrictedConfig.properties,
   );
   const noRestrictedSyntax = createNoRestrictedSyntax(
+    "no-restricted-syntax",
     ...restrictedConfig.syntax,
   );
 

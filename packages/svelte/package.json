@@ -9,6 +9,7 @@
     "svelte",
     "sveltejs"
   ],
+  "license": "UPL-1.0",
   "author": {
     "name": "Eli"
   },

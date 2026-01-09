@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "description": "Our internal Deputy config.",
+  "license": "UPL-1.0",
   "sideEffects": false,
   "type": "module",
   "exports": {

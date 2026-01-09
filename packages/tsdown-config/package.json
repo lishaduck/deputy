@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "description": "Our correct bundler configuration",
+  "license": "UPL-1.0",
   "sideEffects": false,
   "type": "module",
   "exports": {

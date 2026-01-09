@@ -9,6 +9,7 @@
     "node",
     "nodejs"
   ],
+  "license": "UPL-1.0",
   "author": {
     "name": "Eli"
   },

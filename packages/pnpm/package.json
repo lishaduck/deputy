@@ -8,6 +8,7 @@
     "deputy-domain",
     "pnpm"
   ],
+  "license": "UPL-1.0",
   "author": {
     "name": "Eli"
   },
