@@ -90,7 +90,7 @@ function examples(fileGlobs: GlobBag): Linter.Config[] {
           checkParams: true,
           checkProperties: true,
 
-          parser: ts.parser as Linter.Parser,
+          parser: ts.parser,
         }),
       },
       processor: "examples/examples",
