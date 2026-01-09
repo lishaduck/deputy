@@ -1,20 +1,35 @@
 hoist: false
+hoistPattern: []
 strictPeerDependencies: true
 autoInstallPeers: false
 strictDepBuilds: true
 shellEmulator: true
 engineStrict: true
+resolutionMode: lowest-direct
 nodeVersion: "20.19.0"
 ignorePatchFailures: false
-verifyDepsBeforeRun: warn
+verifyDepsBeforeRun: install
 disallowWorkspaceCycles: true
 enableGlobalVirtualStore: true
 catalogMode: strict
 
-ignoredBuiltDependencies:
-  - esbuild
-  - oxc-resolver
-  - unrs-resolver
+enablePrePostScripts: false
+blockExoticSubdeps: true
+minimumReleaseAge: 1440
+minimumReleaseAgeExclude:
+  - "@es-joy/jsdoccomment@0.79.0"
+  - eslint-plugin-jsdoc@62.0.0
+  - eslint-plugin-perfectionist@5.3.1
+  - knip@5.80.1
+
+trustPolicy: "no-downgrade"
+trustPolicyExclude:
+  - chokidar@4.0.3
+
+allowBuilds:
+  esbuild@0.27.2: true
+  oxc-resolver@11.16.2: false
+  unrs-resolver@1.9.2: false
 
 overrides:
   "@types/eslint": "-"
@@ -98,7 +113,7 @@ catalogs:
     eslint-plugin-command: ^3.4.0
     eslint-plugin-depend: ^1.4.0
     eslint-plugin-import-x: ^4.16.1
-    eslint-plugin-jsdoc: ^61.7.1
+    eslint-plugin-jsdoc: ^62.0.0
     eslint-plugin-n: ^17.23.1
     eslint-plugin-no-use-extend-native: ^0.7.2
     eslint-plugin-package-json: ^0.88.1

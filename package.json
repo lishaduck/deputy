@@ -54,7 +54,8 @@
     },
     "packageManager": {
       "name": "pnpm",
-      "onFail": "error"
+      "onFail": "error",
+      "version": "^10.27.0"
     }
   }
 }

@@ -3,6 +3,9 @@
   "globalDependencies": [
     "pnpm-workspace.yaml"
   ],
+  "globalPassThroughEnv": [
+    "pnpm_config_*"
+  ],
   "tasks": {
     "topo": {
       "dependsOn": [
