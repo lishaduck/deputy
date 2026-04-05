@@ -91,7 +91,7 @@ packages:
 catalog:
   "@eslint/config-helpers": ^0.4.2
   ci-info: ^4.3.1
-  defu: ^6.1.4
+  defu: ^6.1.5
   eslint-flat-config-utils: ^2.1.4
   eslint-import-resolver-typescript: ^4.4.4
   eslint-typegen: ^2.3.0
