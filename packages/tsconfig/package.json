@@ -1,0 +1,14 @@
+{
+  "name": "@eslint-deputy/tsconfig",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Our strict TypeScript configuration",
+  "license": "UPL-1.0",
+  "type": "module",
+  "exports": {
+    "./base.json": "./base.json"
+  },
+  "engines": {
+    "node": "^20.19.0 || ^22.12.0 || >=24.0.0"
+  }
+}

@@ -1,0 +1,168 @@
+hoist: false
+hoistPattern: []
+strictPeerDependencies: true
+autoInstallPeers: false
+strictDepBuilds: true
+shellEmulator: true
+engineStrict: true
+resolutionMode: lowest-direct
+nodeVersion: "20.19.0"
+ignorePatchFailures: false
+verifyDepsBeforeRun: install
+disallowWorkspaceCycles: true
+enableGlobalVirtualStore: true
+catalogMode: strict
+
+enablePrePostScripts: false
+blockExoticSubdeps: true
+minimumReleaseAge: 1440
+minimumReleaseAgeExclude:
+  - "@es-joy/jsdoccomment@0.79.0"
+  - eslint-plugin-jsdoc@62.0.0
+  - eslint-plugin-perfectionist@5.3.1
+  - knip@5.80.1
+
+trustPolicy: "no-downgrade"
+trustPolicyExclude:
+  - chokidar@4.0.3
+
+allowBuilds:
+  esbuild@0.27.2: true
+  oxc-resolver@11.16.2: false
+  unrs-resolver@1.9.2: false
+
+overrides:
+  "@types/eslint": "-"
+
+packageExtensions:
+  "@es-joy/jsdoccomment":
+    peerDependencies:
+      eslint: ^9.0.0
+
+  "@eslint/config-helpers":
+    peerDependencies:
+      eslint: ^9.0.0
+
+  "@eslint/js":
+    peerDependencies:
+      eslint: ^9.0.0
+
+  "@types/eslint-plugin-security":
+    peerDependencies:
+      eslint: ^9.0.0
+
+  eslint-flat-config-utils:
+    peerDependencies:
+      eslint: ^9.0.0
+
+  eslint-import-context:
+    peerDependencies:
+      "@typescript-eslint/utils": ^8.0.0
+    dependencies:
+      type-fest: ^4.40.0
+
+  eslint-plugin-depend:
+    peerDependencies:
+      eslint: ^9.0.0
+
+  eslint-plugin-import-x:
+    peerDependencies:
+      "@typescript-eslint/scope-manager": ^8.0.0
+      eslint: ^9.0.0
+    dependencies:
+      type-fest: ^4.40.0
+
+  eslint-plugin-package-json:
+    dependencies:
+      "@types/estree": ^1.0.6
+
+  eslint-plugin-regexp:
+    dependencies:
+      "@types/estree": ^1.0.6
+      "@types/json-schema": ^7.0.15
+
+  eslint-plugin-tsdoc:
+    peerDependencies:
+      eslint: ^9.0.0
+
+packages:
+  - packages/*
+
+catalog:
+  "@eslint/config-helpers": ^0.4.2
+  ci-info: ^4.3.1
+  defu: ^6.1.5
+  eslint-flat-config-utils: ^2.1.4
+  eslint-import-resolver-typescript: ^4.4.4
+  eslint-typegen: ^2.3.0
+  globals: ^17.0.0
+
+catalogs:
+  plugins:
+    "@eslint-community/eslint-plugin-eslint-comments": ^4.5.0
+    "@eslint/js": ^9.39.2
+    "@html-eslint/eslint-plugin": ^0.52.1
+    "@regru/eslint-plugin-prefer-early-return": ^1.0.0
+    "@stylistic/eslint-plugin": ^5.6.1
+    "@vitest/eslint-plugin": ^1.6.6
+    confusing-browser-globals: ^1.0.11
+    eslint-config-flat-gitignore: ^2.1.0
+    eslint-no-restricted: ^0.0.10
+    eslint-plugin-better-tailwindcss: ^3.8.0
+    eslint-plugin-de-morgan: ^2.0.0
+    eslint-plugin-command: ^3.4.0
+    eslint-plugin-depend: ^1.4.0
+    eslint-plugin-import-x: ^4.16.1
+    eslint-plugin-jsdoc: ^62.0.0
+    eslint-plugin-n: ^17.23.1
+    eslint-plugin-no-use-extend-native: ^0.7.2
+    eslint-plugin-package-json: ^0.88.1
+    eslint-plugin-perfectionist: ^5.3.1
+    eslint-plugin-pnpm: ^1.4.3
+    eslint-plugin-promise: ^7.2.1
+    eslint-plugin-regexp: ^2.10.0
+    eslint-plugin-security: ^3.0.1
+    eslint-plugin-sonarjs: ^3.0.5
+    eslint-plugin-svelte: ^3.14.0
+    eslint-plugin-tsdoc: ^0.5.0
+    eslint-plugin-turbo: ^2.7.3
+    eslint-plugin-unicorn-x: ^3.2.1
+    typescript-eslint: ^8.52.0
+
+  parsers:
+    "@typescript-eslint/parser": ^8.52.0
+    svelte-eslint-parser: ^1.4.1
+
+  peers:
+    "@types/node": ^20.19.0 || ^22.12.0 || >=24.0.0
+    eslint: ^9.31.0
+    svelte: ^5.0.0
+    tailwindcss: ^4.0.0
+    typescript: ">=5.9.0"
+    turbo: ^2.0.0
+
+  dev:
+    "@arethetypeswrong/core": ^0.18.2
+    "@eslint/config-inspector": ^1.4.2
+    "@manypkg/cli": ^0.25.1
+    "@prettier/plugin-oxc": ^0.1.3
+    eslint: ^9.39.2
+    jiti: ^2.6.1
+    knip: ^5.80.1
+    node-modules-inspector: ^1.2.0
+    prettier: ^3.7.4
+    prettier-plugin-packagejson: ^2.5.20
+    publint: ^0.3.16
+    svelte: ^5.46.1
+    tailwindcss: ^4.1.18
+    tsdown: ^0.19.0-beta.5
+    turbo: ^2.7.3
+    typescript: ~5.9.3
+    typesync: ^0.14.3
+    unplugin-unused: ^0.5.6
+    update-ts-references: ^4.0.0
+
+  types:
+    "@types/confusing-browser-globals": ~1.0.3
+    "@types/eslint-plugin-security": ~3.0.0
+    "@types/node": ^25.0.3

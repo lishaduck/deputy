@@ -1,0 +1,18 @@
+{
+  "plugins": ["@prettier/plugin-oxc", "prettier-plugin-packagejson"],
+  "trailingComma": "all",
+  "singleQuote": false,
+  "semi": true,
+  "tabWidth": 2,
+  "useTabs": false,
+  "endOfLine": "lf",
+  "experimentalTernaries": true,
+  "overrides": [
+    {
+      "files": ["**/turbo.json", ".github/renovate.json"],
+      "options": {
+        "parser": "json-stringify"
+      }
+    }
+  ]
+}

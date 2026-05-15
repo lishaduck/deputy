@@ -1,0 +1,45 @@
+{
+  "name": "@eslint-deputy/types__eslint-plugin-no-use-extend-native",
+  "version": "99.9.9",
+  "description": "TypeScript definitions for eslint-plugin-no-use-extend-native",
+  "keywords": [
+    "eslint-deputy"
+  ],
+  "homepage": "https://github.com/lishaduck/deputy#readme",
+  "bugs": {
+    "url": "https://github.com/lishaduck/deputy/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lishaduck/deputy.git",
+    "directory": "packages/types__eslint-plugin-no-use-extend-native"
+  },
+  "license": "UPL-1.0",
+  "author": {
+    "name": "Eli"
+  },
+  "sideEffects": false,
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./index.d.cts"
+    }
+  },
+  "files": [
+    "index.d.cts"
+  ],
+  "scripts": {
+    "typecheck": "tsc"
+  },
+  "devDependencies": {
+    "@types/node": "catalog:types",
+    "eslint": "catalog:dev",
+    "typescript": "catalog:dev"
+  },
+  "peerDependencies": {
+    "eslint": "catalog:peers"
+  },
+  "engines": {
+    "node": "^20.19.0 || ^22.12.0 || >=24.0.0"
+  }
+}

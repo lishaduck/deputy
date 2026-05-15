@@ -1,0 +1,22 @@
+{
+  "eslint.options": {
+    "flags": ["v10_config_lookup_from_file"]
+  },
+  "eslint.probe": [
+    "javascript",
+    "typescript",
+    "yaml",
+    "json",
+    "jsonc",
+    "svelte",
+    "html"
+  ],
+  "eslint.rules.customizations": [
+    {
+      "rule": "*",
+      "severity": "downgrade" // TODO: Figure out how to make infos show up as problems.
+    }
+  ],
+  "typescript.tsdk": "./node_modules/typescript/lib",
+  "editor.experimental.preferTreeSitter.typescript": false
+}

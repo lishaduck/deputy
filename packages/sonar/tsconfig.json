@@ -1,0 +1,21 @@
+{
+  "extends": "@eslint-deputy/tsconfig/base.json",
+  "compilerOptions": {
+    "types": ["node"],
+    "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json"
+  },
+  "references": [
+    {
+      "path": "../define-config"
+    },
+    {
+      "path": "../deputy"
+    },
+    {
+      "path": "../tsdown-config"
+    },
+    {
+      "path": "../typegen"
+    }
+  ]
+}

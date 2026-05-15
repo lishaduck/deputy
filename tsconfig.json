@@ -1,0 +1,67 @@
+{
+  "extends": "@eslint-deputy/tsconfig/base.json",
+  "compilerOptions": {
+    "isolatedDeclarations": false,
+    "types": ["node"]
+  },
+  "include": ["*.config.ts"],
+  "references": [
+    {
+      "path": "packages/command"
+    },
+    {
+      "path": "packages/define-config"
+    },
+    {
+      "path": "packages/deputy"
+    },
+    {
+      "path": "packages/html"
+    },
+    {
+      "path": "packages/imports"
+    },
+    {
+      "path": "packages/internal-config"
+    },
+    {
+      "path": "packages/node"
+    },
+    {
+      "path": "packages/pnpm"
+    },
+    {
+      "path": "packages/sonar"
+    },
+    {
+      "path": "packages/svelte"
+    },
+    {
+      "path": "packages/tailwind"
+    },
+    {
+      "path": "packages/tsdown-config"
+    },
+    {
+      "path": "packages/turbo"
+    },
+    {
+      "path": "packages/typegen"
+    },
+    {
+      "path": "packages/types___eslint-community__eslint-plugin-eslint-comments"
+    },
+    {
+      "path": "packages/types___regru__eslint-plugin-prefer-early-return"
+    },
+    {
+      "path": "packages/types__eslint-plugin-no-use-extend-native"
+    },
+    {
+      "path": "packages/types__eslint-plugin-promise"
+    },
+    {
+      "path": "packages/vitest"
+    }
+  ]
+}

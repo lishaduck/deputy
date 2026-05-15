@@ -1,0 +1,91 @@
+{
+  "name": "@eslint-deputy/config",
+  "version": "0.1.0",
+  "description": "An opinionated ESLint configuration",
+  "keywords": [
+    "eslint",
+    "eslintconfig",
+    "eslint-config"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lishaduck/deputy.git",
+    "directory": "packages/deputy"
+  },
+  "license": "UPL-1.0",
+  "author": {
+    "name": "Eli"
+  },
+  "sideEffects": false,
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./use-at-your-own-risk": {
+      "types": "./dist/use-at-your-own-risk.d.ts",
+      "default": "./dist/use-at-your-own-risk.js"
+    }
+  },
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "build": "tsdown",
+    "typecheck": "tsc",
+    "typegen": "./scripts/typegen.ts"
+  },
+  "dependencies": {
+    "@eslint-community/eslint-plugin-eslint-comments": "catalog:plugins",
+    "@eslint-deputy/define-config": "workspace:*",
+    "@eslint/js": "catalog:plugins",
+    "@regru/eslint-plugin-prefer-early-return": "catalog:plugins",
+    "@stylistic/eslint-plugin": "catalog:plugins",
+    "confusing-browser-globals": "catalog:plugins",
+    "defu": "catalog:",
+    "eslint-config-flat-gitignore": "catalog:plugins",
+    "eslint-flat-config-utils": "catalog:",
+    "eslint-no-restricted": "catalog:plugins",
+    "eslint-plugin-de-morgan": "catalog:plugins",
+    "eslint-plugin-depend": "catalog:plugins",
+    "eslint-plugin-jsdoc": "catalog:plugins",
+    "eslint-plugin-no-use-extend-native": "catalog:plugins",
+    "eslint-plugin-package-json": "catalog:plugins",
+    "eslint-plugin-perfectionist": "catalog:plugins",
+    "eslint-plugin-promise": "catalog:plugins",
+    "eslint-plugin-regexp": "catalog:plugins",
+    "eslint-plugin-tsdoc": "catalog:plugins",
+    "eslint-plugin-unicorn-x": "catalog:plugins",
+    "globals": "catalog:",
+    "typescript-eslint": "catalog:plugins"
+  },
+  "devDependencies": {
+    "@eslint-deputy/tsconfig": "workspace:*",
+    "@eslint-deputy/tsdown-config": "workspace:*",
+    "@eslint-deputy/typegen": "workspace:*",
+    "@types/confusing-browser-globals": "catalog:types",
+    "@types/eslint-community__eslint-plugin-eslint-comments": "workspace:@eslint-deputy/types___eslint-community__eslint-plugin-eslint-comments@*",
+    "@types/eslint-plugin-no-use-extend-native": "workspace:@eslint-deputy/types__eslint-plugin-no-use-extend-native@*",
+    "@types/eslint-plugin-promise": "workspace:@eslint-deputy/types__eslint-plugin-promise@*",
+    "@types/node": "catalog:types",
+    "@types/regru__eslint-plugin-prefer-early-return": "workspace:@eslint-deputy/types___regru__eslint-plugin-prefer-early-return@*",
+    "eslint": "catalog:dev",
+    "tsdown": "catalog:dev",
+    "typescript": "catalog:dev",
+    "unplugin-unused": "catalog:dev"
+  },
+  "peerDependencies": {
+    "@types/node": "catalog:peers",
+    "eslint": "catalog:peers",
+    "typescript": "catalog:peers"
+  },
+  "peerDependenciesMeta": {
+    "@types/node": {
+      "optional": true
+    }
+  },
+  "engines": {
+    "node": "^20.19.0 || ^22.12.0 || >=24.0.0"
+  }
+}

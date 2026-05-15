@@ -1,0 +1,104 @@
+{
+  "$schema": "./node_modules/turbo/schema.json",
+  "globalDependencies": [
+    "pnpm-workspace.yaml"
+  ],
+  "globalPassThroughEnv": [
+    "pnpm_config_*"
+  ],
+  "tasks": {
+    "topo": {
+      "dependsOn": [
+        "^topo"
+      ]
+    },
+    "build": {
+      "outputs": [
+        "dist/"
+      ],
+      "dependsOn": [
+        "typegen"
+      ]
+    },
+    "//#lint": {},
+    "//#typecheck": {
+      "dependsOn": [],
+      "inputs": [
+        "node_modules/.cache/tsbuildinfo/**",
+        "node_modules/.cache/tsbuildinfo.json"
+      ]
+    },
+    "typegen": {
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "//#format": {
+      "outputs": [
+        "node_modules/.cache/prettier/**"
+      ],
+      "inputs": [
+        "**/*.ts",
+        "**/*.js",
+        "**/*.md",
+        "**/*.json",
+        "**/*.html",
+        "**/*.css",
+        "!**/dist/**",
+        "!**/node_modules/**"
+      ]
+    },
+    "//#format:check": {
+      "outputs": [
+        "node_modules/.cache/prettier/**"
+      ],
+      "inputs": [
+        "**/*.ts",
+        "**/*.js",
+        "**/*.md",
+        "**/*.json",
+        "**/*.html",
+        "**/*.css",
+        "!**/dist/**",
+        "!**/node_modules/**"
+      ]
+    },
+    "//#manypkg": {
+      "inputs": [
+        "**/package.json"
+      ]
+    },
+    "//#typesync": {
+      "inputs": [
+        "**/package.json",
+        ".typesyncrc"
+      ]
+    },
+    "//#typesync:check": {
+      "inputs": [
+        "**/package.json",
+        ".typesyncrc"
+      ]
+    },
+    "//#ts-references:check": {
+      "inputs": [
+        "**/package.json",
+        "**/tsconfig.json"
+      ]
+    },
+    "//#ts-references:update": {
+      "inputs": [
+        "**/package.json",
+        "**/tsconfig.json"
+      ]
+    },
+    "//#check-deduped-deps": {
+      "inputs": [
+        "pnpm-lock.yaml",
+        ".pnpmfile.cjs"
+      ]
+    },
+    "//#knip:dev": {},
+    "//#knip:prod": {}
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "name": "@eslint-deputy/tsdown-config",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Our correct bundler configuration",
+  "license": "UPL-1.0",
+  "sideEffects": false,
+  "type": "module",
+  "exports": {
+    ".": {
+      "default": "./src/index.ts"
+    }
+  },
+  "scripts": {
+    "typecheck": "tsc"
+  },
+  "devDependencies": {
+    "@arethetypeswrong/core": "catalog:dev",
+    "@eslint-deputy/tsconfig": "workspace:*",
+    "@types/node": "catalog:types",
+    "publint": "catalog:dev",
+    "tsdown": "catalog:dev",
+    "typescript": "catalog:dev",
+    "unplugin-unused": "catalog:dev"
+  },
+  "peerDependencies": {
+    "@arethetypeswrong/core": "catalog:dev",
+    "publint": "catalog:dev",
+    "tsdown": "catalog:dev",
+    "unplugin-unused": "catalog:dev"
+  },
+  "engines": {
+    "node": "^20.19.0 || ^22.12.0 || >=24.0.0"
+  }
+}

@@ -1,0 +1,32 @@
+# TODO
+
+- [x] Add in Sheriff rules
+- [x] Add in lintroll rules
+- [x] Add in szxx rules
+  - [x] What is `local-pkg` for?
+- [x] Add in CTA rules
+- [ ] Add in antfu rules
+- [x] Add in psdtools rules
+- [x] Add in elm-review rules
+- [x] Add in XO rules
+- [ ] Add in XO TypeScript rules
+- [ ] Add in Ducky rules
+- [ ] Create Storybook domain
+- [ ] Create Browser domain
+- [x] Create Tailwind domain
+  - [x] Add in `eslint-plugin-better-tailwindcss`
+- [ ] Add in Prose domain
+  - [x] Investigate `eslint-plugin-mdx` v `@eslint/markdown`
+  - [ ] Add in `eslint-plugin-mdx` for Markdown
+  - [ ] Spelling
+- [ ] Move JSDoc & Perfectionist to their own domains
+- [ ] [Migrate unrs-resolver back to oxc](https://github.com/unrs/unrs-resolver/issues/167)
+- [ ] Add in ESLint plugin domain
+- [ ] Documentation
+  - [ ] SSR domains depend on browser and node domains
+  - [ ] I skipped
+    - [ ] fsecond
+    - [ ] Arrow function stuff
+    - [ ] React, Astro, playwright, Jest, etc.
+- [ ] Check that all domains are implemented, not just stubs.
+- [ ] Investigate size & speed lol

@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "allowArbitraryExtensions": true,
+    "allowImportingTsExtensions": true,
+    "rewriteRelativeImportExtensions": true,
+    "resolveJsonModule": true,
+
+    "types": [],
+    "lib": ["ES2023"],
+
+    "composite": true,
+    "sourceMap": true,
+    "declarationMap": true,
+    "outDir": "${configDir}/node_modules/.cache/tsbuildinfo/",
+
+    "strict": true,
+    "exactOptionalPropertyTypes": true,
+    "noUncheckedIndexedAccess": true,
+
+    "allowUnreachableCode": false,
+    "erasableSyntaxOnly": true,
+    "noImplicitReturns": true,
+    "noImplicitOverride": true,
+    "noFallthroughCasesInSwitch": true,
+    "noPropertyAccessFromIndexSignature": true,
+
+    "useDefineForClassFields": true,
+    "libReplacement": false,
+
+    "verbatimModuleSyntax": true,
+    "isolatedModules": true,
+    "isolatedDeclarations": true,
+    "moduleDetection": "force",
+    "skipLibCheck": true
+  },
+  "include": [
+    "${configDir}/scripts/**/*.ts",
+    "${configDir}/src/**/*.ts",
+    "${configDir}/src/types/**/*.d.cts",
+    "${configDir}/*.config.ts"
+  ],
+  "exclude": [
+    "${configDir}/**/.turbo/**",
+    "${configDir}/**/dist/**",
+    "${configDir}/**/node_modules/**"
+  ]
+}
