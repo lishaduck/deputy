@@ -163,7 +163,10 @@ export const documentation = ({
 
       plugins: { tsdoc },
 
-      rules: { "tsdoc/syntax": error },
+      rules: {
+        "tsdoc/syntax": error,
+        "jsdoc/check-tag-names": off,
+      },
     },
     {
       name: "deputy/docs/handpicked",

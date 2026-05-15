@@ -127,6 +127,13 @@ const tseslintHandpicked: TypedRules = {
       ignoreTypeValueShadow: true,
     },
   ],
+  "@typescript-eslint/no-unnecessary-condition": [
+    warn,
+    {
+      allowConstantLoopConditions: "only-allowed-literals",
+      checkTypePredicates: true,
+    },
+  ],
   "@typescript-eslint/no-unused-expressions": [
     error,
     {
