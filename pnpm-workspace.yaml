@@ -139,7 +139,7 @@ catalogs:
     svelte: ^5.0.0
     tailwindcss: ^4.0.0
     typescript: ">=5.9.0"
-    turbo: ^2.0.0
+    turbo: ^2.9.14
 
   dev:
     "@arethetypeswrong/core": ^0.18.2
